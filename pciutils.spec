@@ -6,7 +6,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(ru):	Утилиты работы с PCI устройствами
 Name:		pciutils
 Version:	2.1.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -16,6 +16,7 @@ Patch0:		%{name}-FHS.patch
 Patch1:		%{name}-bufsiz.patch
 Patch2:		%{name}-devel.patch
 Patch4:		%{name}-man.patch
+Patch5:		%{name}-segv.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,6 +93,7 @@ barramento PCI no Linux.
 %patch1 -p1
 %patch2 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 # paranoid check whether pci.ids in _sourcedir isn't too old
@@ -100,7 +102,7 @@ if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
 	exit 1
 fi
 cp -f %{SOURCE2} .
-%{__make} OPT="%{rpmcflags} -fomit-frame-pointer"
+%{__make} OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
 
 %install
 rm -rf $RPM_BUILD_ROOT

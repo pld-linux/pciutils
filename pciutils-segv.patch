@@ -1,0 +1,11 @@
+--- pciutils-2.1.10/lspci.c.orig	Sat Mar 30 16:39:24 2002
++++ pciutils-2.1.10/lspci.c	Thu Jul  4 23:00:24 2002
+@@ -431,7 +431,7 @@
+ show_agp(struct device *d, int where, int cap)
+ {
+   u32 t;
+-  char rate[8];
++  char rate[9]; /* must be enough for "x1,x2,x4\0" */
+ 
+   t = cap & 0xff;
+   printf("AGP version %x.%x\n", cap/16, cap%16);
