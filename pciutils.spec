@@ -7,7 +7,7 @@ Summary(fr):	Utilitaires relatifs au bus PCI
 Summary(it):	Utility correlate al bus PCI
 Summary(ja):	PCI ¥Ð¥¹´ØÏ¢¥æ¡¼¥Æ¥£¥ê¥Æ¥£
 Summary(ko):	PCI ¹ö½º °ü·Ã À¯Æ¿¸®Æ¼µé
-Summary(no):	PCI-buss-relaterte verktøy
+Summary(nb):	PCI-buss-relaterte verktøy
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Summary(pt):	Utilitários relacionados com o 'bus' PCI
 Summary(pt_BR):	Utilitários para PCI do Linux
@@ -146,7 +146,7 @@ Summary(is):	PCI þróunaraðgerðasafn fyrir Linux
 Summary(it):	Libreria di sviluppo PCI per Linux
 Summary(ja):	Linux PCI ³«È¯¥é¥¤¥Ö¥é¥ê
 Summary(ko):	Linux PCI °³¹ß¿ë ¶óÀÌºê·¯¸®
-Summary(no):	Linux PCI utviklingsbibliotek
+Summary(nb):	Linux PCI utviklingsbibliotek
 Summary(pl):	Pliki developerskie pciutils
 Summary(pt):	Biblioteca de desenvolvimento para PCI do Linux
 Summary(pt_BR):	Biblioteca de desenvolvimentos para aplicações que trabalhem com o barramento PCI no Linux
