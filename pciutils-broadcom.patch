@@ -1,0 +1,10 @@
+--- pciutils-2.1.8/pci.ids.foo	Tue Jan 23 20:47:53 2001
++++ pciutils-2.1.8/pci.ids	Tue Jan 23 20:48:25 2001
+@@ -3892,6 +3892,7 @@
+ 14e2  INFOLIBRIA
+ 14e3  AMTELCO
+ 14e4  BROADCOM Corporation
++	1644 BCM5700 1000BaseTX
+ 14e5  Pixelfusion Ltd
+ 14e6  SHINING Technology Inc
+ 14e7  3CX

@@ -1,0 +1,21 @@
+--- pciutils-2.1.8/pci.ids.foo	Tue Jul 11 15:51:19 2000
++++ pciutils-2.1.8/pci.ids	Tue Jul 11 15:50:34 2000
+@@ -3043,8 +3043,9 @@
+ 12ac  Measurex Corporation
+ 12ad  Multidata GmbH
+ 12ae  Alteon Networks Inc.
+-	0001  AceNIC Gigabit Ethernet
++	0001  AceNIC Gigabit Ethernet (Fibre)
+ 		1410 0104  Gigabit Ethernet-SX PCI Adapter (14100401)
++	0002  AceNIC Gigabit Ethernet (Copper)
+ 12af  TDK USA Corp
+ 12b0  Jorge Scientific Corp
+ 12b1  GammaLink
+@@ -4708,6 +4709,7 @@
+ 	00c0  7899A
+ 	00c1  7899B
+ 	00c3  7899D
++	00c5  RAID subsystem HBA
+ 	00cf  7899P
+ 907f  Atronics
+ 	2015  IDE-2015PL

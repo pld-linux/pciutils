@@ -1,0 +1,24 @@
+--- pciutils-2.1.8/pci.ids.foo	Fri Jul  7 10:53:57 2000
++++ pciutils-2.1.8/pci.ids	Fri Jul  7 10:55:22 2000
+@@ -1100,14 +1100,16 @@
+ 1075  Advanced Integrations Research
+ 1076  Chaintech Computer Co. Ltd
+ 1077  Q Logic
++	1016  QLA10160
+ 	1020  ISP1020
+ 	1022  ISP1022
+-	1080  ISP1080
+-	1240  ISP1240
+-	1280  ISP1280
++	1080  QLA1080
++	1216  QLA12160
++	1240  QLA1240
++	1280  QLA1280
+ 	2020  ISP2020A
+-	2100  ISP2100
+-	2200  ISP2200
++	2100  QLA2100
++	2200  QLA2200
+ 1078  Cyrix Corporation
+ 	0000  5510 [Grappa]
+ 	0001  PCI Master

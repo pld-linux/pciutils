@@ -1,0 +1,11 @@
+--- pciutils-2.1.8/pci.ids.i815	Fri Jul 14 12:00:56 2000
++++ pciutils-2.1.8/pci.ids	Fri Jul 14 12:05:34 2000
+@@ -4424,6 +4424,8 @@
+ 		1014 0119  Netfinity Gigabit Ethernet SX Adapter
+ 		8086 1000  EtherExpress PRO/1000 Gigabit Server Adapter
+ 	1030  82559 InBusiness 10/100
++	1130  82815 815 Chipset Host Bridge and Memory Controller Hub
++	1132  82815 CGC [Chipset Graphics Controller] 
+ 	1161  82806AA PCI64 Hub Advanced Programmable Interrupt Controller
+ 	1209  82559ER
+ 	1221  82092AA_0
