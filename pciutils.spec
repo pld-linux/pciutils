@@ -16,20 +16,18 @@ Summary(sv):	PCI-bussrelaterade verktyg
 Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
-Version:	2.1.10
-Release:	8
+Version:	2.1.11
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	%{name}-non-english-man-pages.tar.bz2
 Source2:	http://pciids.sourceforge.net/pci.ids
-Patch0:		%{name}-FHS.patch
-Patch1:		%{name}-bufsiz.patch
-Patch2:		%{name}-devel.patch
-Patch4:		%{name}-man.patch
-Patch5:		%{name}-segv.patch
-Patch6:		%{name}-pci_h.patch
-Patch7:		%{name}-pci.ids_in_etc.patch
+Patch0:		%{name}-bufsiz.patch
+Patch1:		%{name}-devel.patch
+Patch2:		%{name}-man.patch
+Patch3:		%{name}-segv.patch
+Patch4:		%{name}-pci_h.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -236,10 +234,9 @@ enheter kopplade till PCI-bussen.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 %patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
+
 cp -rf lib pci
 
 %build
@@ -249,7 +246,8 @@ if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
 	exit 1
 fi
 cp -f %{SOURCE2} .
-%{__make} OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
+%{__make} OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
+	SHAREDIR=/etc
 
 %install
 rm -rf $RPM_BUILD_ROOT

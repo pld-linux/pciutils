@@ -1,23 +1,14 @@
---- pciutils-2.1.10/lspci.man.orig	Wed Jul  3 00:56:58 2002
-+++ pciutils-2.1.10/lspci.man	Wed Jul  3 00:57:58 2002
+--- pciutils-2.1.11/lspci.man.orig	Wed Jul  3 00:56:58 2002
++++ pciutils-2.1.11/lspci.man	Wed Jul  3 00:57:58 2002
 @@ -75,9 +75,9 @@
  Use
  .B
  <file>
 -as PCI ID database instead of /usr/share/pci.ids.
-+as PCI ID database instead of /etc/pci.ids.
++as PCI ID database instead of @SHAREDIR@/pci.ids.
  .TP
 -.B -p <dir>
 +.B -P <dir>
  Use
  .B <dir>
  as directory containing PCI bus information instead of /proc/bus/pci.
-@@ -136,7 +136,7 @@
- 
- .SH FILES
- .TP
--.B /usr/share/pci.ids
-+.B /etc/pci.ids
- A list of all known PCI ID's (vendors, devices, classes and subclasses).
- .TP
- .B /proc/bus/pci
