@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.1.10
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -28,6 +28,7 @@ Patch1:		%{name}-bufsiz.patch
 Patch2:		%{name}-devel.patch
 Patch4:		%{name}-man.patch
 Patch5:		%{name}-segv.patch
+Patch6:		%{name}-pci_h.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -236,6 +237,8 @@ enheter kopplade till PCI-bussen.
 %patch2 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
+cp -rf lib pci
 
 %build
 # paranoid check whether pci.ids in _sourcedir isn't too old
@@ -256,6 +259,7 @@ install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+cp -f lib/pci.h		$RPM_BUILD_ROOT%{_includedir}/pci
 
 %clean
 rm -rf $RPM_BUILD_ROOT
