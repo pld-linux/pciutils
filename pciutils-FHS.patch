@@ -1,55 +1,57 @@
---- pciutils-2.1.5/lib/configure.wiget	Thu Jan 20 11:08:24 2000
-+++ pciutils-2.1.5/lib/configure	Tue Feb 15 09:02:08 2000
-@@ -59,7 +59,7 @@
- if [ -z "$ok" ] ; then
- 	echo "WARNING: No real configuration access method is available."
- fi
--echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
-+echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
- if [ -f header.h ] ; then
- 	echo >>$c '#define HAVE_OWN_HEADER_H'
- fi
---- pciutils-2.1.5/Makefile.wiget	Mon Feb 14 20:32:56 2000
-+++ pciutils-2.1.5/Makefile	Tue Feb 15 09:25:45 2000
-@@ -12,13 +12,17 @@
- DATE=2000-02-15
- 
- ifeq ($(shell uname),FreeBSD)
+diff -Nru pciutils-2.1.8/Makefile pciutils-2.1.8.new/Makefile
+--- pciutils-2.1.8/Makefile	Sat May 20 16:48:08 2000
++++ pciutils-2.1.8.new/Makefile	Sun May 21 17:36:07 2000
+@@ -18,17 +18,22 @@
+ PREFIX=/usr/local
+ else
+ ifeq ($(shell uname),AIX)
 -ROOT=/usr/local
 -PREFIX=/usr/local
-+DESTDIR=/
-+prefix=/usr/local
++ROOT=/
++PREFIX=/usr/
+ CFLAGS=-g
+ INSTALL=installbsd
+ DIRINSTALL=mkdir -p
  else
--ROOT=/
+ ROOT=/
 -PREFIX=/usr
 +DESTDIR=/
 +prefix=/usr
 +exec_prefix=$(prefix)
 +bindir=$(exec_prefix)/bin
 +sbindir=$(exec_prefix)/sbin
-+mandir=$(prefix)/man
++mandir=$(prefix)/share/man
 +datadir=$(prefix)/share/misc
+ endif
  endif
 -MANDIR=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
  
  export
  
-@@ -47,17 +51,18 @@
+@@ -38,7 +43,7 @@
+ 	$(MAKE) -C lib all
+ 
+ lib/config.h:
+-	cd lib && ./configure $(PREFIX) $(VERSION)
++	cd lib && ./configure $(prefix) $(VERSION)
+ 
+ lspci: lspci.o common.o lib/libpci.a
+ setpci: setpci.o common.o lib/libpci.a
+@@ -57,17 +62,18 @@
  
  install: all
  	# -c is ignored on Linux, but required on FreeBSD
--	install -d -m 755 $(ROOT)/sbin $(PREFIX)/share $(MANDIR)/man8
--	install -c -m 755 -s lspci setpci $(ROOT)/sbin
--	install -c -m 644 pci.ids $(PREFIX)/share
--	install -c -m 644 lspci.8 setpci.8 $(MANDIR)/man8
-+	install -d -m 755 $(DESTDIR)$(sbindir) $(DESTDIR)$(datadir) \
-+	$(DESTDIR)$(mandir)/man8
-+	install -c -m 755 -s lspci setpci $(DESTDIR)$(sbindir)
-+	install -c -m 644 pci.ids $(DESTDIR)$(datadir)
-+	install -c -m 644 lspci.8 setpci.8 $(DESTDIR)$(mandir)/man8
+-	$(DIRINSTALL) -m 755 $(ROOT)/sbin $(PREFIX)/share $(MANDIR)/man8
+-	$(INSTALL) -c -m 755 -s lspci setpci $(ROOT)/sbin
+-	$(INSTALL) -c -m 644 pci.ids $(PREFIX)/share
+-	$(INSTALL) -c -m 644 lspci.8 setpci.8 $(MANDIR)/man8
++	$(DIRINSTALL) -m 755 $(DESTDIR)$(sbindir) $(DESTDIR)$(datadir) \
++		$(DESTDIR)$(mandir)/man8
++	$(INSTALL) -c -m 755 -s lspci setpci $(DESTDIR)$(sbindir)
++	$(INSTALL) -c -m 644 pci.ids $(DESTDIR)$(datadir)
++	$(INSTALL) -c -m 644 lspci.8 setpci.8 $(DESTDIR)$(mandir)/man8
  	# Remove relics from old versions
--	rm -f $(ROOT)/etc/pci.ids
-+	#rm -f $(ROOT)/etc/pci.ids
+ 	rm -f $(ROOT)/etc/pci.ids
  
  uninstall: all
 -	rm -f $(ROOT)/sbin/lspci $(ROOT)/sbin/setpci
@@ -61,3 +63,15 @@
  
  release:
  	sed "s/^\\(Version:[ 	]*\\)[0-9.]*/\\1$(VERSION)/;s/^\\(Entered-date:[ 	]*\\)[0-9]*/\\1`date -d$(DATE) '+%y%m%d'`/;s/\\(pciutils-\\)[0-9.]*/\\1$(VERSION)\\./" <pciutils.lsm >pciutils.lsm.new
+diff -Nru pciutils-2.1.8/lib/configure pciutils-2.1.8.new/lib/configure
+--- pciutils-2.1.8/lib/configure	Fri Apr 21 13:32:26 2000
++++ pciutils-2.1.8.new/lib/configure	Sun May 21 00:11:53 2000
+@@ -80,7 +80,7 @@
+ if [ -z "$ok" ] ; then
+ 	echo "WARNING: No real configuration access method is available."
+ fi
+-echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
++echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
+ if [ -f header.h ] ; then
+ 	echo >>$c '#define HAVE_OWN_HEADER_H'
+ fi
