@@ -2,14 +2,25 @@ Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
 Version:	2.1.8
-Release:	1
+Release:	11
 License:	GPL
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-Patch0:		pciutils-FHS.patch
-Patch1:		pciutils-bufsiz.patch
-Patch2:		pciutils-devel.patch
+Patch0:		%{name}-FHS.patch
+Patch1:		%{name}-bufsiz.patch
+Patch2:		%{name}-devel.patch
+Patch3:         pciutils-pci.ids-update.patch
+Patch4:         pciutils-qlogic.patch
+Patch5:         pciutils-pcix.patch
+Patch6:         pciutils-ids-2.patch
+Patch7:         pciutils-i815.patch
+Patch8:         pciutils-ati.patch
+Patch9:         pciutils-vortex.patch
+Patch10:        pciutils-megaraid.patch
+Patch11:        pciutils-2.4.0.diffs
+Patch12:        pciutils-broadcom.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,6 +43,7 @@ poprzez /proc/bus/pci).
 Summary:	pciutils developement files (for PLD-installer)
 Summary(pl):	pliki developerskie pciutils
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 
@@ -49,9 +61,19 @@ jest kompilacja instalatora PLD
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
+%patch10 -p1
+%patch11 -p0
+%patch12 -p1
 
 %build
-%{__make} OPT="$RPM_OPT_FLAGS"
+%{__make} OPT="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -69,11 +91,7 @@ rm -rf $RPM_BUILD_ROOT
         libdir=%{_libdir} \
         includedir=%{_includedir}
 						
-
-strip $RPM_BUILD_ROOT%{_sbindir}/*
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
-	README ChangeLog pciutils.lsm
+gzip -9nf README ChangeLog pciutils.lsm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
