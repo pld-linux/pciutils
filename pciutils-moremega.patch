@@ -1,0 +1,21 @@
+--- pciutils-2.1.8/pci.ids.moremega	Thu Mar 22 15:25:29 2001
++++ pciutils-2.1.8/pci.ids	Thu Mar 22 15:26:38 2001
+@@ -585,9 +585,7 @@
+ 	0002  PowerEdge Expandable RAID Controller 3/Di
+ 	0003  PowerEdge Expandable RAID Controller 3/Si
+ 	0004  PowerEdge Expandable RAID Controller 3/Si
+-	0005  PowerEdge Expandable RAID Controller 3/Di
+-	0006  PowerEdge Expandable RAID Controller 3/Di
+-	0008  PowerEdge Expandable RAID Controller 3/Di
++	000a  PowerEdge Expandable RAID Controller 3/Di
+ 1029  Siemens Nixdorf IS
+ 102a  LSI Logic
+ 	0000  HYDRA
+@@ -4591,6 +4589,7 @@
+ 		101e 0466  MegaRaid 466
+ 		101e 0467  MegaRaid 467
+ 		1028 0467  PowerEdge Expandable RAID Controller 2/DC
++		1028 1111  PowerEdge Expandable RAID Controller 2/SC
+ 		103c 10c6  MegaRaid 438
+ 		103c 10c7  MegaRaid T5
+ 		1111 1111  MegaRaid 466
