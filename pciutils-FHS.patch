@@ -1,0 +1,40 @@
+diff -ur pciutils-2.0/Makefile pciutils-2.0.new/Makefile
+--- pciutils-2.0/Makefile	Wed May 19 13:53:53 1999
++++ pciutils-2.0.new/Makefile	Thu May 20 01:54:49 1999
+@@ -8,6 +8,11 @@
+ 
+ ROOT=/
+ PREFIX=/usr
++exec_prefix=$(PREFIX)
++bindir=$(exec_prefix)/bin
++sbindir=$(exec_prefix)/sbin
++mandir=$(PREFIX)/man
++datadir=$(PREFIX)/share/misc
+ 
+ VERSION=2.0
+ SUFFIX=
+@@ -40,9 +45,9 @@
+ 	rm -rf dist
+ 
+ install: all
+-	install -m 755 -s lspci setpci $(ROOT)/sbin
+-	install -m 644 pci.ids $(PREFIX)/share
+-	install -m 644 lspci.8 setpci.8 $(PREFIX)/man/man8
++	install -m 755 -s lspci setpci $(ROOT)$(sbindir)
++	install -m 644 pci.ids $(ROOT)$(datadir)
++	install -m 644 lspci.8 setpci.8 $(ROOT)$(mandir)/man8
+ 	# Remove relics from old versions
+ 	rm -f $(ROOT)/etc/pci.ids
+ 
+diff -ur pciutils-2.0/lib/configure pciutils-2.0.new/lib/configure
+--- pciutils-2.0/lib/configure	Mon Apr 26 22:07:06 1999
++++ pciutils-2.0.new/lib/configure	Thu May 20 01:50:17 1999
+@@ -39,7 +39,7 @@
+ if [ -z "$ok" ] ; then
+ 	echo "WARNING: No real configuration access method is available."
+ fi
+-echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
++echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
+ if [ -f header.h ] ; then
+ 	echo >>$c '#define HAVE_OWN_HEADER_H'
+ fi
