@@ -7,7 +7,7 @@
 #	so if you have anything to contribute, please visit the home page or
 #	send a diff -u against the most recent pci.ids to pci-ids@ucw.cz.
 #
-#	Daily snapshot on Thu 2002-10-24 10:00:05
+#	Daily snapshot on Wed 2002-12-18 11:00:04
 #
 
 # Vendors, devices and subsystems. Please keep sorted.
@@ -212,6 +212,7 @@
 	4752  Rage XL
 		1002 0008  Rage XL
 		1002 4752  Rage XL
+		1028 00d1  PowerEdge 2550
 	4753  Rage XC
 		1002 4753  Rage XC
 	4754  3D Rage I/II 215GT [Mach64 GT]
@@ -232,7 +233,15 @@
 	4964  Radeon R250 Id [Radeon 9000]
 	4965  Radeon R250 Ie [Radeon 9000]
 	4966  Radeon R250 If [Radeon 9000]
+		10f1 0002  R250 If [Tachyon G9000 PRO]
+		148c 2039  R250 If [Radeon 9000 Pro "Evil Commando"]
+		1509 9a00  R250 If [Radeon 9000 "AT009"]
+		174b 7176  R250 If [Sapphire Radeon 9000 Pro]
+		174b 7192  R250 If [Radeon 9000 "Atlantis"]
+		17af 2005  R250 If [Excalibur Radeon 9000 Pro]
+		17af 2006  R250 If [Excalibur Radeon 9000]
 	4967  Radeon R250 Ig [Radeon 9000]
+	496e  Radeon R250 [Radeon 9000] (Secondary)
 	4c42  3D Rage LT Pro AGP-133
 		0e11 b0e8  Rage 3D LT Pro
 		0e11 b10e  3D Rage LT Pro (Compaq Armada 1750)
@@ -252,6 +261,7 @@
 		1002 4c49  Rage LT Pro
 	4c4d  Rage Mobility P/M AGP 2x
 		1002 0084  Xpert 98 AGP 2X (Mobility)
+		1014 0154  ThinkPad A20m
 	4c4e  Rage Mobility L AGP 2x
 	4c50  3D Rage LT Pro
 		1002 4c50  Rage LT Pro
@@ -260,6 +270,7 @@
 	4c53  Rage Mobility L
 	4c54  264LT [Mach64 LT]
 	4c57  Radeon Mobility M7 LW [Radeon Mobility 7500]
+		1014 0517  ThinkPad T30
 		1028 00e6  Radeon Mobility M7 LW (Dell Inspiron 8100)
 	4c58  Radeon Mobility M7 LX [Radeon Mobility FireGL 7800]
 	4c59  Radeon Mobility M6 LY
@@ -277,6 +288,7 @@
 	4e45  Radeon R300 NE [Radeon 9700]
 	4e46  Radeon R300 NF [Radeon 9700]
 	4e47  Radeon R300 NG [Radeon 9700]
+	4e64  Radeon R300 [Radeon 9700] (Secondary)
 	5041  Rage 128 PA/PRO
 	5042  Rage 128 PB/PRO AGP 2x
 	5043  Rage 128 PC/PRO AGP 4x
@@ -339,10 +351,17 @@
 	514c  Radeon R200 QL [Radeon 8500 LE]
 		1002 003a  Radeon R200 QL [Radeon 8500 LE]
 		1002 013a  Radeon 8500
+		148c 2026  R200 QL [Radeon 8500 Evil Master II Multi Display Edition]
 		174b 7149  Radeon R200 QL [Sapphire Radeon 8500 LE]
 	5157  Radeon RV200 QW [Radeon 7500]
 		1002 013a  Radeon 7500
+		1458 4000  RV200 QW [RADEON 7500 PRO MAYA AR]
+		148c 2024  RV200 QW [Radeon 7500LE Dual Display]
+		148c 2025  RV200 QW [Radeon 7500 Evil Master Multi Display Edition]
+		148c 2036  RV200 QW [Radeon 7500 PCI Dual Display]
+		174b 7147  RV200 QW [Sapphire Radeon 7500LE]
 		174b 7161  Radeon RV200 QW [Radeon 7500 LE]
+		17af 0202  RV200 QW [Excalibur Radeon 7500LE]
 	5158  Radeon RV200 QX [Radeon 7500]
 	5159  Radeon VE QY
 		1002 000a  Radeon 7000/Radeon VE
@@ -351,7 +370,11 @@
 		1002 003a  Radeon 7000/Radeon VE
 		1002 00ba  Radeon 7000/Radeon VE
 		1002 013a  Radeon 7000/Radeon VE
-		174b 7112  Radeon 7000 64M TVO
+		1458 4002  RV100 QY [RADEON 7000 PRO MAYA AV Series]
+		148c 2003  RV100 QY [Radeon 7000 Multi-Display Edition]
+		148c 2023  RV100 QY [Radeon 7000 Evil Master Multi-Display]
+		174b 7112  RV100 QY [Sapphire Radeon VE 7000]
+		1787 0202  RV100 QY [Excalibur Radeon 7000]
 	515a  Radeon VE QZ
 	5168  Radeon R200 Qh
 	5169  Radeon R200 Qi
@@ -436,7 +459,10 @@
 		1004 0306  QSound ThunderBird PCI Audio Support Registers
 		122d 1208  DSP368 Audio Support Registers
 		1483 5022  XWave Thunder 3D Audio Support Registers
+	0307  Thunderbird
+	0308  Thunderbird
 	0702  VAS96011 [Golden Gate II]
+	0703  Tollgate
 1005  Avance Logic Inc. [ALI]
 	2064  ALG2032/2064
 	2128  ALG2364A
@@ -662,8 +688,10 @@
 	00b7  256-bit Graphics Rasterizer [Fire GL1]
 		1902 00b8  Fire GL1
 	00be  ATM 622MBPS Controller (1410be00)
+	00dc  Advanced Systems Management Adapter (ASMA)
 	00fc  CPC710 Dual Bridge and Memory Controller (PCI-64)
 	0105  CPC710 Dual Bridge and Memory Controller (PCI-32)
+	010f  Remote Supervisor Adapter (RSA)
 	0142  Yotta Video Compositor Input
 		1014 0143  Yotta Input Controller (ytin)
 	0144  Yotta Video Compositor Output
@@ -678,6 +706,7 @@
 		1014 022e  ServeRAID-4H
 		1014 0258  ServeRAID-5i
 		1014 0259  ServeRAID-5i
+	0302  XA-32 chipset [Summit]
 	ffff  MPIC-2 interrupt controller
 1015  LSI Logic Corp of Canada
 1016  ICL Personal Systems
@@ -798,6 +827,8 @@
 	8520  CyberBlade i1
 		0e11 b16e  CyberBlade i1 AGP
 		1023 8520  CyberBlade i1 AGP
+	8620  CyberBlade/i1
+		1014 0502  ThinkPad T30
 	8820  CyberBlade XPAi1
 	9320  TGUI 9320
 	9350  GUI Accelerator
@@ -1186,6 +1217,8 @@
 		1569 6326  SiS6326 GUI Accelerator
 	7001  7001
 		1039 7000  Onboard USB Controller
+	7002  SiS7002 USB 2.0
+		1509 7002  Onboard USB Controller
 	7007  FireWire Controller
 	7012  SiS7012 PCI Audio Accelerator
 	7013  56k Winmodem (Smart Link HAMR5600 compatible)
@@ -1347,6 +1380,7 @@
 104a  SGS Thomson Microelectronics
 	0008  STG 2000X
 	0009  STG 1764X
+	0010  STG4000 [3D Prophet Kyro Series]
 	0981  DEC-Tulip compatible 10/100 Ethernet
 	1746  STG 1764X
 	2774  DEC-Tulip compatible 10/100 Ethernet
@@ -1440,6 +1474,7 @@
 	ac52  PCI1451 PC card Cardbus Controller
 	ac53  PCI1421 PC card Cardbus Controller
 	ac55  PCI1250 PC card Cardbus Controller
+		1014 0512  ThinkPad T30
 	ac60  PCI2040 PCI to DSP Bridge Controller
 	fe00  FireWire Host Controller
 	fe03  12C01A FireWire Host Controller
@@ -1465,6 +1500,7 @@
 		1050 0840  W89C840 Ethernet Adapter
 	0940  W89C940
 	5a5a  W89C940F
+	6692  W6692
 	9970  W9970CF
 1051  Anigma, Inc.
 1052  ?Young Micro Systems
@@ -1520,6 +1556,7 @@
 	0d38  20263
 		105a 4d39  Fasttrak66
 	1275  20275
+	3376  PDC20376
 	4d30  20267
 		105a 4d33  Ultra100
 		105a 4d39  Fasttrak100
@@ -1537,7 +1574,7 @@
 	5300  DC5300
 	6268  20268R
 	6269  PDC20271
-		105a 6269  Fasttrack tx2
+		105a 6269  FastTrak TX2/TX2000
 	7275  PDC20277
 105b  Foxconn International, Inc.
 105c  Wipro Infotech Limited
@@ -1913,6 +1950,7 @@
 		1851 1850  FlyVideo'98 - Video
 		1851 1851  FlyVideo II
 		1852 1852  FlyVideo'98 - Video (with FM Tuner)
+		bd11 1200  PCTV pro (TV + FM stereo receiver)
 	036f  Bt879 Video Capture
 		127a 0044  Bt879 Video Capture NTSC
 		127a 0122  Bt879 Video Capture PAL I
@@ -1964,6 +2002,7 @@
 		14f1 0002  Bt878 Video Capture (Audio Section)
 		14f1 0003  Bt878 Video Capture (Audio Section)
 		14f1 0048  Bt878 Video Capture (Audio Section)
+		bd11 1200  PCTV pro (TV + FM stereo receiver, audio section)
 	0879  Bt879 Audio Capture
 		127a 0044  Bt879 Video Capture (Audio Section)
 		127a 0122  Bt879 Video Capture (Audio Section)
@@ -2071,7 +2110,9 @@
 		15ed 1003  MCCS 16-port Serial Hot Swap
 	9036  9036
 	9050  PCI <-> IOBus Bridge
+		10b5 2036  SatPak GPS
 		10b5 2273  SH-ARC SoHard ARCnet card
+		10b5 9050  MP9050
 		1522 0001  RockForce 4 Port V.90 Data/Fax/Voice Modem
 		1522 0002  RockForce 2 Port V.90 Data/Fax/Voice Modem
 		1522 0003  RockForce 6 Port V.90 Data/Fax/Voice Modem
@@ -2214,6 +2255,7 @@
 		1028 0095  Integrated 3C905C-TX Fast Etherlink for PC Management NIC
 		10b7 1000  3C905C-TX Fast Etherlink for PC Management NIC
 		10b7 7000  10/100 Mini PCI Ethernet Adapter
+	9300  3CSOHO100B-TX  [910-A01]
 	9800  3c980-TX [Fast Etherlink XL Server Adapter]
 		10b7 9800  3c980-TX Fast Etherlink XL Server Adapter
 	9805  3c980-TX 10/100baseTX NIC [Python-T]
@@ -2255,7 +2297,7 @@
 	1001  FDC 37C922
 	a011  83C170QF
 	b106  SMC34C90
-10b9  Acer Laboratories Inc. [ALi]
+10b9  ALi Corporation. [ALi]
 	0111  C-Media CMI8738/C3DX Audio Device (OEM)
 		10b9 0111  C-Media CMI8738/C3DX Audio Device (OEM)
 	1435  M1435
@@ -2277,6 +2319,7 @@
 	1541  M1541
 		10b9 1541  ALI M1541 Aladdin V/V+ AGP System Controller
 	1543  M1543
+	1563  M1563 South Bridge supporting HyperTransport(TM) Technology
 	1621  M1621
 	1631  ALI M1631 PCI North Bridge Aladdin Pro III
 	1632  M1632M Northbridge+Trident
@@ -2285,7 +2328,9 @@
 	1646  M1646 Northbridge+Trident
 	1647  M1647 Northbridge [MAGiK 1 / MobileMAGiK 1]
 	1651  M1651/M1651T Northbridge [Aladdin-Pro 5/5M,Aladdin-Pro 5T/5TM]
-	1671  M1671 Northbridge [Aladdin-P4]
+	1671  M1671 Super P4 Northbridge [AGP4X,PCI and SDR/DDR]
+	1681  M1681 P4 Northbridge [AGP8X,HyperTransport(TM) and SDR/DDR]
+	1687  M1687 K8 Northbridge [AGP8X and HyperTransport(TM)]
 	3141  M3141
 	3143  M3143
 	3145  M3145
@@ -2306,10 +2351,12 @@
 	5239  USB 2.0 Controller
 	5243  M1541 PCI to AGP Controller
 	5247  PCI to AGP Controller
+	5249  M5249 HTT to PCI Bridge
 	5251  M5251 P1394 OHCI 1.0 Controller
 	5253  M5253 P1394 OHCI 1.1 Controller
 	5261  M5261 Ethernet Controller
 	5451  M5451 PCI AC-Link Controller Audio Device
+		1014 0506  ThinkPad R30
 	5453  M5453 PCI AC-Link Controller Modem Device
 	5455  M5455 PCI AC-Link Controller Audio Device
 	5457  M5457 AC-Link Modem Interface Controller
@@ -2336,7 +2383,7 @@
 10c6  Rambus Inc.
 10c7  Media Vision
 10c8  Neomagic Corporation
-	0001  NM2070 [MagicGraph NM2070]
+	0001  NM2070 [MagicGraph 128]
 	0002  NM2090 [MagicGraph 128V]
 	0003  NM2093 [MagicGraph 128ZV]
 	0004  NM2160 [MagicGraph 128XD]
@@ -2358,13 +2405,14 @@
 		10f7 830b  MagicGraph 128XD
 		10f7 830d  MagicGraph 128XD
 		10f7 8312  MagicGraph 128XD
-	0005  [MagicMedia 256AV]
+	0005  NM2200 [MagicGraph 256AV]
+		1014 00dd  ThinkPad 570
 	0006  NM2360 [MagicMedia 256ZX]
 	0016  NM2380 [MagicMedia 256XL+]
 		10c8 0016  MagicMedia 256XL+
-	0025  [MagicMedia 256AV+]
-	0083  [MagicGraph 128ZV Plus]
-	8005  [MagicMedia 256AV Audio]
+	0025  NM2230 [MagicGraph 256AV+]
+	0083  NM2093 [MagicGraph 128ZV+]
+	8005  NM2200 [MagicMedia 256AV Audio]
 		0e11 b0d1  MagicMedia 256AV Audio Device on Discovery
 		0e11 b126  MagicMedia 256AV Audio Device on Durango
 		1014 00dd  MagicMedia 256AV Audio Device on BlackTip Thinkpad
@@ -2377,7 +2425,7 @@
 		110a 8005  MagicMedia 256AV Audio Device
 		14c0 0004  MagicMedia 256AV Audio Device
 	8006  NM2360 [MagicMedia 256ZX Audio]
-	8016  NM2360 [MagicMedia 256ZX Audio]
+	8016  NM2380 [MagicMedia 256XL+ Audio]
 10c9  Dataexpert Corporation
 10ca  Fujitsu Microelectr., Inc.
 10cb  Omron Corporation
@@ -2533,6 +2581,7 @@
 	017a  Quadro4 200/400NVS
 	017b  Quadro4 550XGL
 	017c  Quadro4 550 GoGL
+	0181  NV18 [GeForce4 MX440 AGP 8x]
 	01a0  NV15 [GeForce2 - nForce GPU]
 	01a4  nForce CPU bridge
 	01ab  nForce 420 Memory Controller (DDR)
@@ -2545,6 +2594,8 @@
 	01b8  nForce PCI-to-PCI bridge
 	01bc  nForce IDE
 	01c1  nForce MC97 Modem (Smart Link HAMR5600 compatible)
+	01c2  nForce USB Controller
+	01c3  nForce Ethernet Controller
 	0200  NV20 [GeForce3]
 		1043 402f  AGP-V8200 DDR
 	0201  NV20 [GeForce3 Ti200]
@@ -2555,6 +2606,8 @@
 	0250  NV25 [GeForce4 Ti4600]
 	0251  NV25 [GeForce4 Ti4400]
 	0253  NV25 [GeForce4 Ti4200]
+		107d 2896  WinFast A250 LE TD (Dual VGA/TV-out/DVI)
+		147b 8f09  Siluro (Dual VGA/TV-out/DVI)
 	0258  Quadro4 900XGL
 	0259  Quadro4 750XGL
 	025b  Quadro4 700XGL
@@ -2634,6 +2687,7 @@
 		1186 1300  DFE-538TX
 		1186 1320  SN5200
 		1186 8139  DRN-32TX
+		11f6 8139  FN22-3(A) LinxPRO Ethernet Adapter
 		1259 2500  AT-2500TX
 		1259 2503  AT-2500TX/ACPI
 		1429 d010  ND010
@@ -2652,7 +2706,7 @@
 	8197  SmartLAN56 56K Modem
 10ed  Ascii Corporation
 	7310  V7310
-10ee  Xilinx, Inc.
+10ee  Xilinx Corporation
 	3fc0  RME Digi96
 	3fc1  RME Digi96/8
 	3fc2  RME Digi96/8 Pro
@@ -2675,6 +2729,7 @@
 10fa  Truevision
 	000c  TARGA 1000
 10fb  Thesys Gesellschaft für Mikroelektronik mbH
+	186f  TH 6255
 10fc  I-O Data Device, Inc.
 # What's in the cardbus end of a Sony ACR-A01 card, comes with newer Vaio CD-RW drives
 	0003  Cardbus IDE Controller
@@ -2707,11 +2762,14 @@
 		1102 8061  SBLive! Player 5.1
 	0004  SB Audigy
 		1102 0051  SB0090 Audigy Player
+		1102 0053  SB0090 Audigy Player/OEM
+	0006  [SB Live! Value] EMU10k1X
 	4001  SB Audigy FireWire Port
 	7002  SB Live! MIDI/Game Port
 		1102 0020  Gameport Joystick
 	7003  SB Audigy MIDI/Game port
 		1102 0040  SB Audigy MIDI/Gameport
+	7004  [SB Live! Value] Input device controller
 	8938  ES1371
 1103  Triones Technologies, Inc.
 	0003  HPT343
@@ -4579,7 +4637,19 @@
 135a  Brain Boxes
 135b  Giganet Inc
 135c  Quatech Inc
+	0010  QSC-100
+	0020  DSC-100
+	0030  DSC-200/300
+	0040  QSC-200/300
+	0050  ESC-100D
+	0060  ESC-100M
 	00f0  MPAC-100 Syncronous Serial Card (Zilog 85230)
+	0170  QSCLP-100
+	0180  DSCLP-100
+	0190  SSCLP-100
+	01a0  QSCLP-200/300
+	01b0  DSCLP-200/300
+	01c0  SSCLP-200/300
 135d  ABB Network Partner AB
 135e  Sealevel Systems Inc
 	7101  Single Port RS-232/422/485/530
