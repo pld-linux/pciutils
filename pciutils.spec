@@ -1,14 +1,18 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	1.99.5
+Version:	2.0
 Release:	1
 Copyright:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/alpha/%{name}-%{version}.tar.gz
+Source:		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
+Patch:		pciutils-FHS.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 Buildroot:	/tmp/%{name}-%{version}-root
+
+%define		_exec_prefix	/
+%define		_datadir	%{_prefix}/share/misc
 
 %description
 This package contains various utilities for inspecting and setting of
@@ -23,17 +27,22 @@ urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga kernela
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 make OPT="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{sbin,/usr/{man/man8,share}}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8}
 
-install -s lspci setpci $RPM_BUILD_ROOT/sbin
-install lspci.8 setpci.8 $RPM_BUILD_ROOT%{_mandir}/man8
-install pci.ids $RPM_BUILD_ROOT%{_datadir}
+make install \
+	ROOT=$RPM_BUILD_ROOT \
+	datadir=%{_datadir} \
+	mandir=%{_mandir} \
+	sbindir=%{_sbindir}
+
+strip $RPM_BUILD_ROOT%{_sbindir}/*
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
 	README ChangeLog pciutils.lsm
@@ -45,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %{_datadir}/pci.ids
-%attr(755,root,root) /sbin/*
+%attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
 
 %changelog
