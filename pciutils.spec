@@ -67,14 +67,12 @@ install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf README ChangeLog pciutils.lsm
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README ChangeLog
 %{_datadir}/pci.ids
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
