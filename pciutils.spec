@@ -21,7 +21,9 @@ Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
+# Source0-md5: 1d40f90aaae69594790bdb8ff90b4a41
 Source1:	%{name}-non-english-man-pages.tar.bz2
+# Source1-md5: 1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
 Patch0:		%{name}-bufsiz.patch
 Patch1:		%{name}-devel.patch
