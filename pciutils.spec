@@ -113,4 +113,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/libpci.a
+%dir %{_includedir}/pci
 %{_includedir}/pci/*.h
