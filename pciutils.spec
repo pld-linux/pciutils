@@ -5,8 +5,6 @@ Version:	2.1.9
 Release:	2
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-FHS.patch
@@ -37,13 +35,6 @@ poprzez /proc/bus/pci).
 Summary:	pciutils development files (for PLD-installer)
 Summary(pl):	pliki developerskie pciutils
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 
 %description devel
 You need this package if (and probably only if) you are going to build
