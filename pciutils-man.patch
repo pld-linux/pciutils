@@ -5,7 +5,7 @@
  .B
  <file>
 -as PCI ID database instead of /usr/share/pci.ids.
-+as PCI ID database instead of /usr/share/misc/pci.ids.
++as PCI ID database instead of /etc/pci.ids.
  .TP
 -.B -p <dir>
 +.B -P <dir>
@@ -17,7 +17,7 @@
  .SH FILES
  .TP
 -.B /usr/share/pci.ids
-+.B /usr/share/misc/pci.ids
++.B /etc/pci.ids
  A list of all known PCI ID's (vendors, devices, classes and subclasses).
  .TP
  .B /proc/bus/pci

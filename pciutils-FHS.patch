@@ -6,7 +6,7 @@ diff -Nru pciutils-2.1.8/lib/configure pciutils-2.1.8.new/lib/configure
  	echo "WARNING: No real configuration access method is available."
  fi
 -echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
-+echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
++echo >>$c "#define PATH_PCI_IDS \"/etc/pci.ids\""
  if [ -f header.h ] ; then
  	echo >>$c '#define HAVE_OWN_HEADER_H'
  fi
