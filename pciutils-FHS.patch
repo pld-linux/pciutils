@@ -41,14 +41,3 @@ diff -Nru pciutils-2.1/lib/configure pciutils-2.1.new/lib/configure
  if [ -f header.h ] ; then
  	echo >>$c '#define HAVE_OWN_HEADER_H'
  fi
---- pciutils-2.1/lib/configure	Mon Nov  1 23:16:28 1999
-+++ pciutils-2.1.new/lib/configure	Tue Jul 20 15:44:29 1999
-@@ -59,7 +59,7 @@
- if [ -z "$ok" ] ; then
- 	echo "WARNING: No real configuration access method is available."
- fi
--echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
-+echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
- if [ -f header.h ] ; then
- 	echo >>$c '#define HAVE_OWN_HEADER_H'
- fi
