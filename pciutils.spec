@@ -1,8 +1,8 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	2.1.8
-Release:	21
+Version:	2.1.9
+Release:	1
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -67,23 +67,23 @@ jest kompilacja instalatora PLD.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
+#%patch3 -p1
+#%patch4 -p1
 %patch5 -p1
-%patch6 -p1
-%patch7 -p1
-%patch8 -p1
-%patch9 -p1
-%patch10 -p1
-%patch11 -p0
-%patch12 -p1
+#%patch6 -p1
+#%patch7 -p1
+#%patch8 -p1
+#%patch9 -p1
+#%patch10 -p1
+#%patch11 -p0
+#%patch12 -p1
 %patch13 -p1
-%patch14 -p1
-%patch15 -p1
-%patch16 -p1
-%patch17 -p1
-%patch18 -p1
-%patch19 -p1
+#%patch14 -p1
+#%patch15 -p1
+#%patch16 -p1
+#%patch17 -p1
+#%patch18 -p1
+#%patch19 -p1
 
 %build
 %{__make} OPT="%{rpmcflags}"
@@ -91,18 +91,13 @@ jest kompilacja instalatora PLD.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	datadir=%{_datadir} \
-	mandir=%{_mandir} \
-	sbindir=%{_sbindir}
-%{__make} install-devel \
-        DESTDIR=$RPM_BUILD_ROOT \
-        datadir=%{_datadir} \
-        mandir=%{_mandir} \
-        sbindir=%{_sbindir} \
-        libdir=%{_libdir} \
-        includedir=%{_includedir}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
+
+install lspci setpci	$RPM_BUILD_ROOT%{_sbindir}
+install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
+install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
+install pci.ids		$RPM_BUILD_ROOT%{_datadir}
+install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 						
 gzip -9nf README ChangeLog pciutils.lsm
 
