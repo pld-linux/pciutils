@@ -28,10 +28,11 @@ urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga kernela
 /proc/bus/pci).
 
 %package devel
-Summary:        pciutils developement files (for PLD-installer)
-Summary(pl):    pliki developerskie pciutils
-Group:          Developement/Libraries
-Group(pl):      Programowanie/Biblioteki
+Summary:	pciutils developement files (for PLD-installer)
+Summary(pl):	pliki developerskie pciutils
+Group:		Development/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 
 %description devel
 You need thics package if (and probably only if) you are going to build
@@ -84,6 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/*
 
 %files devel
+%defattr(644,root,root,755)
 %{_libdir}/libpci.a
 %{_includedir}/pci/*.h
- 
