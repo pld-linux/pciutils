@@ -1,8 +1,8 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	2.0
-Release:	2
+Version:	2.1
+Release:	1
 Copyright:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
