@@ -18,14 +18,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains various utilities for inspecting and setting of
-devices connected to the PCI bus. Requires kernel version 2.1.82 or newer
-(supporting the /proc/bus/pci interface).
+devices connected to the PCI bus. Requires kernel version 2.1.82 or
+newer (supporting the /proc/bus/pci interface).
 
 %description -l pl
 Pakiet zawiera narzêdzia do ustawiania i odczytywania informacji o
-urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga kernela
-2.1.82 lub nowszego (udostêpniaj±cego odpowiednie informacje poprzez
-/proc/bus/pci).
+urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga
+kernela 2.1.82 lub nowszego (udostêpniaj±cego odpowiednie informacje
+poprzez /proc/bus/pci).
 
 %package devel
 Summary:	pciutils developement files (for PLD-installer)
@@ -35,8 +35,8 @@ Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 
 %description devel
-You need thics package if (and probably only if) you are going to build
-PLD-installer
+You need thics package if (and probably only if) you are going to
+build PLD-installer
 
 %decription -l pl devel
 Parwdowpodobnie jedynym powodem dla ktorego mozesz potrzebowac tego pakietu
