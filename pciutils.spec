@@ -1,18 +1,18 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	2.1.9
-Release:	2
+Version:	2.1.10
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	%{name}-non-english-man-pages.tar.bz2
+Source2:	http://pciids.sourceforge.net/pci.ids
 Patch0:		%{name}-FHS.patch
 Patch1:		%{name}-bufsiz.patch
 Patch2:		%{name}-devel.patch
 Patch3:		%{name}-qlogic.patch
-Patch4:		%{name}-pcix.patch
-Patch5:		%{name}-man.patch
+Patch4:		%{name}-man.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,9 +51,9 @@ pakietu jest kompilacja instalatora PLD.
 %patch2 -p1
 #%patch3 -p1
 %patch4 -p1
-%patch5 -p1
 
 %build
+cp -f %{SOURCE2} .
 %{__make} OPT="%{rpmcflags}"
 
 %install
