@@ -1,37 +1,5 @@
-diff -Nru pciutils-2.1/Makefile pciutils-2.1.new/Makefile
---- pciutils-2.1/Makefile	Mon Nov  1 23:16:45 1999
-+++ pciutils-2.1.new/Makefile	Mon Nov  1 23:19:18 1999
-@@ -17,6 +17,11 @@
- else
- ROOT=/
- PREFIX=/usr
-+exec_prefix=$(PREFIX)
-+bindir=$(exec_prefix)/bin
-+sbindir=$(exec_prefix)/sbin
-+mandir=$(PREFIX)/man
-+datadir=$(PREFIX)/share/misc
- endif
- 
- export
-@@ -46,11 +51,10 @@
- 
- install: all
- 	# -c is ignored on Linux, but required on FreeBSD
--	install -c -m 755 -s lspci setpci $(ROOT)/sbin
--	install -c -m 644 pci.ids $(PREFIX)/share
--	install -c -m 644 lspci.8 setpci.8 $(PREFIX)/man/man8
--	# Remove relics from old versions
--	rm -f $(ROOT)/etc/pci.ids
-+	install -d $(ROOT)$(sbindir) $(ROOT)$(datadir) $(ROOT)$(mandir)/man8
-+	install -c -m 755 -s lspci setpci $(ROOT)$(sbindir)
-+	install -c -m 644 pci.ids $(ROOT)$(datadir)
-+	install -c -m 644 lspci.8 setpci.8 $(ROOT)$(mandir)/man8
- 
- uninstall: all
- 	rm -f $(ROOT)/sbin/lspci $(ROOT)/sbin/setpci
-diff -Nru pciutils-2.1/lib/configure pciutils-2.1.new/lib/configure
---- pciutils-2.1/lib/configure	Mon Nov  1 23:16:45 1999
-+++ pciutils-2.1.new/lib/configure	Mon Nov  1 23:16:28 1999
+--- pciutils-2.1.5/lib/configure.wiget	Thu Jan 20 11:08:24 2000
++++ pciutils-2.1.5/lib/configure	Tue Feb 15 09:02:08 2000
 @@ -59,7 +59,7 @@
  if [ -z "$ok" ] ; then
  	echo "WARNING: No real configuration access method is available."
@@ -41,3 +9,55 @@ diff -Nru pciutils-2.1/lib/configure pciutils-2.1.new/lib/configure
  if [ -f header.h ] ; then
  	echo >>$c '#define HAVE_OWN_HEADER_H'
  fi
+--- pciutils-2.1.5/Makefile.wiget	Mon Feb 14 20:32:56 2000
++++ pciutils-2.1.5/Makefile	Tue Feb 15 09:25:45 2000
+@@ -12,13 +12,17 @@
+ DATE=2000-02-15
+ 
+ ifeq ($(shell uname),FreeBSD)
+-ROOT=/usr/local
+-PREFIX=/usr/local
++DESTDIR=/
++prefix=/usr/local
+ else
+-ROOT=/
+-PREFIX=/usr
++DESTDIR=/
++prefix=/usr
++exec_prefix=$(prefix)
++bindir=$(exec_prefix)/bin
++sbindir=$(exec_prefix)/sbin
++mandir=$(prefix)/man
++datadir=$(prefix)/share/misc
+ endif
+-MANDIR=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
+ 
+ export
+ 
+@@ -47,17 +51,18 @@
+ 
+ install: all
+ 	# -c is ignored on Linux, but required on FreeBSD
+-	install -d -m 755 $(ROOT)/sbin $(PREFIX)/share $(MANDIR)/man8
+-	install -c -m 755 -s lspci setpci $(ROOT)/sbin
+-	install -c -m 644 pci.ids $(PREFIX)/share
+-	install -c -m 644 lspci.8 setpci.8 $(MANDIR)/man8
++	install -d -m 755 $(DESTDIR)$(sbindir) $(DESTDIR)$(datadir) \
++	$(DESTDIR)$(mandir)/man8
++	install -c -m 755 -s lspci setpci $(DESTDIR)$(sbindir)
++	install -c -m 644 pci.ids $(DESTDIR)$(datadir)
++	install -c -m 644 lspci.8 setpci.8 $(DESTDIR)$(mandir)/man8
+ 	# Remove relics from old versions
+-	rm -f $(ROOT)/etc/pci.ids
++	#rm -f $(ROOT)/etc/pci.ids
+ 
+ uninstall: all
+-	rm -f $(ROOT)/sbin/lspci $(ROOT)/sbin/setpci
+-	rm -f $(PREFIX)/pci.ids
+-	rm -f $(PREFIX)/man/man8/lspci.8 $(PREFIX)/man/man8/setpci.8
++	rm -f $(DESTDIR)$(sbindir)/lspci $(DESTDIR)$(sbindir)/setpci
++	rm -f $(DESTDIR)$(datadir)/pci.ids
++	rm -f $(DESTDIR)$(mandir)/man8/lspci.8 $(DESTDIR))$(mandir)/man8/setpci.8
+ 
+ release:
+ 	sed "s/^\\(Version:[ 	]*\\)[0-9.]*/\\1$(VERSION)/;s/^\\(Entered-date:[ 	]*\\)[0-9]*/\\1`date -d$(DATE) '+%y%m%d'`/;s/\\(pciutils-\\)[0-9.]*/\\1$(VERSION)\\./" <pciutils.lsm >pciutils.lsm.new

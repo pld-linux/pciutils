@@ -1,7 +1,7 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	2.1.4
+Version:	2.1.5
 Release:	1
 Copyright:	GPL
 Group:		Utilities/System
@@ -27,17 +27,16 @@ urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga kernela
 
 %prep
 %setup -q
-%patch -p1
+%patch -p1 -b .wiget
 
 %build
 make OPT="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8}
 
 make install \
-	ROOT=$RPM_BUILD_ROOT \
+	DESTDIR=$RPM_BUILD_ROOT \
 	datadir=%{_datadir} \
 	mandir=%{_mandir} \
 	sbindir=%{_sbindir}
