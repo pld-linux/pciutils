@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.1.10
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -34,7 +34,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
 %define		_libdir		%{_prefix}/lib
-%define		_datadir	%{_prefix}/share/misc
+%define		_datadir	/etc
 
 %description
 This package contains various utilities for inspecting and setting of
