@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.1.11
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -31,6 +31,7 @@ Patch1:		%{name}-devel.patch
 Patch2:		%{name}-man.patch
 Patch3:		%{name}-segv.patch
 Patch4:		%{name}-pci_h.patch
+Patch5:		%{name}-pcimodules.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -239,6 +240,7 @@ enheter kopplade till PCI-bussen.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 cp -rf lib pci
 
@@ -256,7 +258,7 @@ cp -f %{SOURCE2} .
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
-install lspci setpci	$RPM_BUILD_ROOT%{_sbindir}
+install lspci setpci pcimodules	$RPM_BUILD_ROOT%{_sbindir}
 install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
 install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids		$RPM_BUILD_ROOT%{_datadir}
