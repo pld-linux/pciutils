@@ -53,6 +53,11 @@ pakietu jest kompilacja instalatora PLD.
 %patch4 -p1
 
 %build
+# paranoid check whether pci.ids in _sourcedir isn't too old
+if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
+	echo "pci.ids needs to be updated"
+	exit 1
+fi
 cp -f %{SOURCE2} .
 %{__make} OPT="%{rpmcflags}"
 
