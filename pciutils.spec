@@ -40,9 +40,9 @@ Group:		Development/Libraries
 You need this package if (and probably only if) you are going to build
 PLD-installer.
 
-%description -l pl devel
-Prawdopodobnie jedynym powodem dla którego mo¿esz potrzebowaæ tego pakietu
-jest kompilacja instalatora PLD.
+%description devel -l pl
+Prawdopodobnie jedynym powodem dla którego mo¿esz potrzebowaæ tego
+pakietu jest kompilacja instalatora PLD.
 
 %prep
 %setup -q
@@ -66,7 +66,7 @@ install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
-						
+
 gzip -9nf README ChangeLog pciutils.lsm
 
 %clean
