@@ -25,7 +25,7 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
-# NoSource2-md5: 66f63fe672e6b3b960ac42e9c494fecd
+# NoSource2-md5:	3db20d38b4d78f46ee9c478293a75350
 Patch0:		%{name}-bufsiz.patch
 Patch1:		%{name}-devel.patch
 Patch2:		%{name}-man.patch
