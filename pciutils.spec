@@ -2,12 +2,13 @@ Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
 Version:	2.1.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-FHS.patch
 Patch1:		%{name}-bufsiz.patch
 Patch2:		%{name}-devel.patch
@@ -69,6 +70,7 @@ install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
 install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 						
 gzip -9nf README ChangeLog pciutils.lsm
 
@@ -81,6 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pci.ids
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
+%lang(ja) %{_mandir}/ja/man8/*
+%lang(pl) %{_mandir}/pl/man8/*
 
 %files devel
 %defattr(644,root,root,755)
