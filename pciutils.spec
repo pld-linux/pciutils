@@ -6,7 +6,7 @@ Summary(es):	Utilitarios Linux para PCI
 Summary(fr):	Utilitaires relatifs au bus PCI
 Summary(it):	Utility correlate al bus PCI
 Summary(ja):	PCI ¥Ð¥¹´ØÏ¢¥æ¡¼¥Æ¥£¥ê¥Æ¥£
-Summary(ko):	PCI ¹ö½º °ü·Ã À¯Æ¿¸®Æ¼µé.
+Summary(ko):	PCI ¹ö½º °ü·Ã À¯Æ¿¸®Æ¼µé
 Summary(no):	PCI-buss-relaterte verktøy
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Summary(pt):	Utilitários relacionados com o 'bus' PCI
