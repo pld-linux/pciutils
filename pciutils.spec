@@ -1,13 +1,14 @@
 Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
-Version:	2.1.5
+Version:	2.1.6
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-Patch:		pciutils-FHS.patch
+Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
+Patch0:		pciutils-FHS.patch
+Patch1:		pciutils-bufsiz.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +28,8 @@ urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga kernela
 
 %prep
 %setup -q
-%patch -p1 -b .wiget
+%patch0 -p1
+%patch1 -p1
 
 %build
 make OPT="$RPM_OPT_FLAGS"
