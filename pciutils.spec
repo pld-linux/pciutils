@@ -56,21 +56,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pci.ids
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
-
-%changelog
-* Sun May  2 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.99.5-1]
-- added gzippping %doc and man pages,
-- added Group(pl),
-- pci.ids moved to %{_datadir} and removed trom them %config (this data file,
-  not %config).
-
-* Mon Oct 26 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [1.08-1d]
-- updated to 1.08,
-- minor changes.
-
-* Tue Sep 29 1998 Krzysztof G. Baranowski <kgb@knm.org.pl>
-  [1.07-1d]
-- build from non-root account against glibc-2.1,
-- written spec from scratch.
