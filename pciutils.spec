@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.1.11
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -25,7 +25,7 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5: 1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
-# NoSource2-md5: 20404484ff16c5db827d000778dc43d4
+# NoSource2-md5: 66f63fe672e6b3b960ac42e9c494fecd
 Patch0:		%{name}-bufsiz.patch
 Patch1:		%{name}-devel.patch
 Patch2:		%{name}-man.patch
@@ -36,7 +36,7 @@ URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
-%define		_libdir		%{_prefix}/lib
+%define		_libdir		%{_prefix}/%{_lib}
 %define		_datadir	/etc
 
 %description
@@ -242,16 +242,26 @@ enheter kopplade till PCI-bussen.
 %patch4 -p1
 %patch5 -p1
 
-cp -rf lib pci
-
-%build
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
 	echo "pci.ids needs to be updated"
 	exit 1
 fi
 cp -f %{SOURCE2} .
-%{__make} OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
+
+cp -rf lib pci
+
+%build
+%{__make} lib/config.h pci/config.h \
+	SHAREDIR=%{_datadir}
+
+%{__make} -C lib \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -fPIC"
+
+%{__make} \
+	CC="%{__cc}" \
+	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
 	SHAREDIR=/etc
 
 %install
