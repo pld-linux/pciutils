@@ -1,0 +1,30 @@
+--- pciutils/pciutils.h.orig	Sat Mar 30 16:39:24 2002
++++ pciutils/pciutils.h	Sun Aug 18 21:51:27 2002
+@@ -8,7 +8,7 @@
+  *	Can be freely distributed and used under the terms of the GNU GPL.
+  */
+ 
+-#include "lib/pci.h"
++#include "pci/pci.h"
+ 
+ #define PCIUTILS_VERSION PCILIB_VERSION
+ 
+--- pciutils/Makefile.orig	Sun Aug 18 21:53:49 2002
++++ pciutils/Makefile	Sun Aug 18 21:55:46 2002
+@@ -35,12 +35,15 @@
+ 
+ all: lib lspci setpci lspci.8 setpci.8 pci.ids
+ 
+-lib: lib/config.h
++lib: lib/config.h pci/config.h
+ 	$(MAKE) -C lib all
+ 
+ lib/config.h:
+ 	cd lib && ./configure $(PREFIX) $(VERSION)
+ 
++pci/config.h:
++	cd pci && ./configure $(PREFIX) $(VERSION)
++
+ lspci: lspci.o common.o lib/libpci.a
+ setpci: setpci.o common.o lib/libpci.a
+ 
