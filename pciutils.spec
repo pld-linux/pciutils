@@ -1,5 +1,9 @@
 Summary:	Linux PCI Utilities
+Summary(es):	Utilitarios Linux para PCI
 Summary(pl):	NarzЙdzia do manipulacji ustawieniami urz╠dzeЯ PCI
+Summary(pt_BR):	UtilitАrios para PCI do Linux
+Summary(uk):	Утил╕ти роботи з PCI пристроями
+Summary(ru):	Утилиты работы с PCI устройствами
 Name:		pciutils
 Version:	2.1.10
 Release:	1
@@ -25,24 +29,63 @@ This package contains various utilities for inspecting and setting of
 devices connected to the PCI bus. Requires kernel version 2.1.82 or
 newer (supporting the /proc/bus/pci interface).
 
+%description -l es
+Utilitarios Linux para PCI.
+
 %description -l pl
 Pakiet zawiera narzЙdzia do ustawiania i odczytywania informacji o
 urz╠dzeniach podЁ╠czonych do szyny PCI w Twoim komputerze. Wymaga
 kernela 2.1.82 lub nowszego (udostЙpniaj╠cego odpowiednie informacje
 poprzez /proc/bus/pci).
 
+%description -l pt_BR
+Este pacote contИm vАrios utilitАrios para inspeГЦo e configuraГЦo de
+dispositivos conectados ao barramento PCI do seu computador.
+
+%description -l ru
+Пакет pciutils содержит утилиты для инспектирования и конфигурирования
+устройств, подключенных к PCI шине.
+
+Для работы этим утилитам необходимо наличие интерфейса /proc/bus/pci.
+
+%description -l uk
+Пакет pciutils м╕стить утил╕ти для ╕нспектування та конф╕гурування
+пристро╖в, п╕д'╓днаних до PCI шини.
+
+Для роботи ц╕ утил╕ти потребують наявност╕ ╕нтерфейсу /proc/bus/pci.
+
 %package devel
 Summary:	pciutils development files (for PLD-installer)
+Summary(es):	Biblioteca de desarrollo para aplicaciones que trabajan con el bus PCI en Linux
 Summary(pl):	pliki developerskie pciutils
+Summary(pt_BR):	Biblioteca de desenvolvimentos para aplicaГУes que trabalhem com o barramento PCI no Linux
+Summary(ru):	Хедеры и другие файлы для разработки программ, работающих с шиной PCI
+Summary(uk):	Хедери та ╕нш╕ файли для розробки програм, що працюють з шиною PCI
 Group:		Development/Libraries
 
 %description devel
 You need this package if (and probably only if) you are going to build
 PLD-installer.
 
+%description devel -l es
+Biblioteca de desarrollo para aplicaciones que trabajen con el bus PCI
+en Linux.
+
 %description devel -l pl
 Prawdopodobnie jedynym powodem dla ktСrego mo©esz potrzebowaФ tego
 pakietu jest kompilacja instalatora PLD.
+
+%description devel -l pt_BR
+Biblioteca de desenvolvimentos para aplicaГУes que trabalhem com o
+barramento PCI no Linux.
+
+%description devel -l ru
+Этот пакет содержит хедеры и другие файлы для разработки программ
+инспектирующих и конфигурирующих устройства, подключенные к шине PCI.
+
+%description devel -l uk
+Цей пакет м╕стить хедери та ╕нш╕ файли для розробки програм, що
+╕нспектують та конф╕гурують пристро╖, п╕д'╓днан╕ до шини PCI.
 
 %prep
 %setup -q
