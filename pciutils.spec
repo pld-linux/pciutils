@@ -57,7 +57,7 @@ Group(pl):	Programowanie/Biblioteki
 You need this package if (and probably only if) you are going to build
 PLD-installer.
 
-%decription -l pl devel
+%description -l pl devel
 Prawdopodobnie jedynym powodem dla którego mo¿esz potrzebowaæ tego pakietu
 jest kompilacja instalatora PLD.
 
