@@ -1,8 +1,8 @@
-diff -ur pciutils-2.0/Makefile pciutils-2.0.new/Makefile
---- pciutils-2.0/Makefile	Wed May 19 13:53:53 1999
-+++ pciutils-2.0.new/Makefile	Thu May 20 01:54:49 1999
-@@ -8,6 +8,11 @@
- 
+diff -Nru pciutils-2.1/Makefile pciutils-2.1.new/Makefile
+--- pciutils-2.1/Makefile	Mon Nov  1 23:16:45 1999
++++ pciutils-2.1.new/Makefile	Mon Nov  1 23:19:18 1999
+@@ -17,6 +17,11 @@
+ else
  ROOT=/
  PREFIX=/usr
 +exec_prefix=$(PREFIX)
@@ -10,31 +10,45 @@ diff -ur pciutils-2.0/Makefile pciutils-2.0.new/Makefile
 +sbindir=$(exec_prefix)/sbin
 +mandir=$(PREFIX)/man
 +datadir=$(PREFIX)/share/misc
+ endif
  
- VERSION=2.0
- SUFFIX=
-@@ -40,9 +45,9 @@
- 	rm -rf dist
+ export
+@@ -46,11 +51,10 @@
  
  install: all
--	install -m 755 -s lspci setpci $(ROOT)/sbin
--	install -m 644 pci.ids $(PREFIX)/share
--	install -m 644 lspci.8 setpci.8 $(PREFIX)/man/man8
-+	install -m 755 -s lspci setpci $(ROOT)$(sbindir)
-+	install -m 644 pci.ids $(ROOT)$(datadir)
-+	install -m 644 lspci.8 setpci.8 $(ROOT)$(mandir)/man8
- 	# Remove relics from old versions
- 	rm -f $(ROOT)/etc/pci.ids
+ 	# -c is ignored on Linux, but required on FreeBSD
+-	install -c -m 755 -s lspci setpci $(ROOT)/sbin
+-	install -c -m 644 pci.ids $(PREFIX)/share
+-	install -c -m 644 lspci.8 setpci.8 $(PREFIX)/man/man8
+-	# Remove relics from old versions
+-	rm -f $(ROOT)/etc/pci.ids
++	install -d $(ROOT)$(sbindir) $(ROOT)$(datadir) $(ROOT)$(mandir)/man8
++	install -c -m 755 -s lspci setpci $(ROOT)$(sbindir)
++	install -c -m 644 pci.ids $(ROOT)$(datadir)
++	install -c -m 644 lspci.8 setpci.8 $(ROOT)$(mandir)/man8
  
-diff -ur pciutils-2.0/lib/configure pciutils-2.0.new/lib/configure
---- pciutils-2.0/lib/configure	Mon Apr 26 22:07:06 1999
-+++ pciutils-2.0.new/lib/configure	Thu May 20 01:50:17 1999
-@@ -39,7 +39,7 @@
+ uninstall: all
+ 	rm -f $(ROOT)/sbin/lspci $(ROOT)/sbin/setpci
+diff -Nru pciutils-2.1/lib/configure pciutils-2.1.new/lib/configure
+--- pciutils-2.1/lib/configure	Mon Nov  1 23:16:45 1999
++++ pciutils-2.1.new/lib/configure	Mon Nov  1 23:16:28 1999
+@@ -59,7 +59,7 @@
  if [ -z "$ok" ] ; then
  	echo "WARNING: No real configuration access method is available."
  fi
 -echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
 +echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
+ if [ -f header.h ] ; then
+ 	echo >>$c '#define HAVE_OWN_HEADER_H'
+ fi
+--- pciutils-2.1/lib/configure	Mon Nov  1 23:16:28 1999
++++ pciutils-2.1.new/lib/configure	Tue Jul 20 15:44:29 1999
+@@ -59,7 +59,7 @@
+ if [ -z "$ok" ] ; then
+ 	echo "WARNING: No real configuration access method is available."
+ fi
+-echo >>$c "#define PATH_PCI_IDS \"$prefix/share/misc/pci.ids\""
++echo >>$c "#define PATH_PCI_IDS \"$prefix/share/pci.ids\""
  if [ -f header.h ] ; then
  	echo >>$c '#define HAVE_OWN_HEADER_H'
  fi
