@@ -1,0 +1,20 @@
+--- pciutils-2.1.8/lspci.man.orig	Thu Mar  9 13:22:46 2000
++++ pciutils-2.1.8/lspci.man	Thu Feb 15 00:08:14 2001
+@@ -75,7 +75,7 @@
+ Use
+ .B
+ <file>
+-as PCI ID database instead of /usr/share/pci.ids.
++as PCI ID database instead of /usr/share/misc/pci.ids.
+ .TP
+ .B -p <dir>
+ Use
+@@ -136,7 +136,7 @@
+ 
+ .SH FILES
+ .TP
+-.B /usr/share/pci.ids
++.B /usr/share/misc/pci.ids
+ A list of all known PCI ID's (vendors, devices, classes and subclasses).
+ .TP
+ .B /proc/bus/pci
