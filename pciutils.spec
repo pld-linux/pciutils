@@ -32,10 +32,10 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{sbin,/usr/{man/man8,share}}
 
 install -s lspci setpci $RPM_BUILD_ROOT/sbin
-install lspci.8 setpci.8 $RPM_BUILD_ROOT/usr/man/man8
+install lspci.8 setpci.8 $RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids $RPM_BUILD_ROOT/usr/share
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man8/* \
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
 	README ChangeLog pciutils.lsm
 
 %clean
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 /usr/share/pci.ids
 %attr(755,root,root) /sbin/*
-/usr/man/man8/*
+%{_mandir}/man8/*
 
 %changelog
 * Sun May  2 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
