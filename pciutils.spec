@@ -11,23 +11,9 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Patch0:		%{name}-FHS.patch
 Patch1:		%{name}-bufsiz.patch
 Patch2:		%{name}-devel.patch
-Patch3:		%{name}-pci.ids-update.patch
-Patch4:		%{name}-qlogic.patch
-Patch5:		%{name}-pcix.patch
-Patch6:		%{name}-ids-2.patch
-Patch7:		%{name}-i815.patch
-Patch8:		%{name}-ati.patch
-Patch9:		%{name}-vortex.patch
-Patch10:	%{name}-megaraid.patch
-Patch11:	%{name}-2.4.0.diffs
-Patch12:	%{name}-broadcom.patch
-Patch13:	%{name}-man.patch
-Patch14:	%{name}-i860.patch
-Patch15:	%{name}-serveraid.patch
-Patch16:	%{name}-various.ids.patch
-Patch17:	%{name}-lsi.patch
-Patch18:	%{name}-moremega.patch
-Patch19:	%{name}-e1000.patch
+Patch3:		%{name}-qlogic.patch
+Patch4:		%{name}-pcix.patch
+Patch5:		%{name}-man.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -68,29 +54,14 @@ jest kompilacja instalatora PLD.
 %patch1 -p1
 %patch2 -p1
 #%patch3 -p1
-#%patch4 -p1
+%patch4 -p1
 %patch5 -p1
-#%patch6 -p1
-#%patch7 -p1
-#%patch8 -p1
-#%patch9 -p1
-#%patch10 -p1
-#%patch11 -p0
-#%patch12 -p1
-%patch13 -p1
-#%patch14 -p1
-#%patch15 -p1
-#%patch16 -p1
-#%patch17 -p1
-#%patch18 -p1
-#%patch19 -p1
 
 %build
 %{__make} OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
 install lspci setpci	$RPM_BUILD_ROOT%{_sbindir}
