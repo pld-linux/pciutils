@@ -34,7 +34,7 @@ kernela 2.1.82 lub nowszego (udostêpniaj±cego odpowiednie informacje
 poprzez /proc/bus/pci).
 
 %package devel
-Summary:	pciutils developement files (for PLD-installer)
+Summary:	pciutils development files (for PLD-installer)
 Summary(pl):	pliki developerskie pciutils
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
