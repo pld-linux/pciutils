@@ -29,6 +29,7 @@ Patch2:		%{name}-devel.patch
 Patch4:		%{name}-man.patch
 Patch5:		%{name}-segv.patch
 Patch6:		%{name}-pci_h.patch
+Patch7:		%{name}-pci.ids_in_etc.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -238,6 +239,7 @@ enheter kopplade till PCI-bussen.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 cp -rf lib pci
 
 %build
