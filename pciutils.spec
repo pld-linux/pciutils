@@ -33,7 +33,7 @@ install -d $RPM_BUILD_ROOT/{sbin,/usr/{man/man8,share}}
 
 install -s lspci setpci $RPM_BUILD_ROOT/sbin
 install lspci.8 setpci.8 $RPM_BUILD_ROOT%{_mandir}/man8
-install pci.ids $RPM_BUILD_ROOT/usr/share
+install pci.ids $RPM_BUILD_ROOT%{_datadir}
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
 	README ChangeLog pciutils.lsm
@@ -44,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-/usr/share/pci.ids
+%{_datadir}/pci.ids
 %attr(755,root,root) /sbin/*
 %{_mandir}/man8/*
 
@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
   [1.99.5-1]
 - added gzippping %doc and man pages,
 - added Group(pl),
-- pci.ids moved to /usr/share and removed trom them %config (this data file,
+- pci.ids moved to %{_datadir} and removed trom them %config (this data file,
   not %config).
 
 * Mon Oct 26 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
