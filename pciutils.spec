@@ -2,7 +2,7 @@ Summary:	Linux PCI Utilities
 Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
 Name:		pciutils
 Version:	2.1.8
-Release:	12
+Release:	17
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -22,6 +22,9 @@ Patch10:        %{name}-megaraid.patch
 Patch11:        %{name}-2.4.0.diffs
 Patch12:        %{name}-broadcom.patch
 Patch13:	%{name}-man.patch
+Patch14:	pciutils-i860.patch
+Patch15:	pciutils-serveraid.patch
+Patch16:	pciutils-various.ids.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -72,6 +75,9 @@ jest kompilacja instalatora PLD.
 %patch11 -p0
 %patch12 -p1
 %patch13 -p1
+%patch14 -p1
+%patch15 -p1
+%patch16 -p1
 
 %build
 %{__make} OPT="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
