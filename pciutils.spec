@@ -9,7 +9,7 @@ Group(pl):	Narzêdzia/System
 Source:		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Patch:		pciutils-FHS.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
 %define		_datadir	%{_prefix}/share/misc
