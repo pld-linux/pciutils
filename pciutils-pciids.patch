@@ -1,0 +1,30 @@
+--- pciutils-2.1.99-test3/lib/configure.pciids	2003-12-27 13:34:03.000000000 -0500
++++ pciutils-2.1.99-test3/lib/configure	2004-02-25 01:48:34.524727735 -0500
+@@ -98,6 +98,6 @@
+ if [ -z "$ok" ] ; then
+ 	echo "WARNING: No real configuration access method is available."
+ fi
+-echo >>$c "#define PCI_PATH_IDS \"$sharedir/pci.ids\""
++echo >>$c "#define PCI_PATH_IDS \"$sharedir/hwdata/pci.ids\""
+ echo >>$c "#define PCILIB_VERSION \"$version\""
+ sed '/^#define [^ ]*$/!d;s/^#define \(.*\)/\1=1/' <$c >config.mk
+--- pciutils-2.1.99-test3/lspci.man.pciids	2003-12-27 17:13:47.000000000 -0500
++++ pciutils-2.1.99-test3/lspci.man	2004-02-25 01:49:09.187261705 -0500
+@@ -72,7 +72,7 @@
+ Use
+ .B
+ <file>
+-as PCI ID database instead of @SHAREDIR@/pci.ids.
++as PCI ID database instead of @SHAREDIR@/hwdata/pci.ids.
+ .TP
+ .B -p <dir>
+ Use
+@@ -128,7 +128,7 @@
+ 
+ .SH FILES
+ .TP
+-.B @SHAREDIR@/pci.ids
++.B @SHAREDIR@/hwdata/pci.ids
+ A list of all known PCI ID's (vendors, devices, classes and subclasses).
+ .TP
+ .B /proc/bus/pci

@@ -1,0 +1,20 @@
+--- pciutils-2.1.99-test3/Makefile.strip	2004-02-25 01:46:14.315787866 -0500
++++ pciutils-2.1.99-test3/Makefile	2004-02-25 01:47:45.478046260 -0500
+@@ -1,7 +1,7 @@
+ # Makefile for The PCI Utilities
+ # (c) 1998--2003 Martin Mares <mj@ucw.cz>
+ 
+-OPT=-O2 -fomit-frame-pointer
++OPT=-O2
+ CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
+ 
+ VERSION=2.1.99-test3
+@@ -32,7 +32,7 @@
+ all: $(PCILIB) lspci setpci lspci.8 setpci.8 update-pciids update-pciids.8 pci.ids
+ 
+ $(PCILIB): $(PCIINC) force
+-	$(MAKE) -C lib all
++	CFLAGS="$(CFLAGS) -fPIC" $(MAKE) -C lib all
+ 
+ force:
+ 
