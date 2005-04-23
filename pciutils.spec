@@ -16,22 +16,25 @@ Summary(sv):	PCI-bussrelaterade verktyg
 Summary(uk):	õÔÉÌ¦ÔÉ ÒÏÂÏÔÉ Ú PCI ĞÒÉÓÔÒÏÑÍÉ
 Summary(zh_CN):	PCI ×ÜÏßÏà¹ØµÄ¹¤¾ß¡£
 Name:		pciutils
-Version:	2.1.11
-Release:	8
+Version:	2.1.99
+%define		_test	test8
+Release:	0.%{_test}
 License:	GPL
 Group:		Applications/System
-Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	1d40f90aaae69594790bdb8ff90b4a41
+Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/alpha/%{name}-%{version}-%{_test}.tar.gz
+# Source0-md5:	d7ee9453cb67c32bf99f74bcbdd5d132
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
-Source2:	http://pciids.sourceforge.net/pci.ids
-# NoSource2-md5:	3db20d38b4d78f46ee9c478293a75350
-Patch0:		%{name}-bufsiz.patch
-Patch1:		%{name}-devel.patch
+Patch0:		%{name}-strip.patch
+Patch1:		%{name}-pciids.patch
 Patch2:		%{name}-man.patch
-Patch3:		%{name}-segv.patch
-Patch4:		%{name}-pci_h.patch
-Patch5:		%{name}-pcimodules.patch
+Patch3:		%{name}-2.1.10-scan.patch
+Patch4:		%{name}-havepread.patch
+Patch5:		%{name}-typo.patch
+Patch6:		%{name}-devicetype.patch
+Patch7:		%{name}-domain.patch
+Patch8:		%{name}-2.1.99-gcc4.patch
+Requires:	hwdata
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -234,44 +237,29 @@ enheter kopplade till PCI-bussen.
 ´ËÈí¼ş°ü°üº¬Ò»¸ö³ÌĞò¿â£¬ÓÃÓÚ¼ì²éºÍÉèÖÃÓë PCI ×ÜÏßÁ¬½ÓµÄÉè±¸¡£
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_test}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%%patch2 -p1
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
-
-# paranoid check whether pci.ids in _sourcedir isn't too old
-if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
-	echo "pci.ids needs to be updated"
-	exit 1
-fi
-cp -f %{SOURCE2} .
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
 
 cp -rf lib pci
 
 %build
-%{__make} lib/config.h pci/config.h \
-	SHAREDIR=%{_datadir}
-
-%{__make} -C lib \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -fPIC"
-
-%{__make} \
-	CC="%{__cc}" \
-	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
-	SHAREDIR=/etc
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
-install lspci setpci pcimodules	$RPM_BUILD_ROOT%{_sbindir}
+install lspci setpci	$RPM_BUILD_ROOT%{_sbindir}
 install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
 install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
-install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 cp -f lib/pci.h		$RPM_BUILD_ROOT%{_includedir}/pci
@@ -282,7 +270,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README ChangeLog
-%{_datadir}/pci.ids
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
 %lang(ja) %{_mandir}/ja/man8/*
