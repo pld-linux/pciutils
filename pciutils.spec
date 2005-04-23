@@ -27,7 +27,7 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-m
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Patch0:		%{name}-strip.patch
 Patch1:		%{name}-pciids.patch
-Patch2:		%{name}-man.patch
+#Patch2:		%{name}-man.patch
 Patch3:		%{name}-2.1.10-scan.patch
 Patch4:		%{name}-havepread.patch
 Patch5:		%{name}-typo.patch
@@ -258,7 +258,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
 install lspci setpci	$RPM_BUILD_ROOT%{_sbindir}
-install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
+install *.h lib/[cht]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
 install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
