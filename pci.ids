@@ -7,7 +7,7 @@
 #	so if you have anything to contribute, please visit the home page or
 #	send a diff -u against the most recent pci.ids to pci-ids@ucw.cz.
 #
-#	Daily snapshot on Thu 2005-05-12 07:00:11
+#	Daily snapshot on Fri 2005-05-27 07:00:10
 #
 
 # Vendors, devices and subsystems. Please keep sorted.
@@ -8855,6 +8855,7 @@
 		8086 1019  PRO/1000 CT Desktop Connection
 		8086 301f  D865PERL mainboard
 		8086 3427  S875WP1-E mainboard
+	101a  82547EI Gigabit Ethernet Controller (LOM)
 	101d  82546EB Gigabit Ethernet Controller
 		8086 1000  PRO/1000 MT Quad Port Server Adapter
 	101e  82540EP Gigabit Ethernet Controller (Mobile)
@@ -8912,6 +8913,8 @@
 		8086 302f  Desktop Board D865GBF
 		8086 3427  S875WP1-E mainboard
 	1051  82801EB/ER (ICH5/ICH5R) integrated LAN Controller
+	1052  PRO/100 VM Network Connection
+	1053  PRO/100 VM Network Connection
 	1059  82551QM Ethernet Controller
 # ICH-6 Component
 	1064  82562ET/EZ/GT/GZ - PRO/100 VE (LOM) Ethernet Controller
@@ -9735,12 +9738,12 @@
 	269a  Enterprise Southbridge High Definition Audio
 	269b  Enterprise Southbridge SMBus
 	269e  Enterprise Southbridge PATA
-	2770  Memory Controller Hub
-	2771  PCI Express Graphics Port
-	2772  Integrated Graphics Controller
+	2770  945G/P Memory Controller Hub
+	2771  945G/P PCI Express Graphics Port
+	2772  945G Integrated Graphics Controller
 	2774  955X Memory Controller Hub
 	2775  955X PCI Express Graphics Port
-	2776  Integrated Graphics Controller
+	2776  945G Integrated Graphics Controller
 	2778  Server Memory Controller Hub
 	2779  PCI Express Root Port
 	2782  82915G Express Chipset Family Graphics Controller
@@ -9749,15 +9752,15 @@
 	27a1  Mobile PCI Express Graphics Port
 	27a2  Mobile Integrated Graphics Controller
 	27a6  Mobile Integrated Graphics Controller
-	27b0  I/O Controller Hub LPC
+	27b0  82801GH (ICH7DH) LPC Interface Bridge
 	27b8  82801GB/GR (ICH7 Family) LPC Interface Bridge
-	27b9  Mobile I/O Controller Hub LPC
-	27bd  Mobile I/O Controller Hub LPC
+	27b9  82801GBM (ICH7-M) LPC Interface Bridge
+	27bd  82801GHM (ICH7-M DH) LPC Interface Bridge
 	27c0  82801GB/GR/GH (ICH7 Family) Serial ATA Storage Controllers cc=IDE
 	27c1  82801GR/GH (ICH7 Family) Serial ATA Storage Controllers cc=AHCI
 	27c3  82801GR/GH (ICH7 Family) Serial ATA Storage Controllers cc=RAID
-	27c4  Mobile I/O Controller Hub SATA cc=IDE
-	27c5  Mobile I/O Controller Hub SATA cc=AHCI
+	27c4  82801GBM/GHM (ICH7 Family) Serial ATA Storage Controllers cc=IDE
+	27c5  82801GBM/GHM (ICH7 Family) Serial ATA Storage Controllers cc=AHCI
 	27c8  82801G (ICH7 Family) USB UHCI #1
 	27c9  82801G (ICH7 Family) USB UHCI #2
 	27ca  82801G (ICH7 Family) USB UHCI #3
@@ -9939,7 +9942,6 @@
 		4c53 1050  CT7 mainboard
 		4c53 1051  CE7 mainboard
 		e4bf 1000  CC8-1-BLUES
-	ffff  450NX/GX [Orion] - 82453KX/GX Memory controller [BUG]
 8401  TRENDware International Inc.
 8800  Trigem Computer Inc.
 	2008  Video assistent component
