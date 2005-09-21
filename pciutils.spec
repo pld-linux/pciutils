@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -263,7 +263,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
 install lspci setpci pcimodules	$RPM_BUILD_ROOT%{_sbindir}
-install *.h lib/[ch]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
+install *.h lib/[chts]*.h	$RPM_BUILD_ROOT%{_includedir}/pci
 install *.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
