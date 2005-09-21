@@ -16,22 +16,19 @@ Summary(sv):	PCI-bussrelaterade verktyg
 Summary(uk):	ı‘…Ã¶‘… “œ¬œ‘… ⁄ PCI –“…”‘“œ—Õ…
 Summary(zh_CN):	PCI ◊‹œﬂœ‡πÿµƒπ§æﬂ°£
 Name:		pciutils
-Version:	2.1.11
-Release:	10
+Version:	2.2.0
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	1d40f90aaae69594790bdb8ff90b4a41
+# Source0-md5:	303fc4bb9669549acf65e4a714527c7e
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
 # NoSource2-md5:	597ee335296c0c65bf6773c344b40009
-Patch0:		%{name}-bufsiz.patch
-Patch1:		%{name}-devel.patch
-Patch2:		%{name}-man.patch
-Patch3:		%{name}-segv.patch
-Patch4:		%{name}-pci_h.patch
-Patch5:		%{name}-pcimodules.patch
+Patch0:		%{name}-devel.patch
+Patch1:		%{name}-pci_h.patch
+Patch2:		%{name}-pcimodules.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -238,9 +235,6 @@ enheter kopplade till PCI-bussen.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
