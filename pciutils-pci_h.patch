@@ -1,30 +1,35 @@
 --- pciutils/pciutils.h.orig	Sat Mar 30 16:39:24 2002
 +++ pciutils/pciutils.h	Sun Aug 18 21:51:27 2002
-@@ -8,7 +8,7 @@
+@@ -6,8 +6,8 @@
   *	Can be freely distributed and used under the terms of the GNU GPL.
   */
  
 -#include "lib/pci.h"
+-#include "lib/sysdep.h"
 +#include "pci/pci.h"
++#include "pci/sysdep.h"
  
- #define PCIUTILS_VERSION PCILIB_VERSION
+ #ifdef PCI_OS_WINDOWS
+ #include "compat/getopt.h"
+--- pciutils/Makefile.org	2005-09-21 21:52:22.329188000 +0200
++++ pciutils/Makefile	2005-09-21 21:53:09.760152250 +0200
+@@ -15,7 +15,7 @@
+ INSTALL=install
+ DIRINSTALL=install -d
+ PCILIB=lib/libpci.a
+-PCIINC=lib/config.h lib/header.h lib/pci.h lib/types.h lib/sysdep.h
++PCIINC=pci/config.h lib/config.h lib/header.h lib/pci.h lib/types.h lib/sysdep.h
  
---- pciutils-2.1.11/Makefile.orig	Sun Aug 18 21:53:49 2002
-+++ pciutils-2.1.11/Makefile	Sun Aug 18 21:55:46 2002
-@@ -35,12 +35,15 @@
- 
- all: lib lspci setpci lspci.8 setpci.8 update-pciids update-pciids.8 pci.ids
- 
--lib: lib/config.h
-+lib: lib/config.h pci/config.h
- 	$(MAKE) -C lib all
- 
+ ifeq ($(shell uname),NetBSD)
+ PCILIB=libpciutils.a
+@@ -43,6 +43,9 @@
  lib/config.h:
- 	cd lib && ./configure $(SHAREDIR) $(VERSION)
+ 	cd lib && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
  
 +pci/config.h:
-+	cd pci && ./configure $(SHAREDIR) $(VERSION)
++	cd pci && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
 +
- lspci: lspci.o common.o lib/$(PCILIB)
- setpci: setpci.o common.o lib/$(PCILIB)
+ lspci: lspci.o common.o $(PCILIB)
+ setpci: setpci.o common.o $(PCILIB)
  
+
