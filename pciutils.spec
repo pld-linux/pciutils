@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.2.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -29,6 +29,7 @@ Source2:	http://pciids.sourceforge.net/pci.ids
 Patch0:		%{name}-devel.patch
 Patch1:		%{name}-pci_h.patch
 Patch2:		%{name}-pcimodules.patch
+Patch3:		%{name}-deviceclass.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -235,6 +236,7 @@ enheter kopplade till PCI-bussen.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
