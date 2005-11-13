@@ -36,6 +36,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_exec_prefix	/
 %define		_libdir		%{_prefix}/%{_lib}
 %define		_datadir	/etc
+%define		_sbindir	/sbin
 
 %description
 This package contains various utilities for inspecting and setting of
