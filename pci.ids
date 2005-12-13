@@ -11,7 +11,7 @@
 #	This file can be distributed under either the GNU General Public License
 #	(version 2 or higher) or the 3-clause BSD License.
 #
-#	Daily snapshot on Sat 2005-11-26 02:05:23
+#	Daily snapshot on Tue 2005-12-13 02:05:04
 #
 
 # Vendors, devices and subsystems. Please keep sorted.
@@ -80,6 +80,8 @@
 	1704  ISDN Adapter (PCI Bus, D, C)
 067b  Prolific Technology, Inc.
 	3507  PL-3507 Hi-Speed USB & IEEE 1394 Combo to IDE Bridge Controller
+# Found on Sapphire Radeon X700 (www.saphiretech.com)
+0721  Sapphire, Inc.
 07e2  ELMEG Communication Systems GmbH
 # Wrong ID used in subsystem ID of VIA USB controllers.
 0925  VIA Technologies, Inc. (Wrong ID)
@@ -252,6 +254,7 @@
 		4c53 1300  P017 mezzanine (32-bit PMC)
 		4c53 1310  P017 mezzanine (64-bit PMC)
 	0030  53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI
+		0e11 00da  ProLiant ML 350
 		1028 0123  PowerEdge 2600
 		1028 014a  PowerEdge 1750
 		1028 016c  PowerEdge 1850 MPT Fusion SCSI/RAID (Perc 4)
@@ -3148,12 +3151,14 @@
 		10b4 237e  Velocity 4400
 10b5  PLX Technology, Inc.
 	0001  i960 PCI bus interface
+	1042  Brandywine / jxi2, Inc. - PMC-SyncClock32, IRIG A & B, Nasa 36
 	1076  VScom 800 8 port serial adaptor
 	1077  VScom 400 4 port serial adaptor
 	1078  VScom 210 2 port serial and 1 port parallel adaptor
 	1103  VScom 200 2 port serial adaptor
 	1146  VScom 010 1 port parallel adaptor
 	1147  VScom 020 2 port parallel adaptor
+	2540  IXXAT CAN-Interface PC-I 04/PCI
 	2724  Thales PCSM Security Card
 	6540  PCI6540/6466 PCI-PCI bridge (transparent mode)
 		4c53 10e0  PSL09 PrPMC
@@ -3161,12 +3166,15 @@
 		4c53 10e0  PSL09 PrPMC
 	6542  PCI6540/6466 PCI-PCI bridge (non-transparent mode, secondary side)
 		4c53 10e0  PSL09 PrPMC
+	8111  PEX 8111 PCI Express-to-PCI Bridge
+	8114  PEX 8114 PCI Express-to-PCI/PCI-X Bridge
 	8516  PEX 8516  Versatile PCI Express Switch
 	8532  PEX 8532  Versatile PCI Express Switch
 	9030  PCI <-> IOBus Bridge Hot Swap
 		10b5 2862  Alpermann+Velte PCL PCI LV (3V/5V): Timecode Reader Board
 		10b5 2906  Alpermann+Velte PCI TS (3V/5V): Time Synchronisation Board
 		10b5 2940  Alpermann+Velte PCL PCI D (3V/5V): Timecode Reader Board
+		10b5 2977  IXXAT iPC-I XC16/PCI CAN Board
 		10b5 2978  SH ARC-PCIu SOHARD ARCNET card
 		10b5 3025  Alpermann+Velte PCL PCI L (3V/5V): Timecode Reader Board
 		10b5 3068  Alpermann+Velte PCL PCI HD (3V/5V): Timecode Reader Board
@@ -4993,6 +5001,7 @@
 		102b 48d0  Matrox CronosPlus
 		1048 226b  ELSA EX-VISION 500TV
 		1131 2001  10MOONS PCI TV CAPTURE CARD
+		1131 2005  Techcom (India) TV Tuner Card (SSD-TV-670)
 		1461 050c  Nagase Sangyo TransGear 3000TV
 		1461 10ff  AVerMedia DVD EZMaker
 		1461 2108  AverMedia AverTV/305
@@ -5503,6 +5512,7 @@
 	0476  RL5c476 II
 		1014 0185  ThinkPad A/T/X Series
 		1028 0188  Inspiron 6000 laptop
+		1043 1967  V6800V
 		1043 1987  Asus A4K and Z81K notebooks, possibly others ( mid-2005 machines )
 		104d 80df  Vaio PCG-FX403
 		104d 80e7  VAIO PCG-GR214EP/GR214MP/GR215MP/GR314MP/GR315MP
@@ -5513,6 +5523,7 @@
 	0511  R5C511
 	0522  R5C522 IEEE 1394 Controller
 		1014 01cf  ThinkPad A30p (2653-64G)
+		1043 1967  V6800V
 	0551  R5C551 IEEE 1394 Controller
 		144d c006  vpr Matrix 170B4
 	0552  R5C552 IEEE 1394 Controller
@@ -5521,13 +5532,16 @@
 	0575  R5C575 SD Bus Host Adapter
 	0576  R5C576 SD Bus Host Adapter
 	0592  R5C592 Memory Stick Bus Host Adapter
+		1043 1967  V6800V
 	0811  R5C811
 	0822  R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter
 		1014 0556  Thinkpad X40
 		1028 0188  Inspiron 6000 laptop
+		1028 01a2  Inspiron 9200
 		1043 1967  ASUS V6800V
 	0841  R5C841 CardBus/SD/SDIO/MMC/MS/MSPro/xD/IEEE1394
 	0852  xD-Picture Card Controller
+		1043 1967  V6800V
 1181  Telmatics International
 1183  Fujikura Ltd
 1184  Forks Inc
@@ -6220,6 +6234,7 @@
 1225  Power I/O, Inc.
 1227  Tech-Source
 	0006  Raptor GFX 8P
+	0023  Raptor GFX [1100T]
 1228  Norsk Elektro Optikk A/S
 1229  Data Kinesis Inc.
 122a  Integrated Telecom
@@ -6900,7 +6915,6 @@
 		1092 3002  Monster Sound II
 		1092 3003  Monster Sound II
 		1092 3004  Monster Sound II
-		12eb 0001  AU8830 Vortex 3D Digital Audio Processor
 		12eb 0002  AU8830 Vortex 3D Digital Audio Processor
 		12eb 0088  AU8830 Vortex 3D Digital Audio Processor
 		144d 3510  AU8830 Vortex 3D Digital Audio Processor
@@ -7546,6 +7560,7 @@
 	1724  VT1720/24 [Envy24PT/HT] PCI Multi-Channel Audio Controller
 		1412 1724  AMP Ltd AUDIO2000
 		1412 3630  M-Audio Revolution 7.1
+		1412 3631  M-Audio Revolution 5.1
 		153b 1145  Aureon 7.1 Space
 		153b 1147  Aureon 5.1 Sky
 		153b 1153  Aureon 7.1 Universe
@@ -7666,6 +7681,7 @@
 	a3ce  AVerMedia M179
 	a3cf  AVerMedia M179
 1462  Micro-Star International Co., Ltd.
+	5501  nVidia NV15DDR [GeForce2 Ti]
 # MSI CB54G Wireless PC Card that seems to use the Broadcom 4306 Chipset
 	6819  Broadcom Corporation BCM4306 802.11b/g Wireless LAN Controller [MSI CB54G]
 	6825  PCI Card wireless 11g [PC54G]
@@ -7937,6 +7953,7 @@
 		1166 1648  NetXtreme CIOB-E 1000Base-T
 		1734 100b  Primergy RX300
 	164a  NetXtreme II BCM5706 Gigabit Ethernet
+		103c 3101  NC370T Multifunction Gigabit Server Adapter
 	164c  NetXtreme II BCM5708 Gigabit Ethernet
 	164d  NetXtreme BCM5702FE Gigabit Ethernet
 	1653  NetXtreme BCM5705 Gigabit Ethernet
@@ -7944,8 +7961,6 @@
 	1654  NetXtreme BCM5705_2 Gigabit Ethernet
 		0e11 00e3  NC7761 Gigabit Server Adapter
 		103c 3100  NC1020 HP ProLiant Gigabit Server Adapter 32 PCI
-		103c 3101  NC370T Multifunction Gigabit Server Adapter
-		103c 3102  NC370F Multifunction Gigabit Server Adapter
 		103c 3226  NC150T 4-port Gigabit Combo Switch & Adapter
 	1659  NetXtreme BCM5721 Gigabit Ethernet PCI Express
 		103c 7031  NC320T PCIe Gigabit Server Adapter
@@ -7992,6 +8007,7 @@
 	16a8  NetXtreme BCM5704S Gigabit Ethernet
 		10b7 2001  3C998-SX Dual Port 1000-SX PCI-X
 	16aa  NetXtreme II BCM5706S Gigabit Ethernet
+		103c 3102  NC370F Multifunction Gigabit Server Adapter
 	16ac  NetXtreme II BCM5708S Gigabit Ethernet
 	16c6  NetXtreme BCM5702A3 Gigabit Ethernet
 		10b7 1100  3C1000B-T 10/100/1000 PCI
@@ -8420,6 +8436,7 @@
 1523  MUSIC Semiconductors
 1524  ENE Technology Inc
 	0510  CB710 Memory Card Reader Controller
+	0520  FLASH memory: ENE Technology Inc:
 	0530  ENE PCI Memory Stick Card Reader Controller
 	0550  ENE PCI Secure Digital Card Reader Controller
 	0610  PCI Smart Card Reader Controller
@@ -8791,15 +8808,16 @@
 		168c 2041  Netgate 5354MP Plus ARIES2 b/g MiniPCI Adapter
 		168c 2042  Netgate 5354MP Plus ARIES2 a/b/g MiniPCI Adapter
 		16ab 7302  Trust Speedshare Turbo Pro Wireless PCI Adapter
-	001a  AR5212 Multiprotocol MAC/baseband processor
+	001a  AR5005G 802.11abg NIC
 		1186 3a15  D-Link AirPlus G DWL-G630 Wireless Cardbus Adapter(rev.D)
 		1186 3a16  D-Link AirPlus G DWL-G510 Wireless PCI Adapter(rev.B)
 		1186 3a23  D-Link AirPlus G DWL-G520+A Wireless PCI Adapter
 		1186 3a24  D-Link AirPlus G DWL-G650+A Wireless Cardbus Adapter
+		168c 1052  TP-Link TL-WN510G Wireless CardBus Adapter
 	001b  AR5006X 802.11abg NIC
 		1186 3a19  D-Link AirPremier AG DWL-AG660 Wireless Cardbus Adapter
 		1186 3a22  D-Link AirPremier AG DWL-AG530 Wireless PCI Adapter
-	0020  AR5005VL 802.11bg Wireless Chipset
+	0020  AR5005VL 802.11bg Wireless NIC
 	1014  AR5212 802.11abg NIC
 1695  EPoX Computer Co., Ltd.
 169c  Netcell Corporation
@@ -8886,9 +8904,12 @@
 	7000  Wireless PCI Card - F5D7000
 	7010  BCM4306 802.11b/g Wireless Lan Controller F5D7010
 179c  Data Patterns
+	0557  DP-PCI-557 [PCI 1553B]
+	0566  DP-PCI-566 [Intelligent PCI 1553B]
 	5031  DP-CPCI-5031-Synchro Module
 	5121  DP-CPCI-5121-IP Carrier
 	5211  DP-CPCI-5211-IP Carrier
+	5679  AGE Display Module
 17a0  Genesys Logic, Inc
 	8033  GL880S USB 1.1 controller
 	8034  GL880S USB 2.0 controller
@@ -8933,7 +8954,7 @@
 	0101  Wireless PCI Adapter RT2400 / RT2460
 		1043 0127  WiFi-b add-on Card
 		1462 6828  PC11B2 (MS-6828) Wireless 11b PCI Card
-	0201  Ralink RT2500 802.11G Cardbus/mini-PCI
+	0201  RT2500 802.11G Cardbus/mini-PCI
 		1043 130f  WL-130g
 		1371 001e  CWC-854 Wireless-G CardBus Adapter
 		1371 001f  CWM-854 Wireless-G Mini PCI Adapter
@@ -9001,6 +9022,19 @@
 	4c6f  Artimi RTMI-100 UWB adapter
 18e6  MPL AG
 	0001  OSCI [Octal Serial Communication Interface]
+18ec  Cesnet, z.s.p.o.
+	c006  COMBO6
+		18ec d001  COMBO-4MTX
+		18ec d002  COMBO-4SFP
+		18ec d003  COMBO-4SFPRO
+		18ec d004  COMBO-2XFP
+	c045  COMBO6E
+	c050  COMBO-PTM
+	c058  COMBO6X
+		18ec d001  COMBO-4MTX
+		18ec d002  COMBO-4SFP
+		18ec d003  COMBO-4SFPRO
+		18ec d004  COMBO-2XFP
 18f7  Commtech, Inc.
 	0001  Fastcom ESCC-PCI-335
 	0002  Fastcom 422/4-PCI-335
@@ -10493,6 +10527,7 @@
 	2651  82801FB/FW (ICH6/ICH6W) SATA Controller
 		1028 0179  Optiplex GX280
 		1734 105c  Scenic W620
+		8086 4147  D915GAG Motherboard
 	2652  82801FR/FRW (ICH6R/ICH6RW) SATA Controller
 		1462 7028  915P/G Neo2
 	2653  82801FBM (ICH6M) SATA Controller
@@ -10542,6 +10577,7 @@
 		103c 099c  nx6110/nc6120
 	266e  82801FB/FBM/FR/FW/FRW (ICH6 Family) AC'97 Audio Controller
 		1028 0179  Optiplex GX280
+		1028 0182  Latitude D610 Laptop
 		1028 0188  Inspiron 6000 laptop
 		103c 099c  nx6110/nc6120
 		1458 a002  GA-8I915ME-G Mainboard
@@ -11220,6 +11256,7 @@ feda  Broadcom Inc
 fede  Fedetec Inc.
 	0003  TABIC PCI v3
 fffd  XenSource, Inc.
+	0101  PCI Event Channel Controller
 fffe  VMWare Inc
 	0405  Virtual SVGA 4.0
 	0710  Virtual SVGA
