@@ -17,7 +17,7 @@ Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
 Version:	2.2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -25,7 +25,7 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
-# NoSource2-md5:	9d18a2ff2c61358425b7dba2bd38662e
+# NoSource2-md5:	4a958f96c2b672f8c2c53e8b8a5dbd27
 Patch0:		%{name}-devel.patch
 Patch1:		%{name}-pci_h.patch
 Patch2:		%{name}-pcimodules.patch
