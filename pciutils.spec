@@ -278,7 +278,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog
+%doc ChangeLog README TODO
 %{_datadir}/pci.ids
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
