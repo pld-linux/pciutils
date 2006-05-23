@@ -11,7 +11,7 @@
 #	This file can be distributed under either the GNU General Public License
 #	(version 2 or higher) or the 3-clause BSD License.
 #
-#	Daily snapshot on Sat 2006-05-06 01:05:03
+#	Daily snapshot on Tue 2006-05-23 01:05:03
 #
 
 # Vendors, devices and subsystems. Please keep sorted.
@@ -583,7 +583,12 @@
 	4a4d  R420 JM [FireGL X3]
 	4a4e  M18 JN [Radeon Mobility 9800]
 	4a50  R420 JP [Radeon X800XT]
+	4a54  R420 [Radeon X800 VE]
+	4a69  R420 [Radeon X800 PRO/GTO] (Secondary)
+	4a6a  R420 [Radeon X800] (Secondary)
+	4a6b  R420 [Radeon X800] (Secondary)
 	4a70  R420 [X800XT-PE] (Secondary)
+	4a74  R420 [Radeon X800 VE] (Secondary)
 	4b49  R480 [Radeon X850XT]
 	4b4b  R480 [Radeon X850Pro]
 	4b4c  R481 [Radeon X850XT-PE]
@@ -933,13 +938,15 @@
 		1043 032e  Extreme AX300/TD
 		1462 0400  RX300SE-TD128E (MS-8940 REV:200)
 		1462 0402  RX300SE-TD128E (MS-8940)
-	5b62  RV370 5B62 [Radeon X600 (PCIE)]
+		196d 1086  X300SE HM
+	5b62  RV380 [Radeon X600 (PCIE)]
 	5b63  RV370 [Sapphire X550 Silent]
 	5b64  RV370 5B64 [FireGL V3100 (PCIE)]
 	5b65  RV370 5B65 [FireGL D1100 (PCIE)]
 	5b70  RV370 [Radeon X300SE]
 		1462 0403  RX300SE-TD128E (MS-8940) (secondary display)
-	5b72  Radeon X600(RV380)
+		196d 1087  X300SE HM
+	5b72  RV380 [Radeon X600]
 	5b73  RV370 secondary [Sapphire X550 Silent]
 	5b74  RV370 5B64 [FireGL V3100 (PCIE)] (Secondary)
 	5c61  M9+ 5C61 [Radeon Mobility 9200 (AGP)]
@@ -2347,6 +2354,7 @@
 		103c 099c  NX6110/NC6120
 	8036  PCI6515 Cardbus Controller
 	8038  PCI6515 SmartCard Controller
+	8039  PCIxx12 Cardbus Controller
 	803b  5-in-1 Multimedia Card Reader (SD/MMC/MS/MS PRO/xD)
 	8201  PCI1620 Firmware Loading Function
 	8204  PCI7410,7510,7610 PCI Firmware Loading Function
@@ -3112,6 +3120,7 @@
 		1461 0003  AverMedia UltraTV PCI 350
 		1461 0004  AVerTV WDM Video Capture
 		1461 0761  AverTV DVB-T
+		1461 0771  AverMedia AVerTV DVB-T 771
 		14f1 0001  Bt878 Mediastream Controller NTSC
 		14f1 0002  Bt878 Mediastream Controller PAL BG
 		14f1 0003  Bt878a Mediastream Controller PAL BG
@@ -3174,6 +3183,7 @@
 		1461 0002  Avermedia PCTV98 Audio Capture
 		1461 0004  AVerTV WDM Audio Capture
 		1461 0761  AVerTV DVB-T
+		1461 0771  AverMedia AVerTV DVB-T 771
 		14f1 0001  Bt878 Video Capture (Audio Section)
 		14f1 0002  Bt878 Video Capture (Audio Section)
 		14f1 0003  Bt878 Video Capture (Audio Section)
@@ -3890,43 +3900,53 @@
 		1043 815a  K8N4-E Mainboard
 		1458 0c11  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	0051  CK804 ISA Bridge
 	0052  CK804 SMBus
 		1043 815a  K8N4-E Mainboard
 		1458 0c11  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	0053  CK804 IDE
 		1043 815a  K8N4-E Mainboard
 		1458 5002  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	0054  CK804 Serial ATA Controller
 		1458 b003  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	0055  CK804 Serial ATA Controller
 		1043 815a  K8N4-E Mainboard
 		1458 b003  GA-K8N Ultra-9 Mainboard
+		147b 1c1a  KN8-Ultra Mainboard
 	0056  CK804 Ethernet Controller
 	0057  CK804 Ethernet Controller
 		1043 8141  K8N4-E Mainboard
 		1458 e000  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	0058  CK804 AC'97 Modem
 	0059  CK804 AC'97 Audio Controller
 		1043 812a  K8N4-E Mainboard
+		147b 1c1a  KN8-Ultra Mainboard
 	005a  CK804 USB Controller
 		1043 815a  K8N4-E Mainboard
 		1458 5004  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	005b  CK804 USB Controller
 		1043 815a  K8N4-E Mainboard
 		1458 5004  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	005c  CK804 PCI Bridge
 	005d  CK804 PCIE Bridge
 	005e  CK804 Memory Controller
 		10f1 2891  Thunder K8SRE Mainboard
 		1458 5000  GA-K8N Ultra-9 Mainboard
 		1462 7100  MSI K8N Diamond
+		147b 1c1a  KN8-Ultra Mainboard
 	005f  CK804 Memory Controller
 	0060  nForce2 ISA Bridge
 		1043 80ad  A7N8X Mainboard
@@ -3943,6 +3963,7 @@
 		1043 0c11  A7N8X Mainboard
 		a0a0 03b4  UK79G-1394 motherboard
 	006a  nForce2 AC97 Audio Controler (MCP)
+		1043 8095  nForce2 AC97 Audio Controler (MCP)
 		a0a0 0304  UK79G-1394 motherboard
 	006b  nForce Audio Processing Unit
 		10de 006b  nForce2 MCP Audio Processing Unit
@@ -3997,24 +4018,32 @@
 	00da  nForce3 Audio
 	00dd  nForce3 PCI Bridge
 	00df  CK8S Ethernet Controller
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e0  nForce3 250Gb LPC Bridge
+		10de 0c11  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e1  nForce3 250Gb Host Bridge
 		147b 1c0b  NF8 Mainboard
 	00e2  nForce3 250Gb AGP Host to PCI Bridge
 	00e3  CK8S Serial ATA Controller (v2.5)
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e4  nForce 250Gb PCI System Management
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e5  CK8S Parallel ATA Controller (v2.5)
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e6  CK8S Ethernet Controller
 	00e7  CK8S USB Controller
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00e8  nForce3 EHCI USB 2.0 Controller
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00ea  nForce3 250Gb AC'97 Audio Controller
+		105b 0c43  Winfast NF3250K8AA
 		147b 1c0b  NF8 Mainboard
 	00ed  nForce3 250Gb PCI-to-PCI Bridge
 	00ee  CK8S Serial ATA Controller (v2.5)
@@ -5751,8 +5780,9 @@
 	0101  CIOB-X2 PCI-X I/O Bridge
 	0104  HT1000 PCI/PCI-X bridge
 	0110  CIOB-E I/O Bridge with Gigabit Ethernet
-	0130  HT1000 PCI-X bridge
-	0132  HT1000 PCI-Express bridge
+	0130  HT2000 PCI-X bridge
+	0132  HT2000 PCI-Express bridge
+		1166 0132  HT2000 PCI-Express bridge
 	0200  OSB4 South Bridge
 	0201  CSB5 South Bridge
 		4c53 1080  CT8 mainboard
@@ -7116,6 +7146,7 @@
 		12b9 0091  USR 56k Internal Voice WinModem (Model 2978)
 	1007  USR 56k Internal WinModem
 		12b9 00a3  USR 56k Internal WinModem (Model 3595)
+		12b9 00c4  U.S. Robotics 56K Voice Win Int (2884a)
 	1008  56K FaxModem Model 5610
 		12b9 00a2  USR 56k Internal FAX Modem (Model 2977)
 		12b9 00aa  USR 56k Internal Voice Modem (Model 2976)
@@ -8053,6 +8084,8 @@
 	9110  GeFORCE FX5200
 	9119  NVIDIA NV31 [GeForce FX 5600XT] VGA Adapter
 	9123  NVIDIA NV31 [GeForce FX 5600] FX5600-VTDR128 [MS-8912]
+	9510  Radeon 9600XT
+	9511  Radeon 9600XT
 	9591  nVidia Corporation NV36 [GeForce FX 5700LE]
 1463  Fast Corporation
 1464  Interactive Circuits & Systems Ltd
@@ -8449,6 +8482,7 @@
 		1737 4320  WPC54G
 		1799 7001  Belkin F5D7001 High-Speed Mode Wireless G Network Card
 		1799 7010  Belkin F5D7010 54g Wireless Network card
+		1799 7011  F5D7011 54g+ Wireless Network card
 		185f 1220  TravelMate 290E WLAN Mini-PCI Card
 	4321  BCM4306 802.11a Wireless LAN Controller
 	4322  BCM4306 UART
@@ -9184,6 +9218,8 @@
 167b  ZyDAS Technology Corp.
 	2102  ZyDAS ZD1202
 		187e 3406  ZyAIR B-122 CardBus 11Mbs Wireless LAN Card
+167d  Samsung Electro-Mechanics Co., Ltd.
+	a000  IPW2200 miniPCI Wireless
 1681  Hercules
 	0010  Hercules 3d Prophet II Ultra 64MB (350 MHz NV15BR core)
 1682  XFX Pine Group Inc.
@@ -9203,6 +9239,7 @@
 		1186 3a17  D-Link AirPremier DWL-G680 Wireless Cardbus Adapter
 		1186 3a18  D-Link AirPremier DWL-G550 Wireless PCI Adapter
 		1186 3a63  D-Link AirPremier DWL-AG660 Wireless Cardbus Adapter
+		1186 3a93  Conceptronic C54I Wireless 801.11g PCI card
 		1186 3a94  C54C Wireless 801.11g cardbus
 		1186 3ab0  Allnet ALL0281 Wireless PCI Card
 		1385 4d00  Netgear WG311T Wireless PCI Adapter
@@ -9320,6 +9357,7 @@
 	6020  Wireless PCMCIA Card - F5D6020
 	6060  Wireless PDA Card - F5D6060
 	7000  Wireless PCI Card - F5D7000
+	700a  Wireless PCI Card - F5D7000UK
 	7010  BCM4306 802.11b/g Wireless Lan Controller F5D7010
 179c  Data Patterns
 	0557  DP-PCI-557 [PCI 1553B]
@@ -9340,6 +9378,8 @@
 17c0  Wistron Corp.
 17c2  Newisys, Inc.
 17cb  Airgo Networks Inc
+	0001  AGN100 802.11 a/b/g True MIMO Wireless Card
+	0002  AGN300 802.11 a/b/g True MIMO Wireless Card
 17cc  NetChip Technology, Inc
 	2280  USB 2.0
 17cf  Z-Com, Inc.
@@ -9390,6 +9430,7 @@
 	0301  RT2561/RT61 802.11g PCI
 		1186 3c08  DWL-G630 Rev E
 		1186 3c09  DWL-G510 Rev C
+		1737 0055  WMP54G ver 4.1
 	0302  RT2561/RT61 rev B 802.11g
 		1186 3c08  DWL-G630 Rev E
 		1186 3c09  DWL-G510 Rev C
@@ -9401,6 +9442,8 @@
 # HFC-based ISDN card
 	3069  ISDN PCI DC-105V2
 	9790  WL-121 Wireless Network Adapter 100g+ [Ver.3]
+182e  Raza Microelectronics, Inc.
+	0008  XLR516 Processor
 1830  Credence Systems Corporation
 183b  MikroM GmbH
 	08a7  MVC100 DVI
@@ -9476,7 +9519,9 @@
 	000a  Fastcom 232/4-PCI-335
 18fb  Resilience Corporation
 1904  Hangzhou Silan Microelectronics Co., Ltd.
+	8139  RTL8139D [Realtek] PCI 10/100BaseTX ethernet adaptor
 1923  Sangoma Technologies Corp.
+	0040  A200/Remora FXO/FXS Analog AFT card
 	0100  A104d QUAD T1/E1 AFT card
 	0400  A104u Quad T1/E1 AFT
 1924  Level 5 Networks Inc.
@@ -9500,6 +9545,7 @@
 196a  Sensory Networks Inc.
 	0101  NodalCore C-1000 Content Classification Accelerator
 	0102  NodalCore C-2000 Content Classification Accelerator
+196d  Club-3D BV
 197b  JMicron Technologies, Inc.
 	2360  JMicron 20360/20363 AHCI Controller
 	2361  JMB361 AHCI/IDE
