@@ -1,17 +1,17 @@
---- pciutils-2.1.11/Makefile.pix	2003-01-04 13:53:01.000000000 +0100
-+++ pciutils-2.1.11/Makefile	2003-01-04 23:06:36.000000000 +0100
-@@ -33,7 +33,7 @@
+--- pciutils-2.2.4/Makefile.orig	2006-09-13 00:46:05.065201750 +0200
++++ pciutils-2.2.4/Makefile	2006-09-13 00:47:30.430536750 +0200
+@@ -24,7 +24,7 @@
  
  export
  
--all: $(PCILIB) lspci setpci lspci.8 setpci.8 update-pciids update-pciids.8 pci.ids
-+all: $(PCILIB) lspci setpci pcimodules lspci.8 setpci.8 update-pciids update-pciids.8 pci.ids
+-all: $(PCILIB) lspci setpci lspci.8 setpci.8 update-pciids update-pciids.8 $(PCI_IDS)
++all: $(PCILIB) lspci setpci pcimodules lspci.8 setpci.8 update-pciids update-pciids.8 $(PCI_IDS)
  
  $(PCILIB): $(PCIINC) force
  	$(MAKE) -C lib all
-@@ -43,6 +43,7 @@
- lib/config.h:
- 	cd lib && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
+@@ -37,6 +37,7 @@
+ pci/config.h:
+ 	cd pci && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
  
 +pcimodules: pcimodules.o common.o $(PCILIB)
  lspci: lspci.o common.o $(PCILIB)
@@ -19,7 +19,7 @@
  
 --- pciutils-2.1.11/pcimodules.c.pix	2003-01-04 23:06:00.000000000 +0100
 +++ pciutils-2.1.11/pcimodules.c	2003-01-04 23:06:00.000000000 +0100
-@@ -0,0 +1,183 @@
+@@ -0,0 +1,184 @@
 +/*
 + *	pcimodules:  Load all kernel modules for PCI device currently
 + *      plugged into any PCI slot.
@@ -67,6 +67,7 @@
 +};
 +
 +static struct pcimap_entry *pcimap_list = NULL;
++const char program_name[] = "pcimodules";
 +
 +#define OPT_STRING "h"
 +static struct option long_options[] = {
