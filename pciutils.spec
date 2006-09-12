@@ -16,21 +16,21 @@ Summary(sv):	PCI-bussrelaterade verktyg
 Summary(uk):	Утил╕ти роботи з PCI пристроями
 Summary(zh_CN):	PCI вэоъоЮ╧ь╣д╧╓╬ъ║ё
 Name:		pciutils
-Version:	2.2.3
+Version:	2.2.4
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	39747279aad46e7a6a3e1ea636d055b4
+# Source0-md5:	5629fdb049f189fb853e7021f85553d2
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
-# Source2-md5:	06b10800aa470427a906fdffa45ebcdd
+# NoSource2-md5:	02234128f920bda2415f45651e50892d
 Patch0:		%{name}-devel.patch
 Patch1:		%{name}-pci_h.patch
 Patch2:		%{name}-pcimodules.patch
-Patch3:		%{name}-deviceclass.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
@@ -237,7 +237,6 @@ enheter kopplade till PCI-bussen.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
