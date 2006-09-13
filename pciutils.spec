@@ -22,7 +22,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 # Source0-md5:	5629fdb049f189fb853e7021f85553d2
-Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/pciutils-non-english-man-pages.tar.bz2
+Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
 # NoSource2-md5:	02234128f920bda2415f45651e50892d
@@ -258,7 +258,7 @@ cp -rf lib pci
 %{__make} \
 	CC="%{__cc}" \
 	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
-	SHAREDIR=/etc
+	SHAREDIR=%{_sysconfdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -271,6 +271,8 @@ install pci.ids		$RPM_BUILD_ROOT%{_datadir}
 install lib/libpci.a	$RPM_BUILD_ROOT%{_libdir}
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 cp -f lib/pci.h		$RPM_BUILD_ROOT%{_includedir}/pci
+
+rm -f $RPM_BUILD_ROOT%{_mandir}/{README.pciutils-non-english-man-pages,/pciutils-non_en_man.patch}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
