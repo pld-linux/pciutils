@@ -156,6 +156,7 @@ Summary(sv):	Linux PCI utvecklignsbibliotek
 Summary(uk):	Хедери та ╕нш╕ файли для розробки програм, що працюють з шиною PCI
 Summary(zh_CN):	Linux PCI ©╙╥╒ЁлпР©Б║ё
 Group:		Development/Libraries
+Requires:	zlib-devel
 
 %description devel
 This package contains a library for inspecting and setting devices
