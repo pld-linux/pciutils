@@ -1,20 +1,20 @@
 Summary:	Linux PCI utilities
-Summary(cs):	Linuxové utility pro PCI
-Summary(da):	PCI-bus-relaterede værktøjer
-Summary(de):	PCI-Bus verwandte Dienstprogramme
-Summary(es):	Utilitarios Linux para PCI
-Summary(fr):	Utilitaires relatifs au bus PCI
-Summary(it):	Utility correlate al bus PCI
-Summary(ja):	PCI ¥Ğ¥¹´ØÏ¢¥æ¡¼¥Æ¥£¥ê¥Æ¥£
-Summary(ko):	PCI ¹ö½º °ü·Ã À¯Æ¿¸®Æ¼µé
-Summary(nb):	PCI-buss-relaterte verktøy
-Summary(pl):	Narzêdzia do manipulacji ustawieniami urz±dzeñ PCI
-Summary(pt):	Utilitários relacionados com o 'bus' PCI
-Summary(pt_BR):	Utilitários para PCI do Linux
-Summary(ru):	õÔÉÌÉÔÙ ÒÁÂÏÔÙ Ó PCI ÕÓÔÒÏÊÓÔ×ÁÍÉ
-Summary(sv):	PCI-bussrelaterade verktyg
-Summary(uk):	õÔÉÌ¦ÔÉ ÒÏÂÏÔÉ Ú PCI ĞÒÉÓÔÒÏÑÍÉ
-Summary(zh_CN):	PCI ×ÜÏßÏà¹ØµÄ¹¤¾ß¡£
+Summary(cs.UTF-8):   LinuxovÃ© utility pro PCI
+Summary(da.UTF-8):   PCI-bus-relaterede vÃ¦rktÃ¸jer
+Summary(de.UTF-8):   PCI-Bus verwandte Dienstprogramme
+Summary(es.UTF-8):   Utilitarios Linux para PCI
+Summary(fr.UTF-8):   Utilitaires relatifs au bus PCI
+Summary(it.UTF-8):   Utility correlate al bus PCI
+Summary(ja.UTF-8):   PCI ãƒã‚¹é–¢é€£ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£
+Summary(ko.UTF-8):   PCI ë²„ìŠ¤ ê´€ë ¨ ìœ í‹¸ë¦¬í‹°ë“¤
+Summary(nb.UTF-8):   PCI-buss-relaterte verktÃ¸y
+Summary(pl.UTF-8):   NarzÄ™dzia do manipulacji ustawieniami urzÄ…dzeÅ„ PCI
+Summary(pt.UTF-8):   UtilitÃ¡rios relacionados com o 'bus' PCI
+Summary(pt_BR.UTF-8):   UtilitÃ¡rios para PCI do Linux
+Summary(ru.UTF-8):   Ğ£Ñ‚Ğ¸Ğ»Ğ¸Ñ‚Ñ‹ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ñ‹ Ñ PCI ÑƒÑÑ‚Ñ€Ğ¾Ğ¹ÑÑ‚Ğ²Ğ°Ğ¼Ğ¸
+Summary(sv.UTF-8):   PCI-bussrelaterade verktyg
+Summary(uk.UTF-8):   Ğ£Ñ‚Ğ¸Ğ»Ñ–Ñ‚Ğ¸ Ñ€Ğ¾Ğ±Ğ¾Ñ‚Ğ¸ Ğ· PCI Ğ¿Ñ€Ğ¸ÑÑ‚Ñ€Ğ¾ÑĞ¼Ğ¸
+Summary(zh_CN.UTF-8):   PCI æ€»çº¿ç›¸å…³çš„å·¥å…·ã€‚
 Name:		pciutils
 Version:	2.2.4
 Release:	1
@@ -43,118 +43,118 @@ This package contains various utilities for inspecting and setting of
 devices connected to the PCI bus. Requires kernel version 2.1.82 or
 newer (supporting the /proc/bus/pci interface).
 
-%description -l cs
-Balíèek pciutils obsahuje rùzné programy pro prohlí¾ení a nastavování
-zaøízení pøipojenıch na sbìrnici PCI. Obsa¾ené programy vy¾adují jádro
-verze 2.1.82 nebo novìj¹í (podporující rozhraní /proc/bus/pci).
+%description -l cs.UTF-8
+BalÃ­Äek pciutils obsahuje rÅ¯znÃ© programy pro prohlÃ­Å¾enÃ­ a nastavovÃ¡nÃ­
+zaÅ™Ã­zenÃ­ pÅ™ipojenÃ½ch na sbÄ›rnici PCI. ObsaÅ¾enÃ© programy vyÅ¾adujÃ­ jÃ¡dro
+verze 2.1.82 nebo novÄ›jÅ¡Ã­ (podporujÃ­cÃ­ rozhranÃ­ /proc/bus/pci).
 
-%description -l da
-Pakken pciutils indeholder forskellige værktøjer for at undresøge og
-opsætte enheder koplet til PCI-bussen. Værktøjet kræver kerneversion
-2.1.82 eller senere (som understøtter grænsefladen /proc/bus/pci).
+%description -l da.UTF-8
+Pakken pciutils indeholder forskellige vÃ¦rktÃ¸jer for at undresÃ¸ge og
+opsÃ¦tte enheder koplet til PCI-bussen. VÃ¦rktÃ¸jet krÃ¦ver kerneversion
+2.1.82 eller senere (som understÃ¸tter grÃ¦nsefladen /proc/bus/pci).
 
-%description -l de
-Das pciutils Paket enthält verschiedene Dienstprogramme für das
-Überprüfen und Konfigurieren von Geräten, die an den PCI-Bus
+%description -l de.UTF-8
+Das pciutils Paket enthÃ¤lt verschiedene Dienstprogramme fÃ¼r das
+ÃœberprÃ¼fen und Konfigurieren von GerÃ¤ten, die an den PCI-Bus
 angeschlossen sind. Die bereitgestellten Dienstprogramme erfordern
 Kernel Version 2.1.82 oder neuer (und die darin implementierte
-Unterstützung der Schnittstelle /proc/bus/pci).
+UnterstÃ¼tzung der Schnittstelle /proc/bus/pci).
 
-%description -l es
+%description -l es.UTF-8
 Este paquete contiene varias utilidades para controlar y configurar
 los dispositivos conectados al bus PCI. Las utilidades ofrecidas en
-este paquete requieren la versión 2.1.82 o una posterior del kernel
+este paquete requieren la versiÃ³n 2.1.82 o una posterior del kernel
 (necesita del soporte para la interfaz /proc/bus/pci).
 
-%description -l fr
+%description -l fr.UTF-8
 Le paquetage pciutils contient divers utilitaires permettant
-d'inspecter et de paramétrer des périphériques connectés au bus PCI.
-Les utilitaires fournis requièrent un noyau version 2.1.82 ou plus
-récent (prenant en charge l'interface /proc/bus/pci).
+d'inspecter et de paramÃ©trer des pÃ©riphÃ©riques connectÃ©s au bus PCI.
+Les utilitaires fournis requiÃ¨rent un noyau version 2.1.82 ou plus
+rÃ©cent (prenant en charge l'interface /proc/bus/pci).
 
-%description -l id
+%description -l id.UTF-8
 Paket ini berisi berbagai utilitas untuk mengamati dan mengeset device
 yang terhubung ke bus PCI. Utilitas yang disediakan ini membutuhkan
 kernel versi 2.1.82 atau yang lebih baru (yaitu yang mendukung
 antarmuka /proc/bus/pci).
 
-%description -l is
-Şessi pakki inniheldur ımis tól til ağ skoğa og setja tæki tengd PCI
-rútunni. Tólin eru nauğsynleg fyrir kjarna 2.1.82 eğa nırri (styğja
-/proc/bus/pci viğmótiğ).
+%description -l is.UTF-8
+Ãessi pakki inniheldur Ã½mis tÃ³l til aÃ° skoÃ°a og setja tÃ¦ki tengd PCI
+rÃºtunni. TÃ³lin eru nauÃ°synleg fyrir kjarna 2.1.82 eÃ°a nÃ½rri (styÃ°ja
+/proc/bus/pci viÃ°mÃ³tiÃ°).
 
-%description -l it
+%description -l it.UTF-8
 Il pacchetto pciutils contiene varie utility per controllare e
 configurare i dispositivi collegati al bus PCI. L'utility fornita in
 questo pacchetto richiede la versione 2.1.82 o successiva del kernel
 (richiede il supporto per l'interfaccia /proc/bus/pci).
 
-%description -l ja
-¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï¡¢PCI ¥Ğ¥¹¤ËÀÜÂ³¤µ¤ì¤¿¥Ç¥Ğ¥¤¥¹¤òÄ´ºº¡¢ÀßÄê¤¹¤ë¤¿
-¤á¤Î³Æ¼ï¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤¬´Ş¤Ş¤ì¤Æ¤¤¤Ş¤¹¡£¤½¤ì¤é¤Î¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤Ï¡¢¥«¡¼
-¥Í¥ë¥Ğ¡¼¥¸¥ç¥ó 2.1.82 °Ê¹ß (/proc/bus/pci ¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤ò¥µ¥İ¡¼¥È)
-¤òÉ¬Í×¤È¤·¤Ş¤¹¡£
+%description -l ja.UTF-8
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ã¯ã€PCI ãƒã‚¹ã«æ¥ç¶šã•ã‚ŒãŸãƒ‡ãƒã‚¤ã‚¹ã‚’èª¿æŸ»ã€è¨­å®šã™ã‚‹ãŸ
+ã‚ã®å„ç¨®ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚ãã‚Œã‚‰ã®ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã¯ã€ã‚«ãƒ¼
+ãƒãƒ«ãƒãƒ¼ã‚¸ãƒ§ãƒ³ 2.1.82 ä»¥é™ (/proc/bus/pci ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚’ã‚µãƒãƒ¼ãƒˆ)
+ã‚’å¿…è¦ã¨ã—ã¾ã™ã€‚
 
-%description -l pl
-Pakiet zawiera narzêdzia do ustawiania i odczytywania informacji o
-urz±dzeniach pod³±czonych do szyny PCI w Twoim komputerze. Wymaga
-kernela 2.1.82 lub nowszego (udostêpniaj±cego odpowiednie informacje
+%description -l pl.UTF-8
+Pakiet zawiera narzÄ™dzia do ustawiania i odczytywania informacji o
+urzÄ…dzeniach podÅ‚Ä…czonych do szyny PCI w Twoim komputerze. Wymaga
+kernela 2.1.82 lub nowszego (udostÄ™pniajÄ…cego odpowiednie informacje
 poprzez /proc/bus/pci).
 
-%description -l pt
-Este pacote contém vários utilitários para inspeccionar e configurar
-os dispositivos ligados ao bus PCI. Os utilitários fornecidos precisam
-dum núcleo ou 'kernel' versão 2.1.82 ou mais recente (que suporte a
+%description -l pt.UTF-8
+Este pacote contÃ©m vÃ¡rios utilitÃ¡rios para inspeccionar e configurar
+os dispositivos ligados ao bus PCI. Os utilitÃ¡rios fornecidos precisam
+dum nÃºcleo ou 'kernel' versÃ£o 2.1.82 ou mais recente (que suporte a
 interface /proc/bus/pci).
 
-%description -l pt_BR
-Este pacote contém vários utilitários para inspeção e configuração de
+%description -l pt_BR.UTF-8
+Este pacote contÃ©m vÃ¡rios utilitÃ¡rios para inspeÃ§Ã£o e configuraÃ§Ã£o de
 dispositivos conectados ao barramento PCI do seu computador.
 
-%description -l ru
-ğÁËÅÔ ÓÏÄÅÒÖÉÔ ÒÁÚÌÉŞÎÙÅ ÕÔÉÌÉÔÙ ÄÌÑ ĞÒÏ×ÅÒËÉ É ÎÁÓÔÒÏÊËÉ ÕÓÔÒÏÊÓÔ×,
-ĞÏÄËÌÀŞÅÎÎÙÈ Ë ÛÉÎÅ PCI. õÔÉÌÉÔÁ ÔÒÅÂÕÅÔ ÑÄÒÏ ×ÅÒÓÉÉ 2.1.82 (ÉÌÉ ÂÏÌÅÅ
-ÎÏ×ÏÊ ×ÅÒÓÉÉ), ĞÏÄÄÅÒÖÉ×ÁÀÅÊ ÉÎÔÅÒÆÅÊÓ /proc/bus/pci.
+%description -l ru.UTF-8
+ĞŸĞ°ĞºĞµÑ‚ ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ¸Ñ‚ Ñ€Ğ°Ğ·Ğ»Ğ¸Ñ‡Ğ½Ñ‹Ğµ ÑƒÑ‚Ğ¸Ğ»Ğ¸Ñ‚Ñ‹ Ğ´Ğ»Ñ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ¸ Ğ¸ Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ ÑƒÑÑ‚Ñ€Ğ¾Ğ¹ÑÑ‚Ğ²,
+Ğ¿Ğ¾Ğ´ĞºĞ»ÑÑ‡ĞµĞ½Ğ½Ñ‹Ñ… Ğº ÑˆĞ¸Ğ½Ğµ PCI. Ğ£Ñ‚Ğ¸Ğ»Ğ¸Ñ‚Ğ° Ñ‚Ñ€ĞµĞ±ÑƒĞµÑ‚ ÑĞ´Ñ€Ğ¾ Ğ²ĞµÑ€ÑĞ¸Ğ¸ 2.1.82 (Ğ¸Ğ»Ğ¸ Ğ±Ğ¾Ğ»ĞµĞµ
+Ğ½Ğ¾Ğ²Ğ¾Ğ¹ Ğ²ĞµÑ€ÑĞ¸Ğ¸), Ğ¿Ğ¾Ğ´Ğ´ĞµÑ€Ğ¶Ğ¸Ğ²Ğ°ÑĞµĞ¹ Ğ¸Ğ½Ñ‚ĞµÑ€Ñ„ĞµĞ¹Ñ /proc/bus/pci.
 
-%description -l sk
-Tento balík obsahuje rozlièné pomocné programy pre prehliadanie a
-nastavovanie zariadení pripojenıch na PCI zbernicu. Nástroje vy¾adujú
-jadro s èíslom verzie aspoò 2.1.82 (podporujúce rozhranie
+%description -l sk.UTF-8
+Tento balÃ­k obsahuje rozliÄnÃ© pomocnÃ© programy pre prehliadanie a
+nastavovanie zariadenÃ­ pripojenÃ½ch na PCI zbernicu. NÃ¡stroje vyÅ¾adujÃº
+jadro s ÄÃ­slom verzie aspoÅˆ 2.1.82 (podporujÃºce rozhranie
 /proc/bus/pci).
 
-%description -l sv
-Paketet pciutils innehåller olika verktyg för att inspektera och
-ställa in enheter kopplade till PCI-bussen. Verktygen kräver
-kärnversion 2.1.82 eller senare (som stödjer gränssnittet
+%description -l sv.UTF-8
+Paketet pciutils innehÃ¥ller olika verktyg fÃ¶r att inspektera och
+stÃ¤lla in enheter kopplade till PCI-bussen. Verktygen krÃ¤ver
+kÃ¤rnversion 2.1.82 eller senare (som stÃ¶djer grÃ¤nssnittet
 /proc/bus/pci).
 
-%description -l uk
-ğÁËÅÔ pciutils Í¦ÓÔÉÔØ ÕÔÉÌ¦ÔÉ ÄÌÑ ¦ÎÓĞÅËÔÕ×ÁÎÎÑ ÔÁ ËÏÎÆ¦ÇÕÒÕ×ÁÎÎÑ
-ĞÒÉÓÔÒÏ§×, Ğ¦Ä'¤ÄÎÁÎÉÈ ÄÏ PCI ÛÉÎÉ. äÌÑ ÒÏÂÏÔÉ Ã¦ ÕÔÉÌ¦ÔÉ ĞÏÔÒÅÂÕÀÔØ
-ÎÁÑ×ÎÏÓÔ¦ ¦ÎÔÅÒÆÅÊÓÕ /proc/bus/pci.
+%description -l uk.UTF-8
+ĞŸĞ°ĞºĞµÑ‚ pciutils Ğ¼Ñ–ÑÑ‚Ğ¸Ñ‚ÑŒ ÑƒÑ‚Ğ¸Ğ»Ñ–Ñ‚Ğ¸ Ğ´Ğ»Ñ Ñ–Ğ½ÑĞ¿ĞµĞºÑ‚ÑƒĞ²Ğ°Ğ½Ğ½Ñ Ñ‚Ğ° ĞºĞ¾Ğ½Ñ„Ñ–Ğ³ÑƒÑ€ÑƒĞ²Ğ°Ğ½Ğ½Ñ
+Ğ¿Ñ€Ğ¸ÑÑ‚Ñ€Ğ¾Ñ—Ğ², Ğ¿Ñ–Ğ´'Ñ”Ğ´Ğ½Ğ°Ğ½Ğ¸Ñ… Ğ´Ğ¾ PCI ÑˆĞ¸Ğ½Ğ¸. Ğ”Ğ»Ñ Ñ€Ğ¾Ğ±Ğ¾Ñ‚Ğ¸ Ñ†Ñ– ÑƒÑ‚Ğ¸Ğ»Ñ–Ñ‚Ğ¸ Ğ¿Ğ¾Ñ‚Ñ€ĞµĞ±ÑƒÑÑ‚ÑŒ
+Ğ½Ğ°ÑĞ²Ğ½Ğ¾ÑÑ‚Ñ– Ñ–Ğ½Ñ‚ĞµÑ€Ñ„ĞµĞ¹ÑÑƒ /proc/bus/pci.
 
 %package devel
 Summary:	Linux PCI development library
-Summary(cs):	Linuxová vıvojová knihovna pro PCI
-Summary(da):	Linux PCI udviklingsbibliotek
-Summary(de):	Linux PCI-Entwicklungsbibliothek
-Summary(es):	Biblioteca de desarrollo para aplicaciones que trabajan con el bus PCI en Linux
-Summary(fr):	Bibliothèque de développement PCI Linux
-Summary(id):	Library pengembangan PCI Linux
-Summary(is):	PCI şróunarağgerğasafn fyrir Linux
-Summary(it):	Libreria di sviluppo PCI per Linux
-Summary(ja):	Linux PCI ³«È¯¥é¥¤¥Ö¥é¥ê
-Summary(ko):	Linux PCI °³¹ß¿ë ¶óÀÌºê·¯¸®
-Summary(nb):	Linux PCI utviklingsbibliotek
-Summary(pl):	Pliki developerskie pciutils
-Summary(pt):	Biblioteca de desenvolvimento para PCI do Linux
-Summary(pt_BR):	Biblioteca de desenvolvimentos para aplicações que trabalhem com o barramento PCI no Linux
-Summary(ru):	èÅÄÅÒÙ É ÄÒÕÇÉÅ ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ĞÒÏÇÒÁÍÍ, ÒÁÂÏÔÁÀİÉÈ Ó ÛÉÎÏÊ PCI
-Summary(sk):	Kni¾nica pre vıvoj PCI na Linuxe
-Summary(sl):	Razvojna knji¾nica za PCI v Linuxu
-Summary(sv):	Linux PCI utvecklignsbibliotek
-Summary(uk):	èÅÄÅÒÉ ÔÁ ¦ÎÛ¦ ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ĞÒÏÇÒÁÍ, İÏ ĞÒÁÃÀÀÔØ Ú ÛÉÎÏÀ PCI
-Summary(zh_CN):	Linux PCI ¿ª·¢³ÌĞò¿â¡£
+Summary(cs.UTF-8):   LinuxovÃ¡ vÃ½vojovÃ¡ knihovna pro PCI
+Summary(da.UTF-8):   Linux PCI udviklingsbibliotek
+Summary(de.UTF-8):   Linux PCI-Entwicklungsbibliothek
+Summary(es.UTF-8):   Biblioteca de desarrollo para aplicaciones que trabajan con el bus PCI en Linux
+Summary(fr.UTF-8):   BibliothÃ¨que de dÃ©veloppement PCI Linux
+Summary(id.UTF-8):   Library pengembangan PCI Linux
+Summary(is.UTF-8):   PCI Ã¾rÃ³unaraÃ°gerÃ°asafn fyrir Linux
+Summary(it.UTF-8):   Libreria di sviluppo PCI per Linux
+Summary(ja.UTF-8):   Linux PCI é–‹ç™ºãƒ©ã‚¤ãƒ–ãƒ©ãƒª
+Summary(ko.UTF-8):   Linux PCI ê°œë°œìš© ë¼ì´ë¸ŒëŸ¬ë¦¬
+Summary(nb.UTF-8):   Linux PCI utviklingsbibliotek
+Summary(pl.UTF-8):   Pliki developerskie pciutils
+Summary(pt.UTF-8):   Biblioteca de desenvolvimento para PCI do Linux
+Summary(pt_BR.UTF-8):   Biblioteca de desenvolvimentos para aplicaÃ§Ãµes que trabalhem com o barramento PCI no Linux
+Summary(ru.UTF-8):   Ğ¥ĞµĞ´ĞµÑ€Ñ‹ Ğ¸ Ğ´Ñ€ÑƒĞ³Ğ¸Ğµ Ñ„Ğ°Ğ¹Ğ»Ñ‹ Ğ´Ğ»Ñ Ñ€Ğ°Ğ·Ñ€Ğ°Ğ±Ğ¾Ñ‚ĞºĞ¸ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼, Ñ€Ğ°Ğ±Ğ¾Ñ‚Ğ°ÑÑ‰Ğ¸Ñ… Ñ ÑˆĞ¸Ğ½Ğ¾Ğ¹ PCI
+Summary(sk.UTF-8):   KniÅ¾nica pre vÃ½voj PCI na Linuxe
+Summary(sl.UTF-8):   Razvojna knjiÅ¾nica za PCI v Linuxu
+Summary(sv.UTF-8):   Linux PCI utvecklignsbibliotek
+Summary(uk.UTF-8):   Ğ¥ĞµĞ´ĞµÑ€Ğ¸ Ñ‚Ğ° Ñ–Ğ½ÑˆÑ– Ñ„Ğ°Ğ¹Ğ»Ğ¸ Ğ´Ğ»Ñ Ñ€Ğ¾Ğ·Ñ€Ğ¾Ğ±ĞºĞ¸ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼, Ñ‰Ğ¾ Ğ¿Ñ€Ğ°Ñ†ÑÑÑ‚ÑŒ Ğ· ÑˆĞ¸Ğ½Ğ¾Ñ PCI
+Summary(zh_CN.UTF-8):   Linux PCI å¼€å‘ç¨‹åºåº“ã€‚
 Group:		Development/Libraries
 Requires:	zlib-devel
 
@@ -162,76 +162,76 @@ Requires:	zlib-devel
 This package contains a library for inspecting and setting devices
 connected to the PCI bus.
 
-%description devel -l cs
-Tento balíèek obsahuje knihovny pro prohlí¾ení a nastavování zaøízení
-pøipojenıch k PCI sbìrnici.
+%description devel -l cs.UTF-8
+Tento balÃ­Äek obsahuje knihovny pro prohlÃ­Å¾enÃ­ a nastavovÃ¡nÃ­ zaÅ™Ã­zenÃ­
+pÅ™ipojenÃ½ch k PCI sbÄ›rnici.
 
-%description devel -l da
-Denne pakke indeholder et bibliotek for at inspektere og stælla in
+%description devel -l da.UTF-8
+Denne pakke indeholder et bibliotek for at inspektere og stÃ¦lla in
 enheder kopplade til PCI-bussen.
 
-%description devel -l de
-Dieses Paket enthält eine Bibliothek für das Überprüfen und
-Konfigurieren von Geräten, die an den PCI-Bus angeschlossen sind.
+%description devel -l de.UTF-8
+Dieses Paket enthÃ¤lt eine Bibliothek fÃ¼r das ÃœberprÃ¼fen und
+Konfigurieren von GerÃ¤ten, die an den PCI-Bus angeschlossen sind.
 
-%description devel -l es
+%description devel -l es.UTF-8
 Biblioteca de desarrollo para aplicaciones que trabajen con el bus PCI
 en Linux.
 
-%description devel -l fr
-Ce paquetage contient une bibliothèque permettant d'inspecter et de
-définir des périphériques connectés au bus PCI.
+%description devel -l fr.UTF-8
+Ce paquetage contient une bibliothÃ¨que permettant d'inspecter et de
+dÃ©finir des pÃ©riphÃ©riques connectÃ©s au bus PCI.
 
-%description devel -l id
+%description devel -l id.UTF-8
 Paket ini berisi library untuk mengamati dan mengeset device yang
 terhubung ke bus PCI.
 
-%description devel -l is
-Şessi pakki inniheldur ağgerğasafn til ağ skoğa og setja tæki tengd
-PCI rútunni.
+%description devel -l is.UTF-8
+Ãessi pakki inniheldur aÃ°gerÃ°asafn til aÃ° skoÃ°a og setja tÃ¦ki tengd
+PCI rÃºtunni.
 
-%description devel -l it
+%description devel -l it.UTF-8
 Questo pacchetto contiene una libreria per controllare e configurare i
 dispositivi collegati al bus PCI.
 
-%description devel -l ja
-¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï¡¢PCI ¥Ğ¥¹¤ËÀÜÂ³¤µ¤ì¤¿¥Ç¥Ğ¥¤¥¹¤ò¸¡ºº¡¢ÀßÄê
-¤¹¤ë¤¿¤á¤Î¥é¥¤¥Ö¥é¥ê¤¬´Ş¤Ş¤ì¤Æ¤¤¤Ş¤¹¡£
+%description devel -l ja.UTF-8
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ã¯ã€PCI ãƒã‚¹ã«æ¥ç¶šã•ã‚ŒãŸãƒ‡ãƒã‚¤ã‚¹ã‚’æ¤œæŸ»ã€è¨­å®š
+ã™ã‚‹ãŸã‚ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
 
-%description devel -l ko
-ÀÌ ÆĞÅ°Áö´Â PCI ¹ö½º¿¡ Á¢¼ÓµÈ ÀåÄ¡µéÀ» Á¶»çÇÏ°í ¼¼ÆÃÇÏ´Âµ¥ »ç¿ëµÇ´Â
-¶óÀÌºê·¯¸®¸¦ Æ÷ÇÔÇÏ°í ÀÖ½À´Ï´Ù.
+%description devel -l ko.UTF-8
+ì´ íŒ¨í‚¤ì§€ëŠ” PCI ë²„ìŠ¤ì— ì ‘ì†ëœ ì¥ì¹˜ë“¤ì„ ì¡°ì‚¬í•˜ê³  ì„¸íŒ…í•˜ëŠ”ë° ì‚¬ìš©ë˜ëŠ”
+ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ í¬í•¨í•˜ê³  ìˆìŠµë‹ˆë‹¤.
 
-%description devel -l pl
-Pakiet ten zawiera bibliotekê s³u¿±c± do badania i konfigurowania
-urz±dzeñ przy³±czonych do magistrali PCI.
+%description devel -l pl.UTF-8
+Pakiet ten zawiera bibliotekÄ™ sÅ‚uÅ¼Ä…cÄ… do badania i konfigurowania
+urzÄ…dzeÅ„ przyÅ‚Ä…czonych do magistrali PCI.
 
-%description devel -l pt
-Este pacote contém uma biblioteca para inspeccionar e configurar
+%description devel -l pt.UTF-8
+Este pacote contÃ©m uma biblioteca para inspeccionar e configurar
 dispositivos ligados ao bus PCI.
 
-%description devel -l pt_BR
-Biblioteca de desenvolvimentos para aplicações que trabalhem com o
+%description devel -l pt_BR.UTF-8
+Biblioteca de desenvolvimentos para aplicaÃ§Ãµes que trabalhem com o
 barramento PCI no Linux.
 
-%description devel -l ru
-üÔÏÔ ĞÁËÅÔ ÓÏÄÅÒÖÉÔ ÈÅÄÅÒÙ É ÄÒÕÇÉÅ ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ĞÒÏÇÒÁÍÍ
-ÉÎÓĞÅËÔÉÒÕÀİÉÈ É ËÏÎÆÉÇÕÒÉÒÕÀİÉÈ ÕÓÔÒÏÊÓÔ×Á, ĞÏÄËÌÀŞÅÎÎÙÅ Ë ÛÉÎÅ PCI.
+%description devel -l ru.UTF-8
+Ğ­Ñ‚Ğ¾Ñ‚ Ğ¿Ğ°ĞºĞµÑ‚ ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ¸Ñ‚ Ñ…ĞµĞ´ĞµÑ€Ñ‹ Ğ¸ Ğ´Ñ€ÑƒĞ³Ğ¸Ğµ Ñ„Ğ°Ğ¹Ğ»Ñ‹ Ğ´Ğ»Ñ Ñ€Ğ°Ğ·Ñ€Ğ°Ğ±Ğ¾Ñ‚ĞºĞ¸ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼
+Ğ¸Ğ½ÑĞ¿ĞµĞºÑ‚Ğ¸Ñ€ÑƒÑÑ‰Ğ¸Ñ… Ğ¸ ĞºĞ¾Ğ½Ñ„Ğ¸Ğ³ÑƒÑ€Ğ¸Ñ€ÑƒÑÑ‰Ğ¸Ñ… ÑƒÑÑ‚Ñ€Ğ¾Ğ¹ÑÑ‚Ğ²Ğ°, Ğ¿Ğ¾Ğ´ĞºĞ»ÑÑ‡ĞµĞ½Ğ½Ñ‹Ğµ Ğº ÑˆĞ¸Ğ½Ğµ PCI.
 
-%description devel -l sk
-Tento balík obsahuje kni¾nicu pre prehliadanie a nastavovanie
-zariadení pripojenıch na PCI zbernicu.
+%description devel -l sk.UTF-8
+Tento balÃ­k obsahuje kniÅ¾nicu pre prehliadanie a nastavovanie
+zariadenÃ­ pripojenÃ½ch na PCI zbernicu.
 
-%description devel -l sv
-Detta paket innehåller ett bibliotek för att inspektera och ställa in
+%description devel -l sv.UTF-8
+Detta paket innehÃ¥ller ett bibliotek fÃ¶r att inspektera och stÃ¤lla in
 enheter kopplade till PCI-bussen.
 
-%description devel -l uk
-ãÅÊ ĞÁËÅÔ Í¦ÓÔÉÔØ ÈÅÄÅÒÉ ÔÁ ¦ÎÛ¦ ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ĞÒÏÇÒÁÍ,İÏ
-¦ÎÓĞÅËÔÕÀÔØ ÔÁ ËÏÎÆ¦ÇÕÒÕÀÔØ ĞÒÉÓÔÒÏ§, Ğ¦Ä'¤ÄÎÁÎ¦ ÄÏ ÛÉÎÉ PCI.
+%description devel -l uk.UTF-8
+Ğ¦ĞµĞ¹ Ğ¿Ğ°ĞºĞµÑ‚ Ğ¼Ñ–ÑÑ‚Ğ¸Ñ‚ÑŒ Ñ…ĞµĞ´ĞµÑ€Ğ¸ Ñ‚Ğ° Ñ–Ğ½ÑˆÑ– Ñ„Ğ°Ğ¹Ğ»Ğ¸ Ğ´Ğ»Ñ Ñ€Ğ¾Ğ·Ñ€Ğ¾Ğ±ĞºĞ¸ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼,Ñ‰Ğ¾
+Ñ–Ğ½ÑĞ¿ĞµĞºÑ‚ÑƒÑÑ‚ÑŒ Ñ‚Ğ° ĞºĞ¾Ğ½Ñ„Ñ–Ğ³ÑƒÑ€ÑƒÑÑ‚ÑŒ Ğ¿Ñ€Ğ¸ÑÑ‚Ñ€Ğ¾Ñ—, Ğ¿Ñ–Ğ´'Ñ”Ğ´Ğ½Ğ°Ğ½Ñ– Ğ´Ğ¾ ÑˆĞ¸Ğ½Ğ¸ PCI.
 
-%description devel -l zh_CN
-´ËÈí¼ş°ü°üº¬Ò»¸ö³ÌĞò¿â£¬ÓÃÓÚ¼ì²éºÍÉèÖÃÓë PCI ×ÜÏßÁ¬½ÓµÄÉè±¸¡£
+%description devel -l zh_CN.UTF-8
+æ­¤è½¯ä»¶åŒ…åŒ…å«ä¸€ä¸ªç¨‹åºåº“ï¼Œç”¨äºæ£€æŸ¥å’Œè®¾ç½®ä¸ PCI æ€»çº¿è¿æ¥çš„è®¾å¤‡ã€‚
 
 %prep
 %setup -q
