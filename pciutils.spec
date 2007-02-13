@@ -1,20 +1,20 @@
 Summary:	Linux PCI utilities
-Summary(cs.UTF-8):   Linuxové utility pro PCI
-Summary(da.UTF-8):   PCI-bus-relaterede værktøjer
-Summary(de.UTF-8):   PCI-Bus verwandte Dienstprogramme
-Summary(es.UTF-8):   Utilitarios Linux para PCI
-Summary(fr.UTF-8):   Utilitaires relatifs au bus PCI
-Summary(it.UTF-8):   Utility correlate al bus PCI
-Summary(ja.UTF-8):   PCI バス関連ユーティリティ
-Summary(ko.UTF-8):   PCI 버스 관련 유틸리티들
-Summary(nb.UTF-8):   PCI-buss-relaterte verktøy
-Summary(pl.UTF-8):   Narzędzia do manipulacji ustawieniami urządzeń PCI
-Summary(pt.UTF-8):   Utilitários relacionados com o 'bus' PCI
-Summary(pt_BR.UTF-8):   Utilitários para PCI do Linux
-Summary(ru.UTF-8):   Утилиты работы с PCI устройствами
-Summary(sv.UTF-8):   PCI-bussrelaterade verktyg
-Summary(uk.UTF-8):   Утиліти роботи з PCI пристроями
-Summary(zh_CN.UTF-8):   PCI 总线相关的工具。
+Summary(cs.UTF-8):	Linuxové utility pro PCI
+Summary(da.UTF-8):	PCI-bus-relaterede værktøjer
+Summary(de.UTF-8):	PCI-Bus verwandte Dienstprogramme
+Summary(es.UTF-8):	Utilitarios Linux para PCI
+Summary(fr.UTF-8):	Utilitaires relatifs au bus PCI
+Summary(it.UTF-8):	Utility correlate al bus PCI
+Summary(ja.UTF-8):	PCI バス関連ユーティリティ
+Summary(ko.UTF-8):	PCI 버스 관련 유틸리티들
+Summary(nb.UTF-8):	PCI-buss-relaterte verktøy
+Summary(pl.UTF-8):	Narzędzia do manipulacji ustawieniami urządzeń PCI
+Summary(pt.UTF-8):	Utilitários relacionados com o 'bus' PCI
+Summary(pt_BR.UTF-8):	Utilitários para PCI do Linux
+Summary(ru.UTF-8):	Утилиты работы с PCI устройствами
+Summary(sv.UTF-8):	PCI-bussrelaterade verktyg
+Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
+Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	2.2.4
 Release:	1
@@ -135,26 +135,26 @@ kärnversion 2.1.82 eller senare (som stödjer gränssnittet
 
 %package devel
 Summary:	Linux PCI development library
-Summary(cs.UTF-8):   Linuxová vývojová knihovna pro PCI
-Summary(da.UTF-8):   Linux PCI udviklingsbibliotek
-Summary(de.UTF-8):   Linux PCI-Entwicklungsbibliothek
-Summary(es.UTF-8):   Biblioteca de desarrollo para aplicaciones que trabajan con el bus PCI en Linux
-Summary(fr.UTF-8):   Bibliothèque de développement PCI Linux
-Summary(id.UTF-8):   Library pengembangan PCI Linux
-Summary(is.UTF-8):   PCI þróunaraðgerðasafn fyrir Linux
-Summary(it.UTF-8):   Libreria di sviluppo PCI per Linux
-Summary(ja.UTF-8):   Linux PCI 開発ライブラリ
-Summary(ko.UTF-8):   Linux PCI 개발용 라이브러리
-Summary(nb.UTF-8):   Linux PCI utviklingsbibliotek
-Summary(pl.UTF-8):   Pliki developerskie pciutils
-Summary(pt.UTF-8):   Biblioteca de desenvolvimento para PCI do Linux
-Summary(pt_BR.UTF-8):   Biblioteca de desenvolvimentos para aplicações que trabalhem com o barramento PCI no Linux
-Summary(ru.UTF-8):   Хедеры и другие файлы для разработки программ, работающих с шиной PCI
-Summary(sk.UTF-8):   Knižnica pre vývoj PCI na Linuxe
-Summary(sl.UTF-8):   Razvojna knjižnica za PCI v Linuxu
-Summary(sv.UTF-8):   Linux PCI utvecklignsbibliotek
-Summary(uk.UTF-8):   Хедери та інші файли для розробки програм, що працюють з шиною PCI
-Summary(zh_CN.UTF-8):   Linux PCI 开发程序库。
+Summary(cs.UTF-8):	Linuxová vývojová knihovna pro PCI
+Summary(da.UTF-8):	Linux PCI udviklingsbibliotek
+Summary(de.UTF-8):	Linux PCI-Entwicklungsbibliothek
+Summary(es.UTF-8):	Biblioteca de desarrollo para aplicaciones que trabajan con el bus PCI en Linux
+Summary(fr.UTF-8):	Bibliothèque de développement PCI Linux
+Summary(id.UTF-8):	Library pengembangan PCI Linux
+Summary(is.UTF-8):	PCI þróunaraðgerðasafn fyrir Linux
+Summary(it.UTF-8):	Libreria di sviluppo PCI per Linux
+Summary(ja.UTF-8):	Linux PCI 開発ライブラリ
+Summary(ko.UTF-8):	Linux PCI 개발용 라이브러리
+Summary(nb.UTF-8):	Linux PCI utviklingsbibliotek
+Summary(pl.UTF-8):	Pliki developerskie pciutils
+Summary(pt.UTF-8):	Biblioteca de desenvolvimento para PCI do Linux
+Summary(pt_BR.UTF-8):	Biblioteca de desenvolvimentos para aplicações que trabalhem com o barramento PCI no Linux
+Summary(ru.UTF-8):	Хедеры и другие файлы для разработки программ, работающих с шиной PCI
+Summary(sk.UTF-8):	Knižnica pre vývoj PCI na Linuxe
+Summary(sl.UTF-8):	Razvojna knjižnica za PCI v Linuxu
+Summary(sv.UTF-8):	Linux PCI utvecklignsbibliotek
+Summary(uk.UTF-8):	Хедери та інші файли для розробки програм, що працюють з шиною PCI
+Summary(zh_CN.UTF-8):	Linux PCI 开发程序库。
 Group:		Development/Libraries
 Requires:	zlib-devel
 
