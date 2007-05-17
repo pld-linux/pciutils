@@ -29,6 +29,7 @@ Source2:	http://pciids.sourceforge.net/pci.ids
 Patch0:		%{name}-devel.patch
 Patch1:		%{name}-pci_h.patch
 Patch2:		%{name}-pcimodules.patch
+Patch3:		%{name}-LDFLAGS.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -238,6 +239,7 @@ enheter kopplade till PCI-bussen.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
@@ -259,6 +261,7 @@ cp -rf lib pci
 %{__make} \
 	CC="%{__cc}" \
 	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
+	LDFLAGS="%{rpmldflags}" \
 	SHAREDIR=%{_sysconfdir}
 
 %install
