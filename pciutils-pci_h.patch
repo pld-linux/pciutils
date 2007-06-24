@@ -11,25 +11,3 @@
  
  #ifdef PCI_OS_WINDOWS
  #include "compat/getopt.h"
---- pciutils/Makefile.org	2005-09-21 21:52:22.329188000 +0200
-+++ pciutils/Makefile	2005-09-21 21:53:09.760152250 +0200
-@@ -15,7 +15,7 @@
- INSTALL=install
- DIRINSTALL=install -d
- PCILIB=lib/libpci.a
--PCIINC=lib/config.h lib/header.h lib/pci.h lib/types.h lib/sysdep.h
-+PCIINC=pci/config.h lib/config.h lib/header.h lib/pci.h lib/types.h lib/sysdep.h
- 
- ifeq ($(shell uname),NetBSD)
- PCILIB=libpciutils.a
-@@ -43,6 +43,9 @@
- lib/config.h:
- 	cd lib && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
- 
-+pci/config.h:
-+	cd pci && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
-+
- lspci: lspci.o common.o $(PCILIB)
- setpci: setpci.o common.o $(PCILIB)
- 
-
