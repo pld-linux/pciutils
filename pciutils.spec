@@ -16,19 +16,18 @@ Summary(sv.UTF-8):	PCI-bussrelaterade verktyg
 Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
-Version:	2.2.8
-Release:	1
-License:	GPL
+Version:	2.2.9
+Release:	2
+License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	c0b742521a13ef624b9a0a237f46c1c8
+# Source0-md5:	b3700c60b8b341b593d3c3f274caefb3
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pciids.sourceforge.net/pci.ids
-# NoSource2-md5:	e83cd52ed8a7c87a212f6bf8313ae59c
+# NoSource2-md5:	f6b2aef20568e6a86444ef0e06f9a785
 Patch0:		%{name}-pci_h.patch
 Patch1:		%{name}-pcimodules.patch
-Patch2:		%{name}-LDFLAGS.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -237,7 +236,6 @@ enheter kopplade till PCI-bussen.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ "`wc -l < %{SOURCE2}`" -lt "`wc -l < pci.ids`" ] ; then
@@ -270,7 +268,6 @@ ln -sf lib pci
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT{%{_sbindir},%{_datadir},%{_mandir}/man8,%{_libdir},%{_includedir}/pci}
 
 %{__make} install install-lib \
 	DESTDIR=$RPM_BUILD_ROOT \
