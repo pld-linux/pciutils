@@ -1,0 +1,4 @@
+- version 2.1.10, release 1
+- removed obsolete patch (pciutils-pcix.patch)
+- using pci.ids snapshot instead of enclosed into tarball
+  STBR
