@@ -1,0 +1,4 @@
+- added -fomit-frame-pointer tp OPT in %build (lspci segfautls sometimes
+  otherwise)
+- s/-p/-P/ in lspci.man (pciutils-man.patch)
+- release 2, STBR
