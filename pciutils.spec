@@ -249,10 +249,14 @@ cp -f %{SOURCE2} .
 ln -sf lib pci
 
 %build
+%define	config	ZLIB=yes DNS=yes SHARED=no
+
 %{__make} lib/config.h \
+	%{config} \
 	SHAREDIR=%{_datadir}
 
 %{__make} -C lib \
+	%{config} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -fPIC" \
 	RANLIB=ranlib \
@@ -263,6 +267,7 @@ ln -sf lib pci
 	VERSION=%{version}
 
 %{__make} \
+	%{config} \
 	CC="%{__cc}" \
 	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
 	LDFLAGS="%{rpmldflags}" \
