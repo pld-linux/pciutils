@@ -1,21 +1,21 @@
 --- pciutils-2.2.4/Makefile.orig	2006-09-13 00:46:05.065201750 +0200
 +++ pciutils-2.2.4/Makefile	2006-09-13 00:47:30.430536750 +0200
-@@ -24,7 +24,7 @@
+@@ -50,7 +50,7 @@
  
  export
  
--all: $(PCILIB) lspci setpci lspci.8 setpci.8 update-pciids update-pciids.8 $(PCI_IDS)
-+all: $(PCILIB) lspci setpci pcimodules lspci.8 setpci.8 update-pciids update-pciids.8 $(PCI_IDS)
+-all: lib/$(PCILIB) lspci setpci example lspci.8 setpci.8 pcilib.7 update-pciids update-pciids.8 $(PCI_IDS)
++all: lib/$(PCILIB) lspci setpci pcimodules example lspci.8 setpci.8 pcilib.7 update-pciids update-pciids.8 $(PCI_IDS)
  
- $(PCILIB): $(PCIINC) force
+ lib/$(PCILIB): $(PCIINC) force
  	$(MAKE) -C lib all
-@@ -37,6 +37,7 @@
- pci/config.h:
- 	cd pci && ./configure $(IDSDIR) $(VERSION) $(HOST) $(RELEASE)
+@@ -60,6 +60,7 @@
+ lib/config.h lib/config.mk:
+ 	cd lib && ./configure
  
-+pcimodules: pcimodules.o common.o $(PCILIB)
- lspci: lspci.o common.o $(PCILIB)
- setpci: setpci.o common.o $(PCILIB)
++pcimodules: pcimodules.o common.o lib/$(PCILIB)
+ lspci: lspci.o common.o lib/$(PCILIB)
+ setpci: setpci.o common.o lib/$(PCILIB)
  
 --- pciutils-2.1.11/pcimodules.c.pix	2003-01-04 23:06:00.000000000 +0100
 +++ pciutils-2.1.11/pcimodules.c	2003-01-04 23:06:00.000000000 +0100
