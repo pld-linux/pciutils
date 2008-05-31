@@ -275,7 +275,7 @@ ln -sf lib pci
 	INCDIR=%{_includedir} \
 	LIBDIR=%{_libdir}
 
-rm -f lib/*.o lib/config.h lib/config.mk
+rm -f lib/*.o lib/config.h lib/config.mk lib/libpci.pc
 
 %{__make} \
 	%{config} \
