@@ -38,6 +38,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_datadir	/etc
 %define		_sbindir	/sbin
 
+%define		specflags	-fomit-frame-pointer
+
 %description
 This package contains various utilities for inspecting and setting of
 devices connected to the PCI bus. Requires kernel version 2.1.82 or
@@ -156,6 +158,7 @@ Summary(sv.UTF-8):	Linux PCI utvecklignsbibliotek
 Summary(uk.UTF-8):	Хедери та інші файли для розробки програм, що працюють з шиною PCI
 Summary(zh_CN.UTF-8):	Linux PCI 开发程序库。
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 Requires:	zlib-devel
 
 %description devel
@@ -233,6 +236,18 @@ enheter kopplade till PCI-bussen.
 %description devel -l zh_CN.UTF-8
 此软件包包含一个程序库，用于检查和设置与 PCI 总线连接的设备。
 
+%package static
+Summary:	Static version of PCI library
+Summary(pl.UTF-8):	Statyczna wersja biblioteki PCI
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static version of PCI library.
+
+%description static -l pl.UTF-8
+Statyczna wersja biblioteki PCI.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -249,29 +264,28 @@ cp -f %{SOURCE2} .
 ln -sf lib pci
 
 %build
-%define	config	ZLIB=yes DNS=yes SHARED=no
+%define	config	ZLIB=yes DNS=yes SHARED=yes
 
-%{__make} lib/config.h \
-	%{config} \
-	SHAREDIR=%{_datadir}
-
-%{__make} -C lib \
-	%{config} \
+%{__make} lib/libpci.a \
+	ZLIB=yes DNS=yes SHARED=no \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -fPIC" \
-	RANLIB=ranlib \
+	OPT="%{rpmcflags}" \
 	PREFIX=%{_prefix} \
 	IDSDIR=%{_datadir} \
 	INCDIR=%{_includedir} \
-	LIBDIR=%{_libdir} \
-	VERSION=%{version}
+	LIBDIR=%{_libdir}
+
+rm -f lib/*.o lib/config.h lib/config.mk
 
 %{__make} \
 	%{config} \
 	CC="%{__cc}" \
-	OPT="%{rpmcflags} %{!?debug:-fomit-frame-pointer}" \
+	OPT="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}" \
-	SHAREDIR=%{_datadir}
+	PREFIX=%{_prefix} \
+	IDSDIR=%{_datadir} \
+	INCDIR=%{_includedir} \
+	LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -284,6 +298,15 @@ rm -rf $RPM_BUILD_ROOT
 	SHAREDIR=%{_datadir} \
 	PCI_IDS=pci.ids
 
+install -d $RPM_BUILD_ROOT/%{_lib}
+mv $RPM_BUILD_ROOT%{_libdir}/libpci.so.* $RPM_BUILD_ROOT/%{_lib}
+# let rpm find deps
+chmod 755 $RPM_BUILD_ROOT/%{_lib}/libpci.so.*
+ln -sf $(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT/%{_lib}/libpci.so.3
+ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT%{_libdir}/libpci.so
+
+install lib/libpci.a $RPM_BUILD_ROOT%{_libdir}
+
 install pcimodules $RPM_BUILD_ROOT%{_sbindir}
 # private pciutils header, what does it use?
 install pciutils.h $RPM_BUILD_ROOT%{_includedir}/pci
@@ -295,19 +318,33 @@ rm -f $RPM_BUILD_ROOT%{_mandir}/{README.pciutils-non-english-man-pages,/pciutils
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
+%attr(755,root,root) %{_sbindir}/lspci
+%attr(755,root,root) %{_sbindir}/setpci
+%attr(755,root,root) %{_sbindir}/pcimodules
+%attr(755,root,root) %{_sbindir}/update-pciids
+%attr(755,root,root) /%{_lib}/libpci.so.*.*.*
+%attr(755,root,root) %ghost /%{_lib}/libpci.so.3
 %{_datadir}/pci.ids
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man7/*
-%{_mandir}/man8/*
+%{_mandir}/man7/pcilib.7*
+%{_mandir}/man8/lspci.8*
+%{_mandir}/man8/setpci.8*
+%{_mandir}/man8/update-pciids.8*
 %lang(ja) %{_mandir}/ja/man8/*
 %lang(pl) %{_mandir}/pl/man8/*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libpci.a
+%attr(755,root,root) %{_libdir}/libpci.so
 %dir %{_includedir}/pci
 %{_includedir}/pci/*.h
 %{_pkgconfigdir}/libpci.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libpci.a
