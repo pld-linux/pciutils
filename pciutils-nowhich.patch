@@ -1,5 +1,5 @@
---- pciutils-2.2.9/update-pciids.sh~	2006-09-09 13:36:17.000000000 +0300
-+++ pciutils-2.2.9/update-pciids.sh	2008-04-15 03:40:37.506541329 +0300
+--- pciutils-3.0.3/update-pciids.sh~	2008-11-27 17:46:09.000000000 +0100
++++ pciutils-3.0.3/update-pciids.sh	2008-11-27 17:49:47.000000000 +0100
 @@ -19,23 +19,23 @@
  	DECOMP="cat"
  	SRC="$SRC.gz"
@@ -21,8 +21,8 @@
  	DL="curl -o $DEST.new $SRC"
      ${quiet} && DL="$DL -s -S"
 -elif which wget >/dev/null 2>&1 ; then
-+elif [ -x /usr/bin/wget ]; then
- 	DL="wget -O $DEST.new $SRC"
++elif [ -x /usr/bin/curl ]; then
+ 	DL="wget --no-timestamping -O $DEST.new $SRC"
  	${quiet} && DL="$DL -q"
 -elif which lynx >/dev/null 2>&1 ; then
 +elif [ -x /usr/bin/lynx ]; then
