@@ -14,7 +14,7 @@
  	cd lib && ./configure
  
 +pcimodules: pcimodules.o common.o lib/$(PCILIB)
- lspci: lspci.o common.o lib/$(PCILIB)
+ lspci: lspci.o ls-vpd.o ls-caps.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o lib/$(PCILIB)
  setpci: setpci.o common.o lib/$(PCILIB)
  
 --- pciutils-2.1.11/pcimodules.c.pix	2003-01-04 23:06:00.000000000 +0100
