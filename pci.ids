@@ -1,8 +1,8 @@
 #
 #	List of PCI ID's
 #
-#	Version: 2009.01.30
-#	Date:    2009-01-30 14:17:35
+#	Version: 2009.02.20
+#	Date:    2009-02-20 03:15:01
 #
 #	Maintained by Martin Mares <mj@ucw.cz> and other volunteers from the
 #	PCI ID Project at http://pciids.sf.net/.
@@ -610,12 +610,14 @@
 		103c 308b  MX6125
 		105b 0c81  Realtek ALC 653
 		107b 0300  MX6421
+		1462 0131  MS-1013 Notebook
 	4371  IXP SB400 PCI-PCI Bridge
 		103c 308b  MX6125
 		1462 7217  Aspire L250
 	4372  IXP SB400 SMBus Controller
 		1025 0080  Aspire 5024WLMMi
 		103c 308b  MX6125
+		1462 0131  MS-1013 Notebook
 		1462 7217  Aspire L250
 	4373  IXP SB400 USB2 Host Controller
 		1025 0080  Aspire 5024WLMMi
@@ -631,6 +633,7 @@
 	4376  IXP SB400 IDE Controller
 		1025 0080  Aspire 5024WLMMi
 		103c 308b  MX6125
+		1462 0131  MS-1013 Notebook
 		1462 7217  Aspire L250
 	4377  IXP SB400 PCI-ISA Bridge
 		1025 0080  Aspire 5024WLMi
@@ -639,6 +642,7 @@
 	4378  SB400 AC'97 Modem Controller
 		1025 0080  Aspire 5024WLMMi
 		103c 308b  MX6125
+		1462 0131  MS-1013 Notebook
 	4379  IXP SB400 Serial ATA Controller
 		1462 7141  Aspire L250
 	437a  IXP SB400 Serial ATA Controller
@@ -1169,6 +1173,7 @@
 		1025 0080  Aspire 5024WLMMi
 		103c 280a  DC5750 Microtower
 		103c 308b  MX6125
+		1462 0131  MS-1013 Notebook
 		1462 7217  Aspire L250
 	5951  Radeon Xpress 200 (RS480/RS482/RX480/RX482) Chipset - Host bridge
 	5952  RD580 [CrossFire Xpress 3200] Chipset Host Bridge
@@ -1177,6 +1182,7 @@
 	5955  Radeon XPRESS 200M 5955 (PCIE)
 		1002 5955  RS480 0x5955 [Radeon XPRESS 200M 5955 (PCIE)]
 		103c 308b  MX6125
+		1462 0131  MS-1013 Notebook
 	5956  RD790 Northbridge only dual slot PCI-e_GFX and HT3 K8 part
 	5957  RX780/RX790 Chipset Host Bridge
 	5958  RD780 Northbridge only dual slot PCI-e_GFX and HT1 K8 part
@@ -1484,6 +1490,7 @@
 	9443  R700 [Radeon HD 4850]
 	944a  M98L [Mobility Radeon HD 4850]
 	944c  RV770 LE [Radeon HD 4800 Series]
+	9450  RV770 [FireStream 9270]
 	9452  RV770 [FireStream 9250]
 	945a  M98 XT [Mobility Radeon HD 4870]
 	9480  M96 [Mobility Radeon HD 4650]
@@ -1516,6 +1523,7 @@
 	954f  RV710 [Radeon HD 4350]
 	9552  M92 LP [Mobility Radeon HD 4300 Series]
 	9553  M92 [Mobility Radeon HD 4500 Series]
+	9555  M93 [Mobility Radeon HD 4500 Series]
 	9559  Mobility Radeon HD 3600 Series
 	9581  M76 [Radeon Mobility HD 2600 Series]
 	9583  M76XT [Mobility Radeon HD 2600 XT]
@@ -1540,6 +1548,7 @@
 	95c5  Mobility Radeon HD 3450
 		1002 95c5  Mobility Radeon HD 3450
 	95c6  RV620 LE AGP [Radeon HD 3450]
+	95c9  RV620 PCI [Radeon HD 3450]
 	95cc  RV620 [ATI FireGL V3700]
 	95ce  RV620 [FirePro 2260]
 	95cf  RV620 [FirePro 2260]
@@ -1549,6 +1558,7 @@
 	9612  RS780M/RS780MN [Radeon HD 3200 Graphics]
 	9613  RS780MC [Radeon HD 3100 Graphics]
 	9614  Radeon HD 3300 Graphics
+	9615  RS780E [AMD 780E]
 	9616  760G [Radeon 3000]
 	aa00  R600 Audio Device [Radeon HD 2900 Series]
 	aa08  RV630/M76 audio device [Radeon HD 2600 Series]
@@ -4349,6 +4359,7 @@
 		10b5 3353  Alpermann+Velte PCL PCIe D: Timecode Reader Board
 		10b5 3354  Alpermann+Velte PCL PCIe LV: Timecode Reader Board
 		10b5 3355  Alpermann+Velte PCL PCIe L: Timecode Reader Board
+		10b5 3415  Alpermann+Velte PCIe TS: Time Synchronisation Board
 		1369 c001  LX6464ES
 		1369 c201  LX1616ES
 		14b4 d140  Dektec DTA-140
@@ -5801,27 +5812,39 @@
 	0533  GeForce 7000M (rev a2)
 	053a  GeForce 7050 PV / nForce 630a
 	053b  GeForce 7050 PV / nForce 630a
+		1043 8308  M2N68-AM Motherbord
 	053e  GeForce 7025
 	0541  MCP67 Memory Controller
 	0542  MCP67 SMBus
+		1043 8308  M2N68-AM Motherbord
 	0543  MCP67 Co-processor
 	0547  MCP67 Memory Controller
+		1043 8308  M2N68-AM Motherbord
 		1849 0547  ALiveNF7G-HDready
 	0548  MCP67 ISA Bridge
+		1043 8308  M2N68-AM Motherboard
 	054c  MCP67 Ethernet
+		1043 8308  M2N68-AM Motherbord
 		1849 054c  ALiveNF7G-HDready, MCP67 Gigabit Ethernet
 	054d  MCP67 Ethernet
 	054e  MCP67 Ethernet
 # forcedeth source code from Nvidi
 	054f  MCP67 Ethernet
 	0550  MCP67 AHCI Controller
+		1043 8308  M2N68-AM Motherboard
 	0554  MCP67 AHCI Controller
+		1043 8308  M2N68-AM Motherboard
 	0555  MCP67 SATA Controller
+		1043 8308  M2N68-AM Motherboard
 	055c  MCP67 High Definition Audio
+		1043 8290  M2N68-AM Motherboard
 	055d  MCP67 High Definition Audio
 	055e  MCP67 OHCI USB 1.1 Controller
+		1043 8308  M2N68-AM Motherboard
 	055f  MCP67 EHCI USB 2.0 Controller
+		1043 8308  M2N68-AM Motherboard
 	0560  MCP67 IDE Controller
+		f043 8308  M2N68-AM Motherboard
 	0561  MCP67 PCI Bridge
 	0562  MCP67 PCI Express Bridge
 		1849 0562  ALiveNF7G-HDready
@@ -5839,6 +5862,7 @@
 	05be  PCI express bridge for Quadro Plex S4 / Tesla S870 / Tesla S1070
 	05e1  GT200 [GTX280]
 	05e2  GT200 [GTX260-216]
+	05e3  GeForce GTX 285
 	05e7  GT200 [Tesla C1060 / Tesla S1070]
 	05f9  Quadro CX
 	05fd  Quadro FX 5800
@@ -5865,6 +5889,7 @@
 	0622  G94 [GeForce 9600 GT]
 		1458 3481  GV-NX96T512HP
 	0623  GeForce 9600 GS
+	0625  GeForce 9600 GSO
 	063a  Quadro FX 2700M
 	0640  GeForce 9500 GT
 	0641  D9M-20 [GeForce 9400 GT]
@@ -6068,6 +6093,8 @@
 	f0e5  Zephyr LightPulse Fibre Channel Host Adapter
 	f0f5  Neptune LightPulse Fibre Channel Host Adapter
 	f100  Saturn-X: LightPulse Fibre Channel Host Adapter
+	f111  Saturn-X LightPulse Fibre Channel Host Adapter
+	f112  Saturn-X LightPulse Fibre Channel Host Adapter
 	f700  LP7000 Fibre Channel Host Adapter
 	f701  LP7000 Fibre Channel Host Adapter Alternate ID (JX1:2-3, JX2:1-2)
 	f800  LP8000 Fibre Channel Host Adapter
@@ -6086,8 +6113,12 @@
 	fc40  Saturn-X: LightPulse Fibre Channel Host Adapter
 	fc50  Proteus-X: LightPulse IOV Fibre Channel Host Adapter
 	fd00  Helios-X LightPulse Fibre Channel Host Adapter
+	fd11  Helios-X LightPulse Fibre Channel Host Adapter
+	fd12  Helios-X LightPulse Fibre Channel Host Adapter
 	fe00  Zephyr-X LightPulse Fibre Channel Host Adapter
 	fe05  Zephyr-X: LightPulse FCoE Adapter
+	fe11  Zephyr-X LightPulse Fibre Channel Host Adapter
+	fe12  Zephyr-X LightPulse FCoE Adapter
 	ff00  Neptune LightPulse Fibre Channel Host Adapter
 10e0  Integrated Micro Solutions Inc.
 	5026  IMS5026/27/28
@@ -6203,7 +6234,6 @@
 		1043 8109  P5P800-MX Mainboard
 		1071 8160  MIM2000
 		10bd 0320  EP-320X-R
-		10ec 8139  RT8139
 		10f7 8338  Panasonic CF-Y5 laptop
 		1113 ec01  FNC-0107TX
 		1186 1300  DFE-538TX
@@ -6219,6 +6249,7 @@
 		1436 8139  RT8139
 		144d c00c  P30/P35 notebook
 		1458 e000  GA-7VM400M/7VT600 Motherboard
+		1462 0131  MS-1013 Notebook
 		1462 217c  Aspire L250
 		1462 788c  865PE Neo2-V Mainboard
 		146c 1439  FE-1439TX
@@ -6389,7 +6420,6 @@
 	7005  SB Audigy LS Game Port
 		1102 1001  SB0310 Audigy LS MIDI/Game port
 		1102 1002  SB0312 Audigy LS MIDI/Game port
-	8064  SB0100 [SBLive! 5.1 OEM]
 	8938  Ectiva EV1938
 		1033 80e5  SlimTower-Jim (NEC)
 		1071 7150  Mitac 7150
@@ -9787,6 +9817,9 @@
 	0302  TCR167PCI IRIG Timecode Reader
 	0303  TCR511PCI IRIG Timecode Reader
 	0304  TCR511PEX IRIG Timecode Reader (PCI Express)
+	0305  TCR170PEX IRIG Timecode Reader (PCI Express)
+	0501  PTP270PEX PTP/IEEE1588 slave card (PCI Express)
+	0601  FRC511PEX Free Running Clock (PCI Express)
 1361  Soliton Systems K.K.
 1362  Fujifacom Corporation
 1363  Phoenix Technology Ltd
@@ -10028,6 +10061,9 @@
 	0010  SyncLink Adapter v1
 	0020  SyncLink SCC Adapter
 	0030  SyncLink Multiport Adapter
+	0070  SyncLink GT Adapter
+	0080  SyncLink GT4 Adapter
+	00a0  SyncLink GT2 Adapter
 	0210  SyncLink Adapter v2
 13c1  3ware Inc
 	1000  5xxx/6xxx-series PATA-RAID
@@ -10152,6 +10188,7 @@
 		1043 82b7  Virtuoso 200 (Xonar D2X)
 		1043 8314  Virtuoso 200 (Xonar HDAV1.3)
 		1043 834f  Virtuoso 100 (Xonar D1)
+		1043 835c  Virtuoso 100 (Xonar Essence STX)
 		14c3 1710  HIFIER
 		1a58 0910  Barracuda AC-1
 		415a 5431  X-Meridian 7.1
@@ -11437,6 +11474,7 @@
 		18ac d820  DViCO FusionHDTV3 Gold-T
 		18ac db00  DVICO FusionHDTV DVB-T1
 	8852  CX23885 PCI Video and Audio Decoder
+		0070 8010  Hauppauge WinTV HVR-1400 ExpressCard
 		1461 c039  AVerTV Hybrid Express (A577)
 14f2  MOBILITY Electronics
 	0120  EV1000 bridge
@@ -12737,7 +12775,7 @@
 1a77  Lightfleet Corporation
 1a78  Virident Systems Inc.
 1a84  Commex Technologies
-	0001  Thunder 10 Gigabit ethernet
+	0001  Vulcan SP HT6210 10 Gigabit Ethernet (rev 02)
 1a8c  Verigy Pte. Ltd.
 	1100  E8001-66443 PCI Express CIC
 1a8e  DRS Technologies
@@ -12762,12 +12800,12 @@
 1af4  Qumranet, Inc.
 	1000  Virtio network device
 	1001  Virtio block device
+	1002  Virtio memory balloon
+	1003  Virtio console
 1af5  Netezza Corp.
 1afa  J & W Electronics Co., Ltd.
 1b13  Jaton Corp
 1b36  Red Hat, Inc.
-	1000  Virtio network device
-	1001  Virtio block device
 1b3e  Teradata Corp.
 	1fa8  BYNET BIC2SE/X
 		1b3e 00a3  BYNET BIC2SX
@@ -15224,6 +15262,7 @@
 		1462 7235  P965 Neo MS-7235 mainboard
 	2828  82801HBM/HEM (ICH8M/ICH8M-E) SATA IDE Controller
 		1028 01f3  Inspiron 1420
+		103c 30c0  Compaq 6710b
 		e4bf cc47  CCG-RUMBA
 	2829  82801HBM/HEM (ICH8M/ICH8M-E) SATA AHCI Controller
 		1025 0121  Aspire 5920G
@@ -16888,6 +16927,8 @@ edd8  ARK Logic Inc
 	a099  2000PV [Stingray]
 	a0a1  2000MT
 	a0a9  2000MI
+# Found on M2N68-AM Motherboard
+f043  ASUSTeK Computer Inc. (Wrong ID)
 f05b  Foxconn International, Inc. (Wrong ID)
 f1d0  AJA Video
 	c0fe  Xena HS/HD-R
