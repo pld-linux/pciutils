@@ -226,7 +226,7 @@
 +.IP
 +	for module in $(pcimodules) ; do
 +.IP
-+		modprobe -s -k "$module"
++		modprobe -s "$module"
 +.IP
 +	done
 +.PP
