@@ -16,12 +16,12 @@ Summary(sv.UTF-8):	PCI-bussrelaterade verktyg
 Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
-Version:	3.1.5
+Version:	3.1.6
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	6b25e3abce2efec188974fbc0ebaf575
+# Source0-md5:	96c46bad23fb05d96941f2d848613242
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pci-ids.ucw.cz/v2.2/pci.ids
@@ -268,7 +268,7 @@ ln -sf lib pci
 %{__make} lib/libpci.a \
 	ZLIB=yes DNS=yes SHARED=no \
 	CC="%{__cc}" \
-	OPT="%{rpmcflags}" \
+	OPT="%{rpmcppflags} %{rpmcflags}" \
 	PREFIX=%{_prefix} \
 	IDSDIR=%{_datadir} \
 	INCDIR=%{_includedir} \
