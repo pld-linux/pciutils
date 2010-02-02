@@ -1,8 +1,8 @@
 #
 #	List of PCI ID's
 #
-#	Version: 2010.01.19
-#	Date:    2010-01-19 10:18:08
+#	Version: 2010.01.28
+#	Date:    2010-01-28 03:15:02
 #
 #	Maintained by Martin Mares <mj@ucw.cz> and other volunteers from the
 #	PCI ID Project at http://pciids.sf.net/.
@@ -3443,6 +3443,7 @@
 	8039  CXD3222 i.LINK Controller
 	8056  Rockwell HCF 56K modem
 	808a  Memory Stick Controller
+	81ce  SxS Pro memory card
 104e  Oak Technology, Inc
 	0017  OTI-64017
 	0107  OTI-107 [Spitfire]
@@ -6320,6 +6321,7 @@
 	0871  C79 [GeForce 9200]
 	0872  C79 [GeForce G102M]
 	0873  C79 [GeForce G102M]
+	0876  ION VGA [GeForce 9400M]
 	087a  C79 [Quadro FX 470]
 	087d  ION VGA
 	087e  ION LE VGA
@@ -6974,7 +6976,7 @@
 		10bd 0000  VT86C100A Fast Ethernet Adapter
 		1106 0100  VT86C100A Fast Ethernet Adapter
 		1186 1400  DFE-530TX rev A
-	3044  VT6306 Fire II IEEE 1394 OHCI Link Layer Controller
+	3044  VT6306/7/8 [Fire II(M)] IEEE 1394 OHCI Controller
 		0010 0001  IEEE 1394 4port DCST 1394-3+1B
 		1025 005a  TravelMate 290
 		1043 808a  A8V/A8N/P4P800 series motherboard
@@ -12449,10 +12451,21 @@
 1641  MKNet Corp.
 1657  Brocade Communications Systems, Inc.
 	0013  425 4Gb/825 8Gb PCIe Dual port FC HBA
+		103c 1742  HP 82B 8Gbps dual port FC HBA
+		103c 1744  HP 42B 4Gbps dual port FC HBA
+		1657 0014  425/825 4Gbps/8Gbps PCIe dual port FC HBA
 	0014  BR-1020 FC/FCOE 10GB Eth / FC over Eth
+		1657 0014  1010/1020/1007 10Gbps CNA - FCOE
+		1657 0015  1010/1020/1007 10Gbps CNA - LL
 	0017  415 4Gb/815 8Gb PCIe FC HBA
+		103c 1741  HP 41B 4Gbps single port FC HBA
+		103c 1743  HP 81B 8Gbps single port FC HBA
+		1657 0014  415/815 4Gbps/8Gbps single port PCIe FC HBA
+	0021  8Gbps FC HBA
+		1657 0014  8Gbps FC HBA
+		1657 1779  804 8Gbps FC HBA for HP Bladsystem c-class
 # Same Device_ID used for 410 (1port) and 420 (2 port) HBAs.
-	0646  Brocade 400 4Gb PCIe FC HBA
+	0646  400 4Gbps PCIe FC HBA
 165a  Epix Inc
 	c100  PIXCI(R) CL1 Camera Link Video Capture Board [custom QL5232]
 	d200  PIXCI(R) D2X Digital Video Capture Board [custom QL5232]
@@ -13152,6 +13165,7 @@
 		1924 6202  SFN5122F-R2
 		1924 6203  SFN5122F-R3
 		1924 6204  SFN5122F-R4
+		1924 6205  SFN5122F-R5
 	0813  SFL9021 [Solarstorm]
 		1924 6100  SFN5121T-R0
 	6703  SFC4000 rev A iSCSI/Onload [Solarstorm]
@@ -13300,6 +13314,10 @@
 	2387  SD/MMC Host Controller
 	2388  MS Host Controller
 	2389  xD Host Controller
+	2391  Standard SD Host Controller
+	2392  SD/MMC Host Controller
+	2393  MS Host Controller
+	2394  xD Host Controller
 1982  Distant Early Warning Communications Inc
 	1600  OX16C954 HOST-A
 	16ff  OX16C954 HOST-B
@@ -13413,8 +13431,10 @@
 	0e44  microEnable IV-GigE x4
 1aec  Wolfson Microelectronics
 1aed  Fusion-io
-	1003  ioDrive (NAND Flash Storage)
-	1005  ioDIMM3 320GB
+	1003  ioDimm3 (v1.2)
+	1005  ioDimm3
+	1006  ioXtreme
+	1007  ioXtreme Pro
 1aee  Caustic Graphics Inc.
 1af4  Qumranet, Inc.
 	1000  Virtio network device
