@@ -17,7 +17,7 @@ Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	3.1.7
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -28,6 +28,7 @@ Source2:	http://pci-ids.ucw.cz/v2.2/pci.ids
 Patch0:		%{name}-pci_h.patch
 Patch1:		%{name}-pcimodules.patch
 Patch2:		%{name}-nowhich.patch
+Patch3:		%{name}-pci_init-error.patch
 URL:		http://mj.ucw.cz/pciutils.html
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -252,6 +253,7 @@ Statyczna wersja biblioteki PCI.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ $(wc -l < %{SOURCE2}) -lt $(wc -l < pci.ids) ] ; then
