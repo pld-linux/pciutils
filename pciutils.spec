@@ -25,6 +25,7 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Source2:	http://pci-ids.ucw.cz/v2.2/pci.ids
+# NoSource2-md5:	0052179355f31132a9365114378598ec
 Patch0:		%{name}-pci_h.patch
 Patch1:		%{name}-pcimodules.patch
 Patch2:		%{name}-nowhich.patch
