@@ -17,27 +17,28 @@ Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	3.1.10
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
 # Source0-md5:	cdb1e5a95ab7ac67349f10c8f77a6d3c
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
-Source2:	http://pci-ids.ucw.cz/v2.2/pci.ids
-# NoSource2-md5:	0052179355f31132a9365114378598ec
 Patch0:		%{name}-pci_h.patch
 Patch1:		%{name}-pcimodules.patch
 Patch2:		%{name}-nowhich.patch
 Patch3:		%{name}-pci_init-error.patch
+Patch4:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
+BuildRequires:	hwdata >= 0.243
 BuildRequires:	zlib-devel
+Requires:	hwdata >= 0.243
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
 %define		_libdir		%{_prefix}/%{_lib}
-%define		_datadir	/etc
 %define		_sbindir	/sbin
+%define		hwdatadir	/usr/share/hwdata
 
 %define		specflags	-fomit-frame-pointer
 
@@ -255,25 +256,25 @@ Statyczna wersja biblioteki PCI.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
-if [ $(wc -l < %{SOURCE2}) -lt $(wc -l < pci.ids) ] ; then
+if [ pci.ids -nt %{hwdatadir}/pci.ids ]; then
 	: pci.ids needs to be updated
 	exit 1
 fi
-cp -f %{SOURCE2} .
+%{__rm} pci.ids
 
 ln -sf lib pci
 
 %build
-%define	config	ZLIB=yes DNS=yes SHARED=yes
+%define	config	ZLIB=yes DNS=yes SHARED=yes PCI_IDS=
 
 %{__make} lib/libpci.a \
-	ZLIB=yes DNS=yes SHARED=no \
+	%{config} SHARED=no \
 	CC="%{__cc}" \
 	OPT="%{rpmcppflags} %{rpmcflags}" \
 	PREFIX=%{_prefix} \
-	IDSDIR=%{_datadir} \
 	INCDIR=%{_includedir} \
 	LIBDIR=%{_libdir}
 
@@ -285,20 +286,18 @@ rm -f lib/*.o lib/config.h lib/config.mk lib/libpci.pc
 	OPT="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}" \
 	PREFIX=%{_prefix} \
-	IDSDIR=%{_datadir} \
 	INCDIR=%{_includedir} \
 	LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install install-lib \
 	DESTDIR=$RPM_BUILD_ROOT \
+	%{config} \
+	INSTALL="install -p" \
 	PREFIX=%{_prefix} \
 	LIBDIR=%{_libdir} \
 	SBINDIR=%{_sbindir} \
-	SHAREDIR=%{_datadir} \
-	PCI_IDS=pci.ids
 
 install -d $RPM_BUILD_ROOT/%{_lib}
 mv $RPM_BUILD_ROOT%{_libdir}/libpci.so.* $RPM_BUILD_ROOT/%{_lib}
@@ -307,15 +306,15 @@ chmod 755 $RPM_BUILD_ROOT/%{_lib}/libpci.so.*
 ln -sf $(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT/%{_lib}/libpci.so.3
 ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT%{_libdir}/libpci.so
 
-install lib/libpci.a $RPM_BUILD_ROOT%{_libdir}
+cp -p lib/libpci.a $RPM_BUILD_ROOT%{_libdir}
 
-install pcimodules $RPM_BUILD_ROOT%{_sbindir}
+install -p pcimodules $RPM_BUILD_ROOT%{_sbindir}
 # private pciutils header, what does it use?
-install pciutils.h $RPM_BUILD_ROOT%{_includedir}/pci
+cp -p pciutils.h $RPM_BUILD_ROOT%{_includedir}/pci
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-rm -f $RPM_BUILD_ROOT%{_mandir}/{README.pciutils-non-english-man-pages,/pciutils-non_en_man.patch}
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/{README.pciutils-non-english-man-pages,/pciutils-non_en_man.patch}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -332,7 +331,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/update-pciids
 %attr(755,root,root) /%{_lib}/libpci.so.*.*.*
 %attr(755,root,root) %ghost /%{_lib}/libpci.so.3
-%{_datadir}/pci.ids
 %{_mandir}/man7/pcilib.7*
 %{_mandir}/man8/lspci.8*
 %{_mandir}/man8/setpci.8*
