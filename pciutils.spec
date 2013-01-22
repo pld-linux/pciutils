@@ -259,7 +259,7 @@ Statyczna wersja biblioteki PCI.
 %patch4 -p1
 
 # paranoid check whether pci.ids in _sourcedir isn't too old
-if [ pci.ids -nt %{hwdatadir}/pci.ids ]; then
+if [ pci.ids -nt %{hwdatadir}/pci.ids.gz ]; then
 	: pci.ids needs to be updated
 	exit 1
 fi
