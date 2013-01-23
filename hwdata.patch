@@ -5,7 +5,7 @@
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
 -IDSDIR=$(SHAREDIR)
-+IDSDIR=$(SHAREDIR)/hwdata
++IDSDIR=/lib/hwdata
  MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
  INCDIR=$(PREFIX)/include
  LIBDIR=$(PREFIX)/lib

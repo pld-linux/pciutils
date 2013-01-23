@@ -17,7 +17,7 @@ Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	3.1.10
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -30,15 +30,15 @@ Patch2:		%{name}-nowhich.patch
 Patch3:		%{name}-pci_init-error.patch
 Patch4:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
-BuildRequires:	hwdata >= 0.243
+BuildRequires:	hwdata >= 0.243-2
 BuildRequires:	zlib-devel
-Requires:	hwdata >= 0.243
+Requires:	hwdata >= 0.243-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
 %define		_libdir		%{_prefix}/%{_lib}
 %define		_sbindir	/sbin
-%define		hwdatadir	/usr/share/hwdata
+%define		hwdatadir	/lib/hwdata
 
 %define		specflags	-fomit-frame-pointer
 
