@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	hwdata_check	# don't check hwdata pci.ids freshness
+#
 Summary:	Linux PCI utilities
 Summary(cs.UTF-8):	Linuxové utility pro PCI
 Summary(da.UTF-8):	PCI-bus-relaterede værktøjer
@@ -30,7 +34,7 @@ Patch2:		%{name}-nowhich.patch
 Patch3:		%{name}-pci_init-error.patch
 Patch4:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
-BuildRequires:	hwdata >= 0.243-2
+%{?with_hwdata_check:BuildRequires:	hwdata >= 0.243-2}
 BuildRequires:	zlib-devel
 Requires:	hwdata >= 0.243-2
 Conflicts:	xorg-lib-libpciaccess < 0.13.1-2
@@ -259,11 +263,13 @@ Statyczna wersja biblioteki PCI.
 %patch3 -p1
 %patch4 -p1
 
+%if %{with hwdata_check}
 # paranoid check whether pci.ids in _sourcedir isn't too old
 if [ pci.ids -nt %{hwdatadir}/pci.ids.gz ]; then
 	: pci.ids needs to be updated
 	exit 1
 fi
+%endif
 %{__rm} pci.ids
 
 ln -sf lib pci
@@ -279,7 +285,7 @@ ln -sf lib pci
 	INCDIR=%{_includedir} \
 	LIBDIR=%{_libdir}
 
-rm -f lib/*.o lib/config.h lib/config.mk lib/libpci.pc
+%{__rm} lib/*.o lib/config.h lib/config.mk lib/libpci.pc
 
 %{__make} \
 	%{config} \
