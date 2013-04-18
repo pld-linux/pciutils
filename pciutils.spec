@@ -21,7 +21,7 @@ Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	3.1.10
-Release:	7
+Release:	8
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
