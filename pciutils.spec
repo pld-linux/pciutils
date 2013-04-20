@@ -16,12 +16,12 @@ Summary(sv.UTF-8):	PCI-bussrelaterade verktyg
 Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
-Version:	3.1.10
-Release:	8
+Version:	3.2.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	cdb1e5a95ab7ac67349f10c8f77a6d3c
+# Source0-md5:	3fccb0b28879adb57d8156115f8003c8
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Patch0:		%{name}-pci_h.patch
@@ -30,6 +30,7 @@ Patch2:		%{name}-nowhich.patch
 Patch3:		%{name}-pci_init-error.patch
 Patch4:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
+BuildRequires:	kmod-devel
 BuildRequires:	zlib-devel
 Requires:	hwdata >= 0.243-2
 Conflicts:	xorg-lib-libpciaccess < 0.13.1-2
