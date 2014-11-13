@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	udev	# device names resolving fallback using HWDB
+#
 Summary:	Linux PCI utilities
 Summary(cs.UTF-8):	Linuxové utility pro PCI
 Summary(da.UTF-8):	PCI-bus-relaterede værktøjer
@@ -31,6 +35,7 @@ Patch3:		%{name}-pci_init-error.patch
 Patch4:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
 BuildRequires:	kmod-devel
+%{?with_udev:BuildRequires:	udev-devel}
 BuildRequires:	zlib-devel
 Requires:	hwdata >= 0.243-2
 Conflicts:	xorg-lib-libpciaccess < 0.13.1-2
@@ -264,7 +269,7 @@ Statyczna wersja biblioteki PCI.
 ln -sf lib pci
 
 %build
-%define	config	ZLIB=yes DNS=yes SHARED=yes PCI_IDS=
+%define	config	ZLIB=yes DNS=yes SHARED=yes LIBKMOD=yes %{?with_udev:HWDB=yes}%{!?with_udev:HWDB=no} PCI_IDS=
 
 %{__make} lib/libpci.a \
 	%{config} SHARED=no \
