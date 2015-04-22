@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	udev	# device names resolving fallback using HWDB
-#
+
 Summary:	Linux PCI utilities
 Summary(cs.UTF-8):	Linuxové utility pro PCI
 Summary(da.UTF-8):	PCI-bus-relaterede værktøjer
@@ -21,7 +21,7 @@ Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
 Version:	3.3.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
@@ -37,6 +37,7 @@ URL:		http://mj.ucw.cz/pciutils.html
 BuildRequires:	kmod-devel
 %{?with_udev:BuildRequires:	udev-devel}
 BuildRequires:	zlib-devel
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	hwdata >= 0.243-2
 Conflicts:	xorg-lib-libpciaccess < 0.13.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -142,6 +143,15 @@ kärnversion 2.1.82 eller senare (som stödjer gränssnittet
 Пакет pciutils містить утиліти для інспектування та конфігурування
 пристроїв, під'єднаних до PCI шини. Для роботи ці утиліти потребують
 наявності інтерфейсу /proc/bus/pci.
+
+%package libs
+Summary:	Linux PCI library
+Group:		Libraries
+Conflicts:	%{name} < 3.3.1-2
+
+%description libs
+This package contains a library for inspecting and setting devices
+connected to the PCI bus.
 
 %package devel
 Summary:	Linux PCI development library
@@ -302,10 +312,11 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/%{_lib}
 mv $RPM_BUILD_ROOT%{_libdir}/libpci.so.* $RPM_BUILD_ROOT/%{_lib}
+ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT%{_libdir}/libpci.so
+/sbin/ldconfig -n $RPM_BUILD_ROOT/%{_lib}
+
 # let rpm find deps
 chmod 755 $RPM_BUILD_ROOT/%{_lib}/libpci.so.*
-ln -sf $(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT/%{_lib}/libpci.so.3
-ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_ROOT%{_libdir}/libpci.so
 
 cp -p lib/libpci.a $RPM_BUILD_ROOT%{_libdir}
 
@@ -320,8 +331,8 @@ bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -330,14 +341,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/setpci
 %attr(755,root,root) %{_sbindir}/pcimodules
 %attr(755,root,root) %{_sbindir}/update-pciids
-%attr(755,root,root) /%{_lib}/libpci.so.*.*.*
-%attr(755,root,root) %ghost /%{_lib}/libpci.so.3
 %{_mandir}/man7/pcilib.7*
 %{_mandir}/man8/lspci.8*
 %{_mandir}/man8/setpci.8*
 %{_mandir}/man8/update-pciids.8*
 %lang(ja) %{_mandir}/ja/man8/*
 %lang(pl) %{_mandir}/pl/man8/*
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) /%{_lib}/libpci.so.*.*.*
+%attr(755,root,root) %ghost /%{_lib}/libpci.so.3
 
 %files devel
 %defattr(644,root,root,755)
