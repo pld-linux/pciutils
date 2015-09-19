@@ -146,12 +146,17 @@ kärnversion 2.1.82 eller senare (som stödjer gränssnittet
 
 %package libs
 Summary:	Linux PCI library
+Summary(pl.UTF-8):	Biblioteka Linux PCI
 Group:		Libraries
-Conflicts:	%{name} < 3.3.1-2
+Conflicts:	pciutils < 3.3.1-2
 
 %description libs
 This package contains a library for inspecting and setting devices
 connected to the PCI bus.
+
+%description libs -l pl.UTF-8
+Ten pakiet zawiera bibliotekę do badania i konfiguracji urządzeń
+podłączonych do szyny PCI.
 
 %package devel
 Summary:	Linux PCI development library
