@@ -1,6 +1,6 @@
---- pciutils-3.1.7/lib/init.c~	2008-11-11 00:11:51.000000000 +0100
-+++ pciutils-3.1.7/lib/init.c	2011-08-07 22:05:05.968913892 +0200
-@@ -178,8 +178,10 @@
+--- pciutils-3.6.2/lib/init.c.orig	2018-03-20 21:36:30.000000000 +0100
++++ pciutils-3.6.2/lib/init.c	2018-08-24 21:13:23.412076269 +0200
+@@ -208,8 +208,10 @@
  
    if (a->method)
      {
@@ -12,10 +12,10 @@
        a->methods = pci_methods[a->method];
      }
    else
-@@ -198,8 +200,10 @@
- 	      }
- 	    a->debug("...No.\n");
- 	  }
+@@ -230,8 +232,10 @@
+ 	    }
+ 	  a->debug("...No.\n");
+ 	}
 -      if (!a->methods)
 +      if (!a->methods) {
  	a->error("Cannot find any working access method.");
