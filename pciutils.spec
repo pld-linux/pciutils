@@ -24,7 +24,7 @@ Version:	3.6.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/%{name}-%{version}.tar.gz
+Source0:	https://mj.ucw.cz/download/linux/pci/%{name}-%{version}.tar.gz
 # Source0-md5:	a1c5ec13f81a1c9cf380c93623959005
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
