@@ -9,5 +9,5 @@
 +#include "pci/pci.h"
 +#include "pci/sysdep.h"
  
- #ifdef PCI_OS_WINDOWS
- #include "compat/getopt.h"
+ /*
+  * gcc predefines macro __MINGW32__ for all MinGW targets.

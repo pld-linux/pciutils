@@ -1,7 +1,7 @@
 --- pciutils-3.0.0/Makefile.idpath	2008-04-10 21:19:43.000000000 +0200
 +++ pciutils-3.0.0/Makefile	2008-09-01 15:16:19.000000000 +0200
 @@ -27,7 +27,7 @@ ABI_VERSION=.3
- PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
 -IDSDIR=$(SHAREDIR)
@@ -12,12 +12,12 @@
 --- pciutils-3.1.10/Makefile~	2013-01-19 22:36:24.000000000 +0200
 +++ pciutils-3.1.10/Makefile	2013-01-19 22:44:19.146531267 +0200
 @@ -104,7 +104,9 @@
- 	$(DIRINSTALL) -m 755 $(DESTDIR)$(SBINDIR) $(DESTDIR)$(IDSDIR) $(DESTDIR)$(MANDIR)/man8 $(DESTDIR)$(MANDIR)/man7
- 	$(INSTALL) -c -m 755 $(STRIP) lspci setpci $(DESTDIR)$(SBINDIR)
+ 	$(INSTALL) -c -m 755 $(STRIP) lspci$(EXEEXT) $(DESTDIR)$(LSPCIDIR)
+ 	$(INSTALL) -c -m 755 $(STRIP) setpci$(EXEEXT) $(DESTDIR)$(SBINDIR)
  	$(INSTALL) -c -m 755 update-pciids $(DESTDIR)$(SBINDIR)
 +ifneq ($(PCI_IDS),)
  	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(IDSDIR)
 +endif
  	$(INSTALL) -c -m 644 lspci.8 setpci.8 update-pciids.8 $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -c -m 644 pcilib.7 $(DESTDIR)$(MANDIR)/man7
- ifeq ($(SHARED),yes)
+ 	$(INSTALL) -c -m 644 pci.ids.5 $(DESTDIR)$(MANDIR)/man5

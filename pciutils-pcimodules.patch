@@ -4,18 +4,18 @@
  
  export
  
--all: lib/$(PCILIB) lspci setpci example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
-+all: lib/$(PCILIB) lspci setpci pcimodules example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
+-all: lib/$(PCILIB) lspci$(EXEEXT) setpci$(EXEEXT) example$(EXEEXT) lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
++all: lib/$(PCILIB) lspci$(EXEEXT) setpci$(EXEEXT) pcimodules example$(EXEEXT) lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
  
  lib/$(PCILIB): $(PCIINC) force
  	$(MAKE) -C lib all
 @@ -60,6 +60,7 @@
- lib/config.h lib/config.mk:
- 	cd lib && ./configure
+ COMMON+=compat/getopt.o
+ endif
  
 +pcimodules: pcimodules.o common.o lib/$(PCILIB)
- lspci: lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o lib/$(PCILIB)
- setpci: setpci.o common.o lib/$(PCILIB)
+ lspci$(EXEEXT): lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o $(COMMON) lib/$(PCILIB)
+ setpci$(EXEEXT): setpci.o $(COMMON) lib/$(PCILIB)
  
 --- pciutils-2.1.11/pcimodules.c.pix	2003-01-04 23:06:00.000000000 +0100
 +++ pciutils-2.1.11/pcimodules.c	2003-01-04 23:06:00.000000000 +0100
