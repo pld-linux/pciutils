@@ -20,19 +20,18 @@ Summary(sv.UTF-8):	PCI-bussrelaterade verktyg
 Summary(uk.UTF-8):	Утиліти роботи з PCI пристроями
 Summary(zh_CN.UTF-8):	PCI 总线相关的工具。
 Name:		pciutils
-Version:	3.9.0
+Version:	3.10.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://mj.ucw.cz/download/linux/pci/%{name}-%{version}.tar.gz
-# Source0-md5:	357496ae1652aac66cad0d2de2d831d0
+# Source0-md5:	ca53b87d2a94cdbbba6e09aca90924bd
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	1ac48f433b1995044e14c24513992211
 Patch0:		%{name}-pci_h.patch
 Patch1:		%{name}-pcimodules.patch
-Patch2:		%{name}-nowhich.patch
-Patch3:		%{name}-pci_init-error.patch
-Patch4:		hwdata.patch
+Patch2:		%{name}-pci_init-error.patch
+Patch3:		hwdata.patch
 URL:		http://mj.ucw.cz/pciutils.html
 BuildRequires:	kmod-devel
 %{?with_udev:BuildRequires:	udev-devel}
@@ -277,7 +276,6 @@ Statyczna wersja biblioteki PCI.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %{__rm} pci.ids
 

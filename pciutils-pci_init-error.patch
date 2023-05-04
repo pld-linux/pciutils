@@ -1,26 +1,14 @@
---- pciutils-3.6.2/lib/init.c.orig	2018-03-20 21:36:30.000000000 +0100
-+++ pciutils-3.6.2/lib/init.c	2018-08-24 21:13:23.412076269 +0200
-@@ -208,8 +208,10 @@
+--- pciutils-3.10.0/lib/init.c.orig	2023-05-04 21:14:07.869516839 +0200
++++ pciutils-3.10.0/lib/init.c	2023-05-04 21:29:51.238144530 +0200
+@@ -440,8 +440,10 @@
  
-   if (a->method)
+   if (a->method != PCI_ACCESS_AUTO)
      {
 -      if (a->method >= PCI_ACCESS_MAX || !pci_methods[a->method])
 +      if (a->method >= PCI_ACCESS_MAX || !pci_methods[a->method]) {
  	a->error("This access method is not supported.");
-+	return;
++	return 0;
 +      }
        a->methods = pci_methods[a->method];
      }
    else
-@@ -230,8 +232,10 @@
- 	    }
- 	  a->debug("...No.\n");
- 	}
--      if (!a->methods)
-+      if (!a->methods) {
- 	a->error("Cannot find any working access method.");
-+	return;
-+      }
-     }
-   a->debug("Decided to use %s\n", a->methods->name);
-   a->methods->init(a);
