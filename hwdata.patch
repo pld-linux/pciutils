@@ -12,8 +12,8 @@
 --- pciutils-3.9.0/Makefile.orig	2022-12-16 10:21:43.588532476 +0100
 +++ pciutils-3.9.0/Makefile	2022-12-16 10:23:46.251274298 +0100
 @@ -152,11 +152,13 @@
- 	$(INSTALL) -c -m 755 $(STRIP) lspci$(EXEEXT) $(DESTDIR)$(LSPCIDIR)
  	$(INSTALL) -c -m 755 $(STRIP) setpci$(EXEEXT) $(DESTDIR)$(SBINDIR)
+ 	$(INSTALL) -c -m 755 $(STRIP) pcilmr$(EXEEXT) $(DESTDIR)$(SBINDIR)
  	$(INSTALL) -c -m 755 update-pciids $(DESTDIR)$(SBINDIR)
 +ifneq ($(PCI_IDS),)
  ifneq ($(IDSDIR),)
@@ -22,6 +22,6 @@
  	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(SBINDIR)
  endif
 +endif
- 	$(INSTALL) -c -m 644 lspci.8 setpci.8 update-pciids.8 $(DESTDIR)$(MANDIR)/man8
+ 	$(INSTALL) -c -m 644 lspci.8 setpci.8 pcilmr.8 update-pciids.8 $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -c -m 644 pcilib.7 $(DESTDIR)$(MANDIR)/man7
  	$(INSTALL) -c -m 644 pci.ids.5 $(DESTDIR)$(MANDIR)/man5
