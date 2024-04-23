@@ -1,6 +1,7 @@
 #
 # Conditional build:
-%bcond_without	udev	# device names resolving fallback using HWDB
+%bcond_without	static_libs	# static library
+%bcond_without	udev		# device names resolving fallback using HWDB
 
 Summary:	Linux PCI utilities
 Summary(cs.UTF-8):	Linuxové utility pro PCI
@@ -284,6 +285,7 @@ ln -sf lib pci
 %build
 %define	config	ZLIB=yes DNS=yes SHARED=yes LIBKMOD=yes %{?with_udev:HWDB=yes}%{!?with_udev:HWDB=no} PCI_IDS=
 
+%if %{with static_libs}
 %{__make} lib/libpci.a \
 	%{config} SHARED=no \
 	CC="%{__cc}" \
@@ -293,6 +295,7 @@ ln -sf lib pci
 	LIBDIR=%{_libdir}
 
 %{__rm} lib/*.o lib/config.h lib/config.mk lib/libpci.pc
+%endif
 
 %{__make} \
 	%{config} \
@@ -322,7 +325,7 @@ ln -sf /%{_lib}/$(basename $RPM_BUILD_ROOT/%{_lib}/libpci.so.*.*.*) $RPM_BUILD_R
 # let rpm find deps
 chmod 755 $RPM_BUILD_ROOT/%{_lib}/libpci.so.*
 
-cp -p lib/libpci.a $RPM_BUILD_ROOT%{_libdir}
+%{?with_static_libs:cp -p lib/libpci.a $RPM_BUILD_ROOT%{_libdir}}
 
 install -p pcimodules $RPM_BUILD_ROOT%{_sbindir}
 # private pciutils header, what does it use?
@@ -367,6 +370,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/pci/*.h
 %{_pkgconfigdir}/libpci.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libpci.a
+%endif
